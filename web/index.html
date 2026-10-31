@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN" data-paper="white">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unfixed</title>
+<link rel="icon" type="image/svg+xml" href="site-icon.svg">
+<!-- 项目的 GitHub 仓库地址，只写在这一处；空着时侧栏底部和结果手册最后一页都不出"点个 star"的链接 -->
+<meta name="repo" content="https://github.com/xiaoyou5602/Unfixed">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="paper.css">
+<link rel="stylesheet" href="handbook.css">
+<link rel="stylesheet" href="lexicon.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<svg id="threads" aria-hidden="true"></svg>
+
+<!-- 左上三条杠：打开侧栏（测试名、名词库的维度大纲），见 js/lexicon.js -->
+<button class="menu-btn" id="menuBtn" aria-label="打开目录" aria-expanded="false" aria-controls="drawer">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="17" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="17" y1="18" x2="3" y2="18"></line></svg>
+</button>
+<div class="drawer-mask" id="drawerMask" hidden></div>
+<nav class="drawer" id="drawer" aria-label="目录"></nav>
+
+<header class="topbar">
+  <div class="brand"><b>UNFIXED</b><span>自我探索测试 · 测试版</span></div>
+  <div class="progress"><div class="dots" id="dots"></div><span id="progressText"></span></div>
+</header>
+
+<main id="main" data-kind="cover">
+  <div class="slip-wrap" id="slipWrap"><div class="slip" id="slip"></div></div>
+  <div class="lex-wrap" id="lexWrap" hidden></div>
+</main>
+
+<button class="tune-btn" id="tuneBtn" aria-expanded="false" aria-controls="tune">调参</button>
+<div class="tune" id="tune" hidden>
+  <label><span class="lab">网点大小 <output id="o-cell"></output></span><input type="range" id="t-cell" min="6" max="18" step="0.5"></label>
+  <label><span class="lab">扭曲强度 <output id="o-amp"></output></span><input type="range" id="t-amp" min="0" max="2.5" step="0.05"></label>
+  <label><span class="lab">流速 <output id="o-speed"></output></span><input type="range" id="t-speed" min="0" max="4" step="0.05"></label>
+  <label><span class="lab">同时显影的碎片 <output id="o-frags"></output></span><input type="range" id="t-frags" min="0" max="6" step="1"></label>
+  <label><span class="lab">散落的红线 <output id="o-threads"></output></span><input type="range" id="t-threads" min="0" max="6" step="1"></label>
+  <label><span class="lab">波浪底纹 <output id="o-wave"></output></span><input type="range" id="t-wave" min="0" max="1" step="0.05"></label>
+  <div class="row">纸色 <button data-paper="cream">米</button><button data-paper="white">白</button></div>
+  <label class="check"><input type="checkbox" id="t-bgonly"> 只看底页</label>
+  <button class="reset" id="t-reset">恢复默认</button>
+</div>
+
+<!-- 先读数据，再读程序；后面的文件会用到前面文件里定义的东西，顺序不要换 -->
+<script src="assets/questions.js"></script>
+<script src="assets/scoring.js"></script>
+<script src="assets/lexicon.js"></script>
+<script src="js/shader.js"></script>
+<script src="js/drawn.js"></script>
+<script src="js/paper.js"></script>
+<script src="js/threads.js"></script>
+<script src="js/flow.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/question-view.js"></script>
+<script src="js/pixel.js"></script>
+<script src="js/handbook.js"></script>
+<script src="js/questionnaire.js"></script>
+<script src="js/lexicon.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

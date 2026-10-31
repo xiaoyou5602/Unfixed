@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="58 38 570 570">
+  <defs>
+    <radialGradient id="planet" cx="38%" cy="32%" r="75%">
+      <stop offset="0" stop-color="#3552e6"/>
+      <stop offset="1" stop-color="#1428c4"/>
+    </radialGradient>
+    <!-- 轨道前半圈：在倾斜后的坐标里取下半边，盖在星球上面 -->
+    <clipPath id="front"><rect x="-300" y="0" width="600" height="120"/></clipPath>
+  </defs>
+
+  <!-- 底色：跟网站纸色同一路的暖米色 -->
+  <rect x="58" y="38" width="570" height="570" rx="122" fill="#f8f5ee"/>
+
+  <!-- 蓝色倾斜轨道（后半圈，被星球挡住） -->
+  <ellipse cx="290" cy="272" rx="245" ry="82" transform="rotate(-35 290 272)"
+           fill="none" stroke="#4a68e8" stroke-width="14"/>
+
+  <!-- 星球：左侧淡紫的光晕 + 深蓝本体 + 高光 -->
+  <circle cx="240" cy="268" r="96" fill="#c9d0f1"/>
+  <circle cx="282" cy="276" r="108" fill="url(#planet)"/>
+  <path d="M232 196 C246 176 276 180 280 202 C284 224 262 230 250 248 C242 260 222 258 220 240 C218 224 222 210 232 196Z"
+        fill="#dfe4f8" opacity=".9"/>
+
+  <!-- 淡色小圈，压在星球右下 -->
+  <circle cx="385" cy="350" r="78" fill="none" stroke="#e4e7f6" stroke-width="13" opacity=".9"/>
+
+  <!-- 蓝色轨道前半圈 -->
+  <g transform="rotate(-35 290 272) translate(290 272)">
+    <ellipse rx="245" ry="82" fill="none" stroke="#4a68e8" stroke-width="14" clip-path="url(#front)"/>
+  </g>
+
+  <!-- 深色大圈：两段弧，右边给四角星留缺口 -->
+  <g fill="none" stroke="#1b2340" stroke-width="18" stroke-linecap="round">
+    <path d="M295.1 144.6 A200 200 0 0 1 560.2 268.2"/>
+    <path d="M563.2 381.8 A200 200 0 0 1 171.1 309.1"/>
+  </g>
+
+  <!-- 深色小卫星 -->
+  <circle cx="445" cy="392" r="21" fill="#1b2340"/>
+
+  <!-- 散落的小蓝点 -->
+  <g fill="#3a58e4">
+    <circle cx="287" cy="122" r="10"/>
+    <circle cx="383" cy="166" r="12"/>
+    <circle cx="495" cy="320" r="10"/>
+  </g>
+
+  <!-- 四角星 -->
+  <path d="M568 280 C571 312 578 319 608 323 C578 327 571 334 568 366 C565 334 558 327 528 323 C558 319 565 312 568 280Z"
+        fill="#3a58e4"/>
+</svg>

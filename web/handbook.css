@@ -1,0 +1,186 @@
+/* 结果页：微型探索手册。沿用问卷的纸条与墨色（paper.css 里的 --slip、--ink、--blue、--red），每一章是一张纸条
+   像素过渡只在跳进结果页时出现，放完就是普通的可读页面；这里不铺大面积色块，词条只靠字色和字号区分 */
+
+.hb{
+  --hb-display:"Archivo","Noto Sans SC","Source Han Sans SC","Microsoft YaHei",sans-serif;
+  position:relative;display:flex;flex-direction:column;gap:26px;color:var(--ink);
+}
+
+/* 答完页换成手册：纸条变宽、各页自带纸条，顶栏跟着页面滚走 */
+main[data-kind="done"]{justify-content:center;padding-top:70px}
+main[data-kind="done"] .slip-wrap{width:min(760px,100%);filter:none}
+main[data-kind="done"] .slip{background:none;padding:0;clip-path:none}
+body.reading .topbar{position:absolute}
+
+/* 进场过渡：等着出现的元素先占位不显示；像素画布浮在整本手册上面 */
+.px-layer{position:absolute;inset:0;pointer-events:none;z-index:20}
+.px-canvas{position:absolute;image-rendering:pixelated}
+.px-wait{visibility:hidden}
+
+/* 每一页是一张纸条：阴影在外层，切角在里层，和问卷的纸条一样 */
+.hb-page{filter:drop-shadow(0 1px 0 rgba(27,35,64,.10)) drop-shadow(0 18px 26px rgba(27,35,64,.13))}
+/* 纸色叠在底色上做成不透明，手册字多，不让背后的大字和网点透上来 */
+.hb-sheet{position:relative;background:linear-gradient(var(--slip),var(--slip)),var(--paper);padding:clamp(24px,4.4vw,44px) clamp(20px,4.6vw,46px) 46px;
+  clip-path:polygon(0 6px,6px 6px,6px 0,100% 0,100% calc(100% - 12px),calc(100% - 6px) calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 6px),calc(100% - 12px) calc(100% - 6px),calc(100% - 12px) 100%,0 100%)}
+.hb-folio{position:absolute;right:clamp(18px,3vw,28px);bottom:16px;font:500 10px/1 var(--mono);letter-spacing:.12em;color:var(--muted)}
+
+/* 封面 */
+.hb-cover .hb-sheet{min-height:min(78vh,720px);display:flex;flex-direction:column}
+.hb-meta{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  padding-bottom:14px;border-bottom:1px solid var(--line)}
+.hb-meta span:first-child{color:var(--blue)}
+.hb-meta span:last-child{margin-left:auto;color:var(--red)}
+.hb-cover-sub{font:700 clamp(19px,2.2vw,23px)/1.6 var(--serif);margin:22px 0 0;text-wrap:pretty}
+.hb-stair{container-type:inline-size;display:flex;flex-direction:column;gap:clamp(2px,1vh,10px);margin:clamp(26px,6vh,58px) 0 clamp(24px,5vh,48px);font-weight:normal}
+/* 错落的台阶：用 left 而不是 margin 挪位置，挪了也不会挤窄可用宽度 */
+.hb-word{position:relative;display:block;width:fit-content;max-width:100%;left:calc(var(--t) * 100%);transform:translateX(calc(var(--t) * -100%));
+  font:800 min(66px, calc(100cqw / var(--len))) / 1.1 var(--hb-display);letter-spacing:-.01em;color:var(--blue);overflow-wrap:anywhere}
+.hb-word.alt{color:var(--ink)}
+.hb-motto{font:500 15px/1.8 var(--serif);margin:0 0 22px;padding-left:12px;border-left:2px solid var(--red)}
+.hb-cover-foot{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.hb-toc{display:flex;flex-wrap:wrap;gap:8px}
+.hb-toc button,.hb-toc span{display:inline-flex;gap:7px;align-items:baseline;font:500 13px/1.3 var(--sans);color:var(--ink);background:none;
+  border:1px solid var(--line);padding:7px 10px;cursor:pointer;transition:border-color .2s,color .2s}
+.hb-toc b{font:500 11px/1 var(--mono);color:var(--blue)}
+.hb-toc button:hover{border-color:var(--blue);color:var(--blue)}
+.hb-toc .is-off{cursor:default;color:var(--muted);border-style:dashed}
+.hb-toc .is-off b{color:var(--muted)}
+
+/* 怎么读、正文 */
+.hb-kicker{font:500 11px/1 var(--mono);letter-spacing:.12em;color:var(--blue);margin:0 0 14px}
+.hb-body{font:400 15.5px/1.85 var(--sans);margin:0 0 14px;max-width:38em}
+.hb-lede{font:700 clamp(21px,2.2vw,25px)/1.6 var(--serif);margin:0 0 12px;text-wrap:pretty}
+.hb-lead{font:400 13.5px/1.8 var(--sans);color:var(--muted);margin:-8px 0 20px;padding-left:12px;border-left:2px solid var(--blue)}
+
+/* 章首：和问卷纸条同样的小字栏，下面是大标题 */
+.hb-head{margin:0 0 24px}
+.hb-head-row{display:flex;gap:14px;align-items:baseline;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.hb-no{color:var(--red)}
+.hb-latin{color:var(--blue)}
+.hb-title{margin:0;font:900 clamp(32px,5vw,50px)/1.12 var(--sans);letter-spacing:.02em;color:var(--blue)}
+
+/* 分节与词条 */
+.hb-sec{margin:30px 0 0}
+.hb-sec-h{display:flex;align-items:center;gap:9px;font:500 11.5px/1.3 var(--mono);letter-spacing:.1em;color:var(--muted);margin:0 0 14px}
+.hb-sec-h::before{content:"";flex:none;width:7px;height:7px;background:var(--red)}
+.hb-sec-p{font:400 13.5px/1.8 var(--sans);color:var(--muted);margin:-4px 0 14px;max-width:40em}
+.hb-card{padding:0 0 20px;margin:0 0 20px;border-bottom:1px dashed var(--line)}
+.hb-card:last-child{margin-bottom:0;border-bottom:0}
+.hb-label{font:800 clamp(26px,3.8vw,38px)/1.12 var(--hb-display);letter-spacing:-.005em;color:var(--blue);overflow-wrap:anywhere}
+.is-mod .hb-label,.is-detail .hb-label,.is-near .hb-label{font-size:clamp(20px,2.6vw,25px);color:var(--ink)}
+.is-maybe .hb-label{font-size:clamp(20px,2.6vw,25px);text-decoration:underline dashed 1.5px;text-underline-offset:6px}
+.is-ext .hb-label{font-size:clamp(18px,2.3vw,22px);color:var(--muted)}
+.hb-tag{display:inline-block;font:500 10.5px/1 var(--mono);letter-spacing:.1em;color:var(--red);border:1px solid currentColor;padding:4px 6px;margin:0 0 8px}
+.hb-zh{font:500 14px/1.5 var(--sans);color:var(--muted);margin:6px 0 0}
+.hb-en{font:600 15px/1.4 var(--hb-display);letter-spacing:.01em;color:var(--muted);margin:6px 0 0;overflow-wrap:anywhere}
+.hb-label .hb-ni{font-size:11px;margin-left:8px;vertical-align:.45em}
+.hb-ni{font:500 10.5px/1 var(--mono);font-style:normal;letter-spacing:.06em;color:var(--red);border:1px solid currentColor;padding:1px 4px;margin-left:5px;vertical-align:1px}
+.hb-def{font:400 14.5px/1.85 var(--sans);margin:10px 0 0;max-width:40em}
+.hb-basis{font:400 14px/1.85 var(--serif);margin:10px 0 0;padding:1px 0 1px 12px;border-left:2px solid var(--blue);max-width:40em}
+/* 链到名词库的词条页 */
+.hb-lex{display:inline-block;margin:10px 0 0;font:500 12.5px/1.5 var(--sans);color:var(--blue);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.hb-lex:hover,.hb-lex-name:hover{color:var(--red)}
+/* 词卡里点开的核心特征、体验举例：正文沿用名词库词条页的 .lx-prose，字号收小一档 */
+.hb-more{margin:12px 0 0;max-width:40em}
+.hb-more summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font:500 12.5px/1.5 var(--sans);color:var(--blue)}
+.hb-more summary::-webkit-details-marker{display:none}
+.hb-more summary::before{content:"+";display:inline-grid;place-items:center;width:15px;height:15px;font:500 12px/1 var(--mono);border:1px solid currentColor}
+.hb-more[open] summary::before{content:"−"}
+.hb-more summary:hover{color:var(--red)}
+.hb-more summary:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.hb-more-body{margin:10px 0 0;padding:0 0 0 14px;border-left:2px solid var(--line)}
+.hb-more h4{font:500 11px/1.3 var(--mono);letter-spacing:.1em;color:var(--red);margin:16px 0 2px}
+.hb-more h4:first-child{margin-top:4px}
+.hb-more .lx-prose{font-size:14px}
+.hb-more .lx-prose li{padding:4px 0 4px 18px}
+.hb-more .lx-prose li::before{top:14px}
+.hb-more .lx-prose > :last-child{margin-bottom:0}
+.hb-lex-name{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.hb-combined{font:400 14.5px/1.8 var(--sans);margin:30px 0 0;padding:12px 14px;background:rgba(29,51,224,.05);border-left:2px solid var(--blue)}
+
+/* 所属范围：台阶，从最上一层排到主结果 */
+.hb-path{display:flex;flex-direction:column;gap:6px;margin:4px 0 12px}
+/* 每一级往右缩进一小段：两级、五级看着都是台阶，不会把最后一级甩到栏的另一头 */
+.hb-step{display:block;width:fit-content;max-width:calc(100% - var(--i) * 28px);margin-left:calc(var(--i) * 28px);
+  font:600 14px/1 var(--hb-display);padding:8px 10px;color:var(--ink);border:1px solid var(--line)}
+.hb-step.is-now{color:var(--blue);border-color:var(--blue)}
+a.hb-step{text-decoration:none}
+a.hb-step:hover{color:var(--blue);border-color:var(--blue)}
+
+/* 结果页上的选择：和问卷里的逐行按钮、勾选框同一套样子 */
+.hb-choice{border:0;padding:0;margin:18px 0 4px;display:flex;flex-wrap:wrap;gap:6px}
+.hb-choice legend{float:left;width:100%;font:400 13.5px/1.7 var(--sans);color:var(--muted);margin:0 0 4px;padding:0}
+.hb-pill,.hb-toggle{position:relative;cursor:pointer}
+.hb-pill input,.hb-toggle input{position:absolute;opacity:0;pointer-events:none}
+.hb-pill span{display:inline-block;font:400 13.5px/1 var(--sans);padding:9px 12px;border:1px solid var(--line);transition:background .2s,color .2s,border-color .2s}
+.hb-pill:hover span{border-color:var(--blue)}
+.hb-pill input:checked + span{background:var(--blue);border-color:var(--blue);color:#f7f4ec}
+/* 勾选框自己占一行，不和上面的名词库链接挤在一起 */
+.hb-toggle{display:flex;width:fit-content;align-items:center;margin:12px 0 0;font:400 13.5px/1.5 var(--sans)}
+.hb-toggle span::before{content:"";display:inline-block;width:15px;height:15px;margin:0 9px -3px 0;border:1.5px solid var(--ink);transition:border-color .2s}
+.hb-toggle input:checked + span::before{border-color:var(--blue);background:var(--blue);box-shadow:inset 0 0 0 3px var(--slip)}
+.hb-pill input:focus-visible + span,.hb-toggle input:focus-visible + span::before{outline:2px solid var(--red);outline-offset:2px}
+.hb-exit{margin:28px 0 0;padding:14px 16px;background:rgba(29,51,224,.05);border-left:2px solid var(--blue)}
+.hb-exit p{font:400 14px/1.85 var(--sans);margin:0}
+.hb-exit .hb-toggle{margin-top:8px}
+.hb-exit .hb-exit-h{font:500 12.5px/1.6 var(--sans);color:var(--blue);margin:0 0 6px}
+.hb-exit .hb-exit-term{margin:0 0 2px}
+.hb-exit-term b{font:700 17px/1.5 var(--sans)}
+.hb-exit-term span{font:400 13.5px/1.5 var(--sans);color:var(--muted);margin-left:10px}
+.hb-exit .hb-exit-note{font-size:13px;color:var(--muted);margin-top:4px}
+.hb-name{display:block;margin:0 0 6px}
+.hb-name span{display:block;font:400 13.5px/1.75 var(--sans);color:var(--muted);margin-bottom:8px}
+.hb-name input{width:min(100%,420px);font:600 17px/1.4 var(--hb-display);color:var(--ink);background:rgba(255,255,255,.55);border:0;border-bottom:1.5px solid var(--line);
+  padding:6px 8px;outline:none;transition:border-color .2s}
+.hb-name input:focus{border-bottom-color:var(--blue)}
+
+/* 关系元素：按回答分成几列，列头只用一道色线区分 */
+.hb-matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.hb-col h4{font:500 11px/1 var(--mono);letter-spacing:.1em;margin:0 0 8px;padding:8px 0 0;border-top:2px solid var(--blue);color:var(--blue)}
+.hb-col.c1 h4{border-color:var(--ink);color:var(--ink)}
+.hb-col.c2 h4{border-color:var(--muted);color:var(--muted)}
+.hb-col.c3 h4{border-color:var(--red);color:var(--red)}
+.hb-col ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+.hb-col li{font:400 13px/1.35 var(--sans);padding:5px 8px;border:1px solid var(--line)}
+.hb-col li i{font:400 11px/1 var(--sans);font-style:normal;color:var(--blue);margin-left:5px}
+
+/* 简写、按钮 */
+.hb-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0 0}
+.hb-btn{font:600 14px/1 var(--sans);letter-spacing:.06em;color:#f7f4ec;background:var(--blue);border:0;padding:13px 18px;cursor:pointer;transition:background .2s;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 100%,0 100%)}
+.hb-btn:hover{background:var(--blue-deep)}
+.hb-btn.ghost{color:var(--ink);background:none;box-shadow:inset 0 0 0 1px var(--line);clip-path:none}
+.hb-btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--blue);color:var(--blue)}
+.hb-btn:focus-visible,.hb-toc button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.hb-copied{font:500 12px/1 var(--mono);color:var(--blue)}
+.hb-shorthand{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.hb-shorthand span{font:800 clamp(20px,3vw,28px)/1.25 var(--hb-display);color:var(--blue)}
+.hb-shorthand i{font:800 20px/1 var(--hb-display);font-style:normal;color:var(--red)}
+.hb-end .jump{margin-bottom:16px}
+.hb-star{margin-top:20px}
+.hb-star a{color:var(--blue)}
+
+@media (max-width:700px){
+  main[data-kind="done"]{padding:64px 16px 80px}
+  .hb{gap:20px}
+  .hb-sheet{padding:22px 18px 44px}
+  .hb-cover .hb-sheet{min-height:82vh}
+  .hb-meta span:last-child{margin-left:0}
+  .hb-body{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){ .hb-toc button,.hb-btn,.hb-pill span{transition:none} }
+
+/* 打印：只留手册本身，一章一页 */
+@media print{
+  #bg,#threads,.topbar,.tune-btn,.tune,.hb-lex,.hb-choice,.hb-toggle,.hb-actions,.hb-end .jump,.hb-star,.hb-name,.px-layer,.hb-more summary{display:none !important}
+  html,body{background:#fff}
+  main,main[data-kind="done"]{display:block;padding:0}
+  .slip-wrap{width:100% !important}
+  .hb{gap:0}
+  .hb-page{filter:none;break-after:page}
+  .hb-sheet{clip-path:none;background:#fff}
+  .hb-cover .hb-sheet{min-height:96vh}
+  .px-wait{visibility:visible !important}
+}
