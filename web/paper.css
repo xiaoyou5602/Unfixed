@@ -161,9 +161,28 @@ body.bg-only main,body.bg-only #threads{opacity:0;pointer-events:none}
   main{padding:76px 16px 96px}
   main[data-kind="cover"] .slip-wrap{margin-top:2vh}
   .slip{padding:22px 18px 18px}
-  .txt{font-size:15.5px}
+  main[data-kind="q"] .txt{font-size:14.5px}
+  .stem{font-size:18px;font-weight:500;line-height:1.55}
+  .intro{font-size:12.5px}
+  .note{font-size:12px;line-height:1.7}
+  .defs dt{font-size:12px}
+  .defs dd{font-size:13px;line-height:1.7}
+  /* 答题页其余题型同步收小；点击区域沿用原来的留白。 */
+  main[data-kind="q"] .row-text{font-size:14.5px}
+  main[data-kind="q"] .row-quote{font-size:12px}
+  main[data-kind="q"] .pill:not(.exit-pill) span{font-size:12.5px}
+  main[data-kind="q"] .free,main[data-kind="q"] .follow textarea{font-size:14px}
+  main[data-kind="q"] .follow span{font-size:12.5px}
+  main[data-kind="q"] .rank li{font-size:13px}
+  main[data-kind="q"] .next{font-size:14px}
+  main[data-kind="q"] .back{font-size:12px}
+  main[data-kind="q"] .pending{font-size:13px}
   .brand span{display:none}
   .dots{grid-template-columns:repeat(20,3px);gap:3px}
   .dots i{width:3px;height:3px}
+}
+@media (max-width:700px) and (orientation:portrait){
+  main[data-kind="q"] .box{width:16px;height:16px}
+  main[data-kind="q"] .opt input:checked + .box::after{inset:3px}
 }
 @media (prefers-reduced-motion:reduce){ .slip-wrap{transition:opacity .2s} }

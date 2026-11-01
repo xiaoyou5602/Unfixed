@@ -21,7 +21,9 @@ window.Handbook = (() => {
   const WHOLE = { flux: 'Aroflux', spike: 'Arospike' };
   const origin = id => WHOLE[id] || (/^[a-z]+-$/.test(id) ? id[0].toUpperCase() + id.slice(1, -1) + 'romantic' : id);
   // 词条 ID：先按计分的名字对，对不上按原词，aspec 这类本身就是词条 ID 的直接用
-  const lexId = id => LEX[id] || LEX[origin(id)] || (LEX_NAME[id] ? id : '');
+  // 不由计分推出的词（oriented / angled aroace）按词条名对
+  const LEX_BY_NAME = Object.fromEntries(Object.entries(LEX_NAME).map(([k, v]) => [v, k]));
+  const lexId = id => LEX[id] || LEX[origin(id)] || (LEX_NAME[id] ? id : '') || LEX_BY_NAME[id] || '';
   // 选择只存在这台设备的浏览器里
   const STORE = 'arospec-result-choices-v1';
   const DEFAULTS = { granularity: 'main', pick: {}, exits: [], include: [], directions: false, overallName: '' };
@@ -121,14 +123,14 @@ window.Handbook = (() => {
     h += sec('和你的回答最接近的词', d.primary.map(c => card(c, 'primary', slot, c.id === '探索中'
       ? `<p class="hb-sec-p">"探索中"是正式的结果，不是测试失败。${d.possible.length ? '下面列出和你的回答有接近之处的词，可以自己对照。' : ''}</p>` : '')).join(''),
       slot === 'overall' ? '这一章的定义借用对应的浪漫倾向词条，读的时候把"浪漫吸引"换成你整体的吸引体验。' : '');
-    if (d.primary.length === 2 && slot !== 'overall') h += pick(slot, d.primary, '两个词都和你的回答接近，可以并列。放进结果卡时：');
+    if (d.primary.length === 2 && slot !== 'overall') h += pick(slot, d.primary, '两个词都和你的回答接近，放进结果卡时：');
     if (d.parents.length) h += sec('所属范围', path(d));
     h += sec('可以一起用的词', d.modifiers.map(c => card(c, 'mod', slot)).join(''), '它们描述态度或意愿，可以和上面的词一起用。');
     h += sec('可能也接近，可以自己对照', d.possible.map(c => card(c, 'maybe', slot)).join(''),
       '你的回答里有几处接近这些词。题目未必对得上每个人的体验，看过定义，你自己更清楚哪部分符合。');
     // 相邻的词（15.17）：不看证据，前面哪题没太明白时也有路可退
-    h += sec('挨得最近的词', (d.adjacent || []).map(c => card(c, 'near', slot)).join(''),
-      '前面有哪道题当时拿不准、没太明白的话，结果可能就偏到了旁边。这几个词在分类上和上面的结果挨得最近，也可以看看哪个更贴切。');
+    h += sec('还可以看看这些词', (d.adjacent || []).map(c => card(c, 'near', slot)).join(''),
+      '这些词和上面的结果有一些关联。如果觉得测试结果不太符合自己，也可以读读它们的定义。');
     if (g === 'all') h += sec('你可能也会想了解', d.extensions.map(c => card(c, 'ext', slot, includeToggle(c.id))).join(''), EXT_NOTE);
     if (d.optionalExit) h += alico(d.optionalExit);
     return h;
@@ -138,6 +140,12 @@ window.Handbook = (() => {
     // 吸引类型只是描述；aplatonic、asensual 这类身份性的词可以由本人写进简写（12.3）
     const cards = d.details.map(c => card(c, 'detail', 'other', / attraction$/.test(c.id) ? '' : includeToggle(c.id))).join('');
     let h = sec('你描述到的吸引', cards, '这些吸引和浪漫、性分开来看，可以同时存在。') || nothing;
+    // oriented / angled aroace：不凭标签组合自动输出，附上定义由本人选（3.6、15.9）
+    h += sec('也有人这样称呼自己', (d.optionalDerived || []).map(id => {
+      const e = LEX_ENTRY[lexId(id)] || {};
+      return card({ id, label: e.zh || id, definition: e.summary }, 'detail', 'other',
+        toggle('exit', id, choices.exits.includes(id), '用这个词，加进结果卡'));
+    }).join(''), '如果上面的某种吸引对你的身份很重要，有人会把它和无浪漫、无性恋的身份放在一起说。适不适合、用不用，都由你决定。');
     if (g === 'all') h += sec('你可能也会想了解', d.extensions.map(c => card(c, 'ext', 'other', includeToggle(c.id))).join(''), EXT_NOTE);
     return h;
   }
@@ -148,7 +156,7 @@ window.Handbook = (() => {
       const [name, ...rest] = c.text.split('：'), k = `dir:${x.question}:${c.value}`;
       return `<div class="hb-card is-detail"><div class="hb-label">${text(c.short || name)}</div>
         ${rest.length ? `<p class="hb-def" data-px="text">${text(rest.join('：'))}</p>` : ''}</div>`;
-    }).join('') + (x.follow ? `<p class="hb-basis">${text(x.follow)}</p>` : ''))).join('')
+    }).join(''))).join('')
       + (named ? toggle('directions', '1', choices.directions, '把方向的叫法加进结果卡') : '');
   }
   function elements(el) {
@@ -201,20 +209,35 @@ window.Handbook = (() => {
   const STAIR = [0, 0.62, 1, 0.42, 0.08, 0.78, 0.3];
   function cover(chapters, serial) {
     // 封面的词从简写拆出来，但和词卡大标题一样写词条全称（RA 写作 Relationship anarchy）；简写本身不变
-    const words = result.shorthand ? result.shorthand.split(' · ').flatMap(s => s.split(' / ')).map(titleOf).slice(0, 7) : ['探索', '手册'];
+    // 同一章里并列的词（简写里用 / 连着）各占一行，但同色、同字号、贴紧、左边对齐，看得出是一对
+    const groups = result.shorthand ? result.shorthand.split(' · ').map(s => s.split(' / ').map(titleOf)) : [['探索'], ['手册']];
+    let left = 7;
+    const shown = groups.map(g => { const s = g.slice(0, Math.max(0, left)); left -= s.length; return s; }).filter(g => g.length);
     return `<div class="hb-meta"><span>UNFIXED · FIELD NOTES</span><span>No. ${serial}</span><span>${today()}</span></div>
       <p class="hb-cover-sub" data-px="text">一本按你的回答拼出来的微型探索手册</p>
-      <h1 class="hb-stair" aria-label="${esc(words.join(' · '))}">${words.map((w, i) =>
-        `<span class="hb-word${i % 2 ? ' alt' : ''}" style="--t:${STAIR[i % STAIR.length]};--len:${wordLen(w).toFixed(2)}">${text(w)}</span>`).join('')}</h1>
+      <h1 class="hb-stair" aria-label="${esc(groups.map(g => g.join(' / ')).join(' · '))}">${shown.map((g, gi) =>
+        `<span class="hb-group${gi % 2 ? ' alt' : ''}" style="--t:${STAIR[gi % STAIR.length]}">${g.map(w =>
+          `<span class="hb-word" style="--len:${wordLen(w).toFixed(2)}">${text(w)}</span>`).join('')}</span>`).join('')}</h1>
       <p class="hb-motto" data-px="text">标签只是代称，一切由你自己的最终体验决定。</p>
       <div class="hb-cover-foot">
         <nav class="hb-toc" aria-label="目录">${chapters.map(c => c.skipped ? `<span class="is-off"><b>${c.no}</b>${text(c.big)} · 跳过了</span>`
           : `<button type="button" data-hb-jump="hb-${c.id}"><b>${c.no}</b>${text(c.big)}</button>`).join('')}</nav>
       </div>`;
   }
-  const GRAN = [['umbrella', '只看伞'], ['main', '主树标签'], ['all', '加上延伸区']];
+  // 估算只是起点：m、w 多的词实际排出来会比估算宽，量一下真实宽度，放不下就再缩，一个词不拆成两行
+  // 并列的一对再统一成其中较小的字号，免得一大一小像分了主次
+  function fitStair(root) {
+    root.querySelectorAll('.hb-group').forEach(g => {
+      const ws = [...g.children], room = g.parentElement.clientWidth;
+      ws.forEach(w => { w.style.fontSize = ''; });
+      const sizes = ws.map(w => { const fs = parseFloat(getComputedStyle(w).fontSize), need = w.scrollWidth; return need > room ? fs * room / need * 0.98 : fs; });
+      const min = Math.min(...sizes);
+      ws.forEach(w => { w.style.fontSize = `${min}px`; });
+    });
+  }
+  const GRAN =[['umbrella', '只看伞'], ['main', '主树标签'], ['all', '加上延伸区']];
   const howto = () => `<p class="hb-kicker">怎么读这本手册</p>
-    <p class="hb-body" data-px="text">每一章对应问卷的一部分：写出和你的回答最接近的词和它的定义。测试只能说到"你描述的体验和哪些词的定义接近"，不替你决定身份。</p>
+    <p class="hb-body" data-px="text">每一章对应问卷的一部分，也就是你的回答最接近的词。测试只能说到"你描述的体验和哪些词的定义接近"，不替你决定身份。</p>
     <fieldset class="hb-choice" aria-label="想看多细">${GRAN.map(([v, l]) =>
       `<label class="hb-pill"><input type="radio" name="hb-gran" data-hb-gran value="${v}" ${choices.granularity === v ? 'checked' : ''}><span>${l}</span></label>`).join('')}</fieldset>`;
   function short() {
@@ -228,7 +251,7 @@ window.Handbook = (() => {
   const end = () => `<p class="hb-lede" data-px="text">标签只是代称，一切由你自己的最终体验决定。</p>
     <p class="hb-body" data-px="text">aspec 社群欢迎还在探索的人。这本手册只说明你描述的体验和哪些词的定义接近，不替你决定身份。</p>
     ${env.missing.length ? `<p class="hb-sec-p">这几道题没有作答，想补的话点题号回去：</p>
-      <div class="jump">${env.missing.map(q => `<button type="button" data-q="${esc(q.id)}">${text(q.id)} · ${text(q.title)}</button>`).join('')}</div>` : ''}
+      <div class="jump">${env.missing.map(q => `<button type="button" data-q="${esc(q.id)}">${text(env.questionLabel(q.id))} · ${text(q.title)}</button>`).join('')}</div>` : ''}
     <p class="hb-sec-p">回答和这里的选择只保存在这台设备的浏览器里。回去改了前面的回答，手册会按新的回答重新拼。</p>
     <div class="hb-actions hb-end-nav"><button type="button" class="hb-btn ghost" data-step="-1">← 回去改回答</button>
       <button type="button" class="hb-btn ghost" data-hb-act="print">打印或存成 PDF</button><button type="button" class="hb-btn" data-go="0">回到开头 ↺</button></div>
@@ -269,6 +292,8 @@ window.Handbook = (() => {
     slip = el;
     const hb = el.querySelector('.hb');
     if (!hb) return;
+    fitStair(hb);
+    document.fonts.ready.then(() => slip.contains(hb) && fitStair(hb));
     PixelReveal.mount(hb, entering);
     env.onResult?.(result);
   }
@@ -327,6 +352,11 @@ window.Handbook = (() => {
       const k = e.target.dataset && e.target.dataset.hbMore;
       if (k) opened.set(k, e.target.open);
     }, true);
+    // 屏幕宽度变了、字体晚到了，封面的词重新量一遍
+    let fitQueued = false;
+    const refit = () => { if (fitQueued) return; fitQueued = true; requestAnimationFrame(() => { fitQueued = false; const hb = slip.querySelector('.hb'); if (hb) fitStair(hb); }); };
+    addEventListener('resize', refit);
+    document.fonts.addEventListener?.('loadingdone', refit);
     // 打印时全部展开
     addEventListener('beforeprint', () => { PixelReveal.finishAll(); slip.querySelectorAll('.hb-more').forEach(d => { d.open = true; }); });
   }

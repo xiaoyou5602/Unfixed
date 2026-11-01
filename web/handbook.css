@@ -33,10 +33,10 @@ body.reading .topbar{position:absolute}
 .hb-meta span:last-child{margin-left:auto;color:var(--red)}
 .hb-cover-sub{font:700 clamp(19px,2.2vw,23px)/1.6 var(--serif);margin:22px 0 0;text-wrap:pretty}
 .hb-stair{container-type:inline-size;display:flex;flex-direction:column;gap:clamp(2px,1vh,10px);margin:clamp(26px,6vh,58px) 0 clamp(24px,5vh,48px);font-weight:normal}
-/* 错落的台阶：用 left 而不是 margin 挪位置，挪了也不会挤窄可用宽度 */
-.hb-word{position:relative;display:block;width:fit-content;max-width:100%;left:calc(var(--t) * 100%);transform:translateX(calc(var(--t) * -100%));
-  font:800 min(66px, calc(100cqw / var(--len))) / 1.1 var(--hb-display);letter-spacing:-.01em;color:var(--blue);overflow-wrap:anywhere}
-.hb-word.alt{color:var(--ink)}
+/* 错落的台阶：用 left 而不是 margin 挪位置，挪了也不会挤窄可用宽度。一组是一章的词，并列的两个词在组里上下贴紧、左边对齐 */
+.hb-group{position:relative;display:block;width:fit-content;max-width:100%;left:calc(var(--t) * 100%);transform:translateX(calc(var(--t) * -100%));color:var(--blue)}
+.hb-group.alt{color:var(--ink)}
+.hb-word{display:block;font:800 min(66px, calc(100cqw / var(--len))) / 1.1 var(--hb-display);letter-spacing:-.01em;white-space:nowrap}
 .hb-motto{font:500 15px/1.8 var(--serif);margin:0 0 22px;padding-left:12px;border-left:2px solid var(--red)}
 .hb-cover-foot{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
 .hb-toc{display:flex;flex-wrap:wrap;gap:8px}

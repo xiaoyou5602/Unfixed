@@ -6,6 +6,7 @@ window.QuestionScoring = (() => {
   const hit = x => x === '成立';
   const eligible = x => x && ['高', '中'].includes(x.status);
   const unique = xs => [...new Set(xs)];
+  const POSSIBLE_MAX = 3;
   function confidence(primary, corroborating, contrary) {
     const p = primary.some(hit), c = corroborating.some(hit), n = contrary.some(hit);
     if (p && !n && corroborating.every(hit)) return '高';
@@ -41,7 +42,7 @@ window.QuestionScoring = (() => {
     };
     if (!unsplit && !skipSex) {
       inherit('③a', 'Q2-08', 'Q1-07');
-      inherit('③b', 'Q2-08', 'Q1-09', v => ['recip', 'fray'].includes(v) ? v : null);
+      inherit('③b', 'Q2-08', 'Q1-09', v => v === 'fray' ? v : null);
       inherit('④a', 'Q2-09', 'Q1-09', v => ['akoi·回应后消退', 'akoi·进入关系后消退'].includes(v) ? 'akoi·回应后消退' : null);
       inherit('④b', 'Q2-09', 'Q1-10', v => v.startsWith('akoi·') ? 'akoi·不需要或不希望被回应' : v);
       inherit('④c', 'Q2-09', 'Q1-11', v => v === 'disakoi' ? v : null);
@@ -49,9 +50,13 @@ window.QuestionScoring = (() => {
       inherit('⑦', 'Q2-10', 'Q1-12', v => v === 'adex' ? null : v);
       inherit('⑧', 'Q2-13', 'Q1-15');
     }
+    // 浪漫② 取频率的分，强度很弱时最多 1 分；频率没答、强度很弱也记 1 分（15.3）
+    // Q1-21 确定没有过时不问 Q1-02，直接记 0 分
+    const scores = window.SCORING_RULES.scores;
+    let romantic = get('Q1-21')[0] === '确定没有过' ? 0 : scores['Q1-02'][get('Q1-02')[0]];
+    if (get('Q1-03')[0] === '很弱') romantic = Math.min(romantic ?? 1, 1);
     const axes = { '浪漫①': get('Q1-04')[0] || '缺失',
-      // 很少或很弱都算极少或很弱；强度没答时只看频率。
-      '浪漫②': get('Q1-03')[0] === '很弱' || get('Q1-02')[0] === '很少' ? '极少或很弱' : get('Q1-02')[0] || '缺失',
+      '浪漫②': Object.keys(scores['浪漫②']).find(v => scores['浪漫②'][v] === romantic) || '缺失',
       '浪漫⑤': get('Q1-13')[0] || '缺失' };
     if (!unsplit && !skipSex) Object.assign(axes, { '性①': get('Q2-03')[0] || '缺失', '性②': get('Q2-02')[0] || '缺失',
       '性⑤': get('Q2-11')[0] || (is('Q2-07[⑤]', '一样') ? axes['浪漫⑤'] : '缺失') });
@@ -74,6 +79,11 @@ window.QuestionScoring = (() => {
     if (rule.op === '出现') return ctx.flow.ctx.shown.has(rule.ref) ? '成立' : '缺失';
     const vals = ctx.get(rule.ref);
     if (!vals.length) return '缺失';
+    if (['≥', '≤'].includes(rule.op)) {
+      // 比分数：逐行题按题号查分数表；没有分的取值算答了别的取值（15.3）
+      const table = window.SCORING_RULES.scores[rule.ref.replace(/\[.*\]$/, '')], n = Number(rule.values[0]);
+      return vals.some(v => v in table && (rule.op === '≥' ? table[v] >= n : table[v] <= n)) ? '成立' : '不成立';
+    }
     const yes = rule.values.some(v => vals.includes(v));
     return (['≠', '∉', '不含'].includes(rule.op) ? !yes : yes) ? '成立' : '不成立';
   }
@@ -160,6 +170,8 @@ window.QuestionScoring = (() => {
       if (primary.some(id => [names.a, names.grey, names.spec, names.allo, '探索中'].includes(id))) {
         possible.push(...[...sub, ...extended].filter(id => audit[id]?.status === '线索'));
       }
+      // 不在 quoi 路径、却说不清渴望指向谁（Q2-10）时，Quoisexual 作为"可能"列出（15.7）
+      if (!quoi && ok(names.quoi)) possible.push(names.quoi);
       if (primary.some(id => sub.includes(id)) && !primary.includes(names.a)) parents.push(names.grey);
       if (inSpectrum && !primary.includes(names.spec)) parents.push(names.spec);
       const modifiers = ['Aego', 'Cupio'].map(p => p + suffix).filter(ok);
@@ -169,12 +181,17 @@ window.QuestionScoring = (() => {
       extensions.push(...active.filter(id => !primary.includes(id) && !possible.includes(id)), ...umbrella);
       if (!inSpectrum) extensions.push(...modifiers);
       possible = unique(possible).filter(id => !primary.includes(id) && (!audit[id]?.highOnly || audit[id].status === '高'));
+      // "可能"最多 3 个（12.1 第 5 条）：Aro-spec 始终留在结果页，先占位；其余证据强的在前，同级按分类树顺序。
+      // 挤掉的 C 级"高""中"回到延伸区，线索级不再列，相邻的词照常可以补上
+      const rank = id => id === names.spec ? -1 : { '高': 0, '中': 1, '线索': 2 }[audit[id]?.status] ?? 3;
+      possible = possible.map((id, i) => [id, i]).sort((x, y) => rank(x[0]) - rank(y[0]) || x[1] - y[1])
+        .map(([id]) => id).slice(0, POSSIBLE_MAX);
       extensions = extensions.filter(id => !possible.includes(id));
-      // 相邻的词（15.17）：不看证据，前面一题答偏也有路可退；已经出现过的不重复，最多 3 个
+      // 相邻的词（15.17）：不看证据，前面一题答偏也有路可退；已经出现过的不重复，最多 2 个
       const near = window.SCORING_RULES.adjacent || {}, top = primary.slice(0, 2);
       const seen = new Set([...top, ...parents, ...possible, ...(inSpectrum ? modifiers : []), ...extensions]);
       const adjacent = unique(top.flatMap(id => near[id === '探索中' ? `探索中（维度${sexual ? '二' : '一'}）` : id] || []))
-        .filter(id => !seen.has(id)).slice(0, 3);
+        .filter(id => !seen.has(id)).slice(0, 2);
       const makeCard = id => {
         const result = card(id);
         if (audit[id]?.derivedFrom) result.basis.push(...audit[id].derivedFrom.flatMap(k => card(k).basis));
@@ -191,6 +208,12 @@ window.QuestionScoring = (() => {
     const otherIds = Object.keys(audit).filter(id => audit[id].section === '15.8' && ok(id));
     const other = { primary: [], modifiers: [], details: otherIds.filter(id => audit[id].grade !== 'C').map(card),
       extensions: otherIds.filter(id => audit[id].grade === 'C').map(card), possible: [] };
+    // oriented / angled aroace 不出题、不自动输出（3.6）：在光谱内、又描述到某种其他吸引时列出，由本人在结果页选择（15.9）
+    const aro = romantic.inSpectrum, ace = ctx.unsplit ? aro : !!sexual?.inSpectrum;
+    const isA = (d, id) => !!d?.primary.some(c => c.id === id);
+    const bothA = isA(romantic, 'Aromantic') && (ctx.unsplit || isA(sexual, 'Asexual'));
+    other.optionalDerived = other.details.some(c => / attraction$/.test(c.id))
+      ? [bothA && 'Oriented aroace', (aro || ace) && 'Angled aroace'].filter(Boolean) : [];
 
     // 4A 的先后：动手排过按排好的顺序，没排过按选项顺序（见 normalize）。
     let relationships = ctx.get('Q4-01').filter(ok);
@@ -213,14 +236,14 @@ window.QuestionScoring = (() => {
     const relationship = { primary: relationshipPrimary.map(card), modifiers: relRest.slice(0, 2).map(card),
       parents: unique(relationshipPrimary.flatMap(id => partners.includes(id) ? ['伴侣式关系'] : ['亲密友谊', '选择的家人'].includes(id) ? ['非伴侣式的重要关系'] : [])),
       extensions: relRest.slice(2).map(card), possible: Object.keys(audit).filter(id => audit[id].section === '15.11' && audit[id].status === '线索' &&
-        !relationshipPrimary.includes(id)).map(card), elements };
+        !relationshipPrimary.includes(id)).slice(0, POSSIBLE_MAX).map(card), elements };
     const structureIds = ['Monogamy', 'Polyamory', 'Open relationship', 'Ambiamorous', 'CNM'];
     const ideas = ['RA', 'Solo polyamory', '恋爱规范性批判', '离开关系电梯', '友谊中心'].filter(ok);
     const structurePrimary = ok('RA') ? 'RA' : structureIds.find(ok);
     const structureRest = ideas.filter(id => id !== structurePrimary);
     const structure = { primary: structurePrimary ? [card(structurePrimary)] : [], modifiers: structureRest.slice(0, 2).map(card),
       parents: ['Polyamory', 'Open relationship'].includes(structurePrimary) ? ['CNM'] : [],
-      extensions: structureRest.slice(2).map(card), possible: Object.keys(audit).filter(id => audit[id].section === '15.12' && audit[id].status === '线索').map(card),
+      extensions: structureRest.slice(2).map(card), possible: Object.keys(audit).filter(id => audit[id].section === '15.12' && audit[id].status === '线索').slice(0, POSSIBLE_MAX).map(card),
       details: structureIds.filter(ok).map(card), hierarchy: ctx.is('Q5-02', '多元之爱') ?
         ({ '预设主次': '层级式', '自然形成的优先': '非层级式', '不分等级': '非层级式' }[ctx.get('Q5-03')[0]] || null) : null };
 
@@ -229,14 +252,13 @@ window.QuestionScoring = (() => {
       combined = romantic.inSpectrum ? (sexual.inSpectrum ? 'aroace' : 'alloaro') : sexual.inSpectrum ? 'alloace' : null;
     }
     const descriptions = describe(bank, answers, ctx);
-    // 简写里的方向写叫法：取值是稳定的名字；无方向、不适用、不想标注、都不用不是叫法，不写
+    // 简写里的方向写叫法：取值是稳定的名字；无方向、不适用、不想标注不是叫法，不写
     const shortName = (id, o) => o.free_text ? answers[id]?.text?.[o.id]?.trim() || ''
-      : ['无方向', '不适用', '不想标注', '都不用'].includes(o.value) ? ''
-      : id === 'QM-03' ? o.value + '恋' : id === 'QM-04' ? o.value + ' aroace' : o.value;
-    const directions = ['QM-02', 'QM-03', 'QM-04'].filter(id => ctx.selected[id]?.length).map(id => ({
+      : ['无方向', '不适用', '不想标注'].includes(o.value) ? ''
+      : id === 'QM-03' ? o.value + '恋' : o.value;
+    const directions = ['QM-02', 'QM-03'].filter(id => ctx.selected[id]?.length).map(id => ({
       question: id, choices: ctx.selected[id].map(o => ({ value: o.value, text: o.free_text ? answers[id]?.text?.[o.id] || '' : o.text,
-        short: shortName(id, o) })),
-      follow: id === 'QM-04' && ctx.get(id).some(v => ['oriented', 'angled'].includes(v)) ? answers[id]?.follow || '' : '' }));
+        short: shortName(id, o) })) }));
     let overall = null;
     if (ctx.unsplit) {
       const prefix = id => ({ Aromantic: 'a-', Alloromantic: 'allo-', 'Aro-spec': 'aspec', Aroflux: 'flux', Arospike: 'spike' }[id] || id.replace(/romantic$/i, '-').toLowerCase());
@@ -269,7 +291,8 @@ window.QuestionScoring = (() => {
     const main = [ctx.unsplit ? options.overallName || '' : nameOf(romantic, 'romantic'),
       nameOf(sexual, 'sexual'), nameOf(relationship, 'relationship'), nameOf(structure, 'structure')];
     const allowed = new Set(Object.values(dimensions).filter(Boolean).flatMap(d => [...(d.extensions || []), ...(d.details || [])].map(c => c.id)).filter(Boolean));
-    const extras = [ctx.unsplit ? overall : romantic, sexual].map(d => d?.optionalExit).filter(id => id && (options.exits || []).includes(id));
+    const extras = [...[ctx.unsplit ? overall : romantic, sexual].map(d => d?.optionalExit), ...other.optionalDerived]
+      .filter(id => id && (options.exits || []).includes(id));
     extras.push(...(options.includeInShorthand || []).filter(id => allowed.has(id)));
     if (options.includeDirections) extras.push(...directions.flatMap(d => d.choices.map(c => c.short)));
     return { version: 1, dimensions, combined, shorthand: options.noLabels ? '' : unique([...main, ...extras].filter(Boolean)).join(' · '),
@@ -302,11 +325,12 @@ window.QuestionScoring = (() => {
       for (const row of window.QuestionFlow.visibleRows(q, ctx.flow.ctx)) {
         const v = ctx.get(`${q.id}[${row.id}]`)[0];
         if (!v) continue;
-        const label = q.row_options.find(o => o.value === v)?.text;
-        if (label) parts.push(sentence(`对于${q.id === 'Q2-07' ? '性吸引这边的' : ''}${row.text}，我的回答是「${label}」`));
+        const o = q.row_options.find(o => o.value === v);
+        const label = o && window.QuestionFlow.rowLabel(o, window.QuestionFlow.recap(row, ctx.flow.ctx));
+        if (label) parts.push(sentence(q.id === 'Q2-07' ? `对于性吸引这边的${row.text}，和浪漫部分相比，我的回答是「${label}」`
+          : `对于${row.text}，我的回答是「${label}」`));
         if (q.row_extra && a.extra?.[row.id]) parts.push(sentence(`对于${row.text}，${q.row_extra}`));
       }
-      if (q.id === 'QM-04' && ctx.get(q.id).some(v => ['oriented', 'angled'].includes(v)) && a.follow?.trim()) parts.push(sentence(a.follow.trim()));
       if (parts.length) out.push({ question: q.id, part: q.part, text: parts.join('') });
     }
     return out;

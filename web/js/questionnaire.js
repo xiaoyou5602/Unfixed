@@ -32,6 +32,27 @@ const answerOf = id => {
   return a;
 };
 
+/* ---------------- 匿名统计 ---------------- */
+// 只在线上打开（页面头部的 stats 地址由 deploy_site.py 填上）：从封面进题记一次开始，进结果页记一次完成和各维度的主标签。
+// 只带这台浏览器生成的随机作答编号，不发回答；清空回答就换一个编号。发不出去时什么也不影响
+const STATS = document.querySelector('meta[name="stats"]')?.content.trim() || '';
+const ATTEMPT = 'arospec-attempt-v1';
+let attempt = null;
+try { attempt = localStorage.getItem(ATTEMPT); } catch (e) {}
+function report(type, labels) {
+  if (!STATS) return;
+  if (!attempt) {
+    attempt = crypto.randomUUID?.() || Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+    try { localStorage.setItem(ATTEMPT, attempt); } catch (e) {}
+  }
+  fetch(STATS, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type, attempt, labels }) }).catch(() => {});
+}
+// 其他吸引没有主标签，算它列出的词
+const labelsOf = r => [...Object.entries(r.dimensions).flatMap(([d, x]) => x ? (d === 'other' ? x.details : x.primary).map(c => [d, c.id]) : []),
+  ...(r.combined ? [['combined', r.combined]] : [])];
+function forgetAttempt() { attempt = null; try { localStorage.removeItem(ATTEMPT); } catch (e) {} }
+
 /* ---------------- 页面列表 ---------------- */
 // PAGES：封面 + 按当前回答会出现的题 + 答完页。改了回答就重排，当前题之前的页不会变（条件只看前面的题）
 let PAGES = [], FLOW = null;
@@ -47,13 +68,15 @@ function buildPages() {
   PAGES.push({ kind: 'done', print: { no: '::', latin: 'FIELD NOTES', big: '手册' } });
 }
 const pageOf = id => PAGES.findIndex(p => p.q === id);
+// 显示序号按当前作答路线连续编号；固定题号仍用于回答、条件和跳转。
+const questionLabel = id => `第 ${PAGES[pageOf(id)].index} 题`;
 
 // 题库里的一道题 → 渲染器要的样子。只列条件成立的选项和行，回答里的选项 id 换成序号
 function viewOf(pg) {
   const q = BANK.questions.find(x => x.id === pg.q), ctx = FLOW.ctx;
   const opts = QuestionFlow.visibleOptions(q, ctx), kind = KINDS[q.response] || null;
   const v = {
-    id: q.id, title: q.title, part: PARTS[q.part].title, kind, response: q.response,
+    id: q.id, label: questionLabel(q.id), title: q.title, part: PARTS[q.part].title, kind, response: q.response,
     stem: q.stem, note: q.note || '', intro: pg.intro && q.part !== 'Q0' ? QuestionFlow.intro(PARTS[q.part], ctx) : '',
     definitions: q.definitions || [],
     options: opts.map(o => o.text), ids: opts.map(o => o.id),
@@ -67,7 +90,12 @@ function viewOf(pg) {
   if (kind === 'rows') {
     // 逐行题按行提供"不确定"；整题跳过、整题不确定仍在下面
     const unsure = v.exits.filter(x => x.value === '不确定').map(x => ({ text: x.text, value: x.value, exit: true }));
-    v.rows = QuestionFlow.visibleRows(q, ctx).map(r => ({ id: r.id, text: r.text, category: r.category, quote: r.quotes ? quoteOf(r.quotes, ctx) : '' }));
+    v.rows = QuestionFlow.visibleRows(q, ctx).map(r => {
+      const rc = QuestionFlow.recap(r, ctx);
+      return { id: r.id, text: r.text, ask: r.ask || '', category: r.category,
+        quote: rc ? rc.quote : r.quotes ? quoteOf(r.quotes, ctx) : '',
+        options: [...q.row_options.map(o => ({ text: QuestionFlow.rowLabel(o, rc), value: o.value })), ...unsure] };
+    });
     v.rowOptions = [...q.row_options.map(o => ({ text: o.text, value: o.value })), ...unsure];
     v.rowExtra = q.row_extra || '';
   }
@@ -104,11 +132,16 @@ function coverHTML() {
   const resume = hasProgress() && pageOf(savedAt) > 0 ? pageOf(savedAt) : savedAt === 'done' ? PAGES.length - 1 : -1;
   return `<div class="slip-head"><span class="qid">00</span><span>开始之前</span><span class="kind">测试版</span></div>
     <p class="lede">${text(opening.slice(0, cut))}</p>
-    <p class="body">${text(opening.slice(cut))}</p>
+    <p class="body">${text(opening.slice(cut).trimStart())}</p>
     ${resume > 0 ? `<button class="next" data-go="${resume}">继续作答 →</button>
       <button class="restart" data-restart>清空回答，重新开始</button>`
     : `<button class="next" data-go="1">开始 →</button>`}
-    <p class="sample-note">题目会按你前面的回答出现，大约 ${FLOW.list.length} 题。回答只保存在这台设备的浏览器里。答完会拼出一本你的探索手册。</p>`;
+    <p class="sample-note">${text(coverNote())}</p>`;
+}
+// 封面小字写在开场分册的"封面小字"表里
+function coverNote() {
+  const notes = PARTS.Q0.cover || [], note = notes.find(n => n.when === 'plain');
+  return (note ? note.text : '').replaceAll('{题数}', FLOW.list.length);
 }
 function footHTML(pg) {
   const last = cur === PAGES.length - 2;
@@ -120,7 +153,7 @@ function footHTML(pg) {
 }
 // 还没做的题型：题干照常显示，说明暂时答不了，出口照常可选
 function pendingHTML(q, footer) {
-  return `<div class="slip-head"><span class="qid">${text(q.id)}</span><span>${text(q.part)}</span><span class="kind">${text(q.response)}</span></div>
+  return `<div class="slip-head" data-question-id="${esc(q.id)}"><span class="qid">${text(q.label)}</span><span>${text(q.part)}</span><span class="kind">${text(q.response)}</span></div>
     ${q.intro ? `<p class="intro">${text(q.intro)}</p>` : ''}
     <h1 class="stem">${text(q.stem)}</h1>
     ${q.note ? `<p class="note">${text(q.note)}</p>` : ''}
@@ -132,7 +165,7 @@ function pendingHTML(q, footer) {
 // 答完页就是结果页：一本按当前回答拼的探索手册，见 handbook.js
 function doneHTML() {
   const missing = FLOW.list.filter(q => !QuestionFlow.answered(answers[q.id]));
-  return Handbook.html({ bank: BANK, answers, flow: FLOW, missing, prints: PRINTS, onResult: r => { RESULT = r; } });
+  return Handbook.html({ bank: BANK, answers, flow: FLOW, missing, questionLabel, prints: PRINTS, onResult: r => { RESULT = r; } });
 }
 let view = null;
 function render() {
@@ -153,7 +186,7 @@ function renderDots() {
   });
   dots.innerHTML = h;
   document.getElementById('progressText').textContent =
-    pg.kind === 'cover' ? `按回答出题 · 约 ${FLOW.list.length} 题` : pg.kind === 'done' ? '结果页' : `${pg.q} · ${view.title}`;
+    pg.kind === 'cover' ? `按回答出题 · 约 ${FLOW.list.length} 题` : pg.kind === 'done' ? '结果页' : `${questionLabel(pg.q)} · ${view.title}`;
 }
 function go(i) {
   if (busy || i === cur || i < 0 || i >= PAGES.length) return;
@@ -161,8 +194,12 @@ function go(i) {
   setPrint(PAGES[i], true);
   slipWrap.classList.add('leaving');
   setTimeout(() => {
+    const from = cur;
     cur = i; render(); window.scrollTo(0, 0);
     if (PAGES[cur].kind !== 'cover') { savedAt = PAGES[cur].q || PAGES[cur].kind; persist(); }
+    // 从封面进题、这次作答还没记过开始时记一次；每次进结果页都记完成，后台按最新一次的标签算
+    if (PAGES[from].kind === 'cover' && PAGES[cur].kind !== 'cover' && !attempt) report('start');
+    if (PAGES[cur].kind === 'done' && RESULT) report('complete', labelsOf(RESULT));
     slipWrap.classList.remove('leaving');
     setTimeout(() => { busy = false; }, 420);
   }, 380);
@@ -173,6 +210,8 @@ function changed() {
   const id = PAGES[cur].q;
   buildPages();
   cur = pageOf(id);
+  const count = slip.querySelector('.count');
+  if (count) count.textContent = `${PAGES[cur].index} / 约 ${FLOW.list.length}`;
   renderDots();
 }
 
@@ -183,7 +222,7 @@ slip.addEventListener('click', e => {
     else if (t.dataset.step != null) go(cur + +t.dataset.step);
     else if (t.dataset.q != null) go(pageOf(t.dataset.q));
     else if (confirm('清空这台设备上保存的回答，从头开始？')) {
-      answers = {}; savedAt = null; persist(); buildPages(); render();
+      answers = {}; savedAt = null; persist(); forgetAttempt(); buildPages(); render();
     }
     return;
   }

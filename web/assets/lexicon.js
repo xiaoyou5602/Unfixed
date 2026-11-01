@@ -366,7 +366,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td>不拆分（作答方式）</td><td>觉得浪漫和性分不开，或拆开没有意义的人，可以在测试开场选这一项。选了之后，结果呈现整体的吸引体验，不分别推出 aro、ace 归属，也不拼组合标签（见 02 第 5 节）</td></tr><tr><td><a href=\"#term/aspec\">Aspec</a></td><td>aspec 的划分建立在\"浪漫、性可以分开看\"的前提上；SAM 则是具体的拆分方法。两者不是同一个东西</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"用 SAM 的人一定是 aspec。\"</b> SAM 只说明吸引怎样分开描述。是否落在 aspec 光谱内，要看拆开后每一边的体验。</li><li><b>\"不拆分，就是没有吸引。\"</b> 不拆分只是作答方式：答的是整体的吸引体验，并不表示没有吸引。</li><li><b>\"SAM 适用于每一个人。\"</b> AUREA 的说明是它不适用于描述每个人的经历。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td>不拆分（作答方式）</td><td>觉得浪漫和性混在一起、很难分清的人，可以在测试开场选这一项（能分清、只是觉得拆开没什么意义的，仍按拆分作答）。选了之后，结果呈现整体的吸引体验，不分别推出 aro、ace 归属，也不拼组合标签（见 02 第 5 节）</td></tr><tr><td><a href=\"#term/aspec\">Aspec</a></td><td>aspec 的划分建立在\"浪漫、性可以分开看\"的前提上；SAM 则是具体的拆分方法。两者不是同一个东西</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"用 SAM 的人一定是 aspec。\"</b> SAM 只说明吸引怎样分开描述。是否落在 aspec 光谱内，要看拆开后每一边的体验。</li><li><b>\"不拆分，就是没有吸引。\"</b> 不拆分只是作答方式：答的是整体的吸引体验，并不表示没有吸引。</li><li><b>\"SAM 适用于每一个人。\"</b> AUREA 的说明是它不适用于描述每个人的经历。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -891,7 +891,7 @@ window.LEXICON = {
        "zh": "困惑浪漫倾向",
        "zhStatus": "社群流传；也说\"困惑浪漫\"",
        "complete": true,
-       "summary": "无法确定自己是否体验浪漫吸引、无法把它和柏拉图等其他吸引分开，或觉得\"浪漫吸引\"这个概念对自己不适用的体验。",
+       "summary": "无法区分友情（platonic）与爱情（romantic），对\"浪漫吸引\"等概念感到困惑、难以理解或者不适用，因此也无法确定自己是否感受到浪漫吸引的体验。",
        "facts": [
         [
          "别名",
@@ -925,11 +925,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>对\"浪漫吸引\"到底是什么，自己说不太清楚</li><li>分不清某种心动是浪漫吸引，还是柏拉图等其他吸引</li><li>觉得\"浪漫\"这个概念对自己不太适用，或不知道该怎么用它来理解自己；尝试用它描述自己时，常会觉得扭曲或虚假</li><li>含义因人而异，同样叫 quoi，不同人的情况可能差别很大</li></ul>"
+         "html": "<ul><li>不明白\"浪漫吸引\"和\"友谊吸引\"之间有什么区别</li><li>知道自己对某人有强烈情感，但分不清某种心动是浪漫吸引，还是柏拉图等其他吸引</li><li>觉得\"浪漫\"这个概念对自己不太适用，或不知道该怎么用它来理解自己；尝试用它描述自己时，常会觉得扭曲或虚假</li><li>感觉难以区分浪漫吸引与其他类型的吸引，如感官吸引（platonic attraction、sensual attraction）、审美吸引（aesthetic attraction）</li><li>长期处于\"我到底是什么浪漫取向？\"、\"算不算无浪漫？\"的困惑中，最终决定把困惑本身也当做一种浪漫取向</li><li>含义因人而异，同样叫 quoi，不同人的情况可能差别很大</li></ul>"
         },
         {
          "title": "体验举例",
-         "html": "<ul><li>身边的人谈论心动，你能听懂，却分不清自己对一个人的在意，是想和对方在一起，还是想好好做朋友。</li></ul>"
+         "html": "<ul><li>身边的人谈论心动，你好像能听懂，却分不清自己对一个人的在意，是想和对方在一起，还是想好好做朋友。</li></ul>"
         },
         {
          "title": "概念边界",
@@ -6245,7 +6245,6 @@ window.LEXICON = {
   "Asensual": "asensual",
   "Aesthetic attraction": "aesthetic-attraction",
   "Alterous attraction": "alterous-attraction",
-  "Queerplatonic attraction": "queerplatonic-attraction",
   "Emotional attraction": "emotional-attraction",
   "Intellectual attraction": "intellectual-attraction",
   "浪漫伴侣关系": "romantic-partnership",

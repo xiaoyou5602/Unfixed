@@ -65,5 +65,23 @@ window.QuestionFlow = (() => {
 
   const answered = a => !!a && (!!a.exit || (a.sel || []).length > 0 || Object.keys(a.rows || {}).length > 0);
 
-  return { test, path, intro, chosen, visibleOptions, visibleRows, answered };
+  // 镜像行按引用题的旧答案挑回述句；只引用部分取值、一项都没选到时用"未选"那句。没有对应句子时返回 null，由页面照旧列出原选项
+  function recap(row, ctx) {
+    const ref = row.quotes, a = ref && ctx.answers[ref.question];
+    if (!row.recaps || !answered(a)) return null;
+    let keys = [a.exit];
+    if (!a.exit) {
+      const sel = new Set(a.sel || []);
+      keys = [...new Set(visibleOptions(question(ctx, ref.question), ctx)
+        .filter(o => sel.has(o.id) && (!ref.values || ref.values.includes(o.value))).map(o => o.value))];
+      if (!keys.length) keys = ['未选'];
+    }
+    const lines = keys.map(k => row.recaps[k]).filter(Boolean);
+    if (!lines.length) return null;
+    return { quote: `你之前说，${lines.join('；')}。`, gloss: keys.map(k => (row.glosses || {})[k]).find(Boolean) || null };
+  }
+  // 行选项的文字：是非行带上这一行的具体说明，如"一样：也会变淡"
+  const rowLabel = (o, rc) => rc?.gloss?.[o.value] ? `${o.text}：${rc.gloss[o.value]}` : o.text;
+
+  return { test, path, intro, chosen, visibleOptions, visibleRows, answered, recap, rowLabel };
 })();

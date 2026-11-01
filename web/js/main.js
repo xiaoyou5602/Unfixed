@@ -8,11 +8,15 @@ function resize() {
   dpr = Math.min(devicePixelRatio || 1, 2);
   const area = innerWidth * innerHeight;
   if (area * dpr * dpr > 3.6e6) dpr = Math.max(0.75, Math.sqrt(3.6e6 / area));
-  canvas.width = Math.max(1, Math.round(innerWidth * dpr)); canvas.height = Math.max(1, Math.round(innerHeight * dpr));
+  const width = Math.max(1, Math.round(innerWidth * dpr)), height = Math.max(1, Math.round(innerHeight * dpr));
+  // 即使赋相同值也会清空 WebGL 画布；只在确实变化时调整。
+  if (canvas.width === width && canvas.height === height) return;
+  if (canvas.width !== width) canvas.width = width;
+  if (canvas.height !== height) canvas.height = height;
   setPrint(Lexicon.printPage(), false);
 }
-let resizeQueued = false;
-addEventListener('resize', () => { if (resizeQueued) return; resizeQueued = true; requestAnimationFrame(() => { resizeQueued = false; resize(); }); });
+let resizeQueued = true;
+addEventListener('resize', () => { resizeQueued = true; });
 
 const PAPER = { cream: [0.949, 0.933, 0.894], white: [0.969, 0.969, 0.961] };
 const FR = new Float32Array(40), FC = new Float32Array(40), FP = new Float32Array(40);
@@ -20,6 +24,9 @@ let simT = 37, lastNow = performance.now(), lastDraw = 0;
 function frame(now) {
   requestAnimationFrame(frame);
   if (now - lastDraw < 31) return;
+  // 手机地址栏伸缩会连续触发 resize。清空和重画必须在同一帧内完成，
+  // 不能在独立回调里清空后被上面的限帧跳过，留下不透明黑帧。
+  if (resizeQueued) { resizeQueued = false; resize(); }
   const dt = Math.min(0.1, (now - lastNow) / 1000); lastNow = now; lastDraw = now;
   simT += dt * S.speed * (reduceMotion ? 0.15 : 1);
   const breath = reduceMotion ? 0 : Math.sin(now / 1000 * Math.PI * 2 / 9.5);
@@ -57,7 +64,6 @@ function frame(now) {
 
 let texturesReady = false;
 render();
-resize();
 fontsReady.then(async () => {
   if (glOK()) { upload(atlasTex, await buildAtlas()); setPrint(Lexicon.printPage(), false); }
   texturesReady = true;

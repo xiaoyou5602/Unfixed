@@ -36,9 +36,11 @@ window.QuestionView = (() => {
     return `<div class="rows">${q.rows.map(r => {
       const head = r.category && r.category !== cat ? `<h2 class="row-cat">${text(r.category)}</h2>` : '';
       cat = r.category || cat;
+      // 写了问句的行先复述之前的回答，再问性侧；其余行照旧先列题面
+      const quote = r.quote ? `<p class="row-quote">${text(r.quote)}</p>` : '';
       return `${head}<div class="qrow" data-row="${esc(r.id)}" role="radiogroup" aria-label="${text(r.text)}">
-        <p class="row-text">${text(r.text)}</p>${r.quote ? `<p class="row-quote">${text(r.quote)}</p>` : ''}
-        <div class="row-opts">${q.rowOptions.map(o => `<label class="pill${o.exit ? ' exit-pill' : ''}">
+        ${r.ask ? `${quote}<p class="row-text">${text(r.ask)}</p>` : `<p class="row-text">${text(r.text)}</p>${quote}`}
+        <div class="row-opts">${(r.options || q.rowOptions).map(o => `<label class="pill${o.exit ? ' exit-pill' : ''}">
           <input type="radio" name="${esc(q.id)}-${esc(r.id)}" value="${esc(o.value)}" ${vals[r.id] === o.value ? 'checked' : ''}><span>${text(o.text)}</span></label>`).join('')}</div>
         ${q.rowExtra ? `<label class="row-extra"><input type="checkbox" data-extra="${esc(r.id)}" ${extra[r.id] ? 'checked' : ''}><span>${text(q.rowExtra)}</span></label>` : ''}
       </div>`;
@@ -49,7 +51,7 @@ window.QuestionView = (() => {
     const body = q.kind === 'rows' ? rowsHTML(q, st)
       : `<div class="opts" role="group" aria-label="${text(q.title)}">${optionsHTML(q, st)}</div>
          <div class="rank-wrap">${rankHTML(q, st)}</div><div class="follow-wrap">${followHTML(q, st)}</div>`;
-    return `<div class="slip-head"><span class="qid">${esc(q.id)}</span><span>${text(q.part)}</span><span class="kind">${text(q.response || KIND_LABEL[q.kind])}</span></div>
+    return `<div class="slip-head" data-question-id="${esc(q.id)}"><span class="qid">${esc(q.label || q.id)}</span><span>${text(q.part)}</span><span class="kind">${text(q.response || KIND_LABEL[q.kind])}</span></div>
     ${q.intro ? `<p class="intro">${text(q.intro)}</p>` : ''}
     <h1 class="stem">${text(q.stem)}</h1>
     ${q.note ? `<p class="note">${text(q.note)}</p>` : ''}
