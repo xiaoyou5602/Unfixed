@@ -352,13 +352,13 @@ window.Handbook = (() => {
       const k = e.target.dataset && e.target.dataset.hbMore;
       if (k) opened.set(k, e.target.open);
     }, true);
-    // 屏幕宽度变了、字体晚到了，封面的词重新量一遍
+    // 屏幕宽度变了、字体晚到了，封面的词重新量一遍；还没进过结果页时 slip 是空的，跳过
     let fitQueued = false;
-    const refit = () => { if (fitQueued) return; fitQueued = true; requestAnimationFrame(() => { fitQueued = false; const hb = slip.querySelector('.hb'); if (hb) fitStair(hb); }); };
+    const refit = () => { if (fitQueued) return; fitQueued = true; requestAnimationFrame(() => { fitQueued = false; const hb = slip?.querySelector('.hb'); if (hb) fitStair(hb); }); };
     addEventListener('resize', refit);
     document.fonts.addEventListener?.('loadingdone', refit);
     // 打印时全部展开
-    addEventListener('beforeprint', () => { PixelReveal.finishAll(); slip.querySelectorAll('.hb-more').forEach(d => { d.open = true; }); });
+    addEventListener('beforeprint', () => { PixelReveal.finishAll(); slip?.querySelectorAll('.hb-more').forEach(d => { d.open = true; }); });
   }
   bind(document.getElementById('slip'));
   return { html, mount, get result() { return result; } };
