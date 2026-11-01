@@ -5,10 +5,11 @@
 let dpr = 1;
 function resize() {
   if (!glOK()) return;
+  const W = canvas.clientWidth, H = canvas.clientHeight;
   dpr = Math.min(devicePixelRatio || 1, 2);
-  const area = innerWidth * innerHeight;
+  const area = W * H;
   if (area * dpr * dpr > 3.6e6) dpr = Math.max(0.75, Math.sqrt(3.6e6 / area));
-  const width = Math.max(1, Math.round(innerWidth * dpr)), height = Math.max(1, Math.round(innerHeight * dpr));
+  const width = Math.max(1, Math.round(W * dpr)), height = Math.max(1, Math.round(H * dpr));
   // 即使赋相同值也会清空 WebGL 画布；只在确实变化时调整。
   if (canvas.width === width && canvas.height === height) return;
   if (canvas.width !== width) canvas.width = width;

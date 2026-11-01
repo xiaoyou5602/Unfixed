@@ -151,7 +151,7 @@ const printCanvas = document.createElement('canvas');
 let printZone = null;  // 大标题大致占的区域，碎片尽量避开
 const INK_BLUE = '#ff0000', INK_RED = '#00ff00', INK_NAVY = '#0000ff';
 function drawPrint(page) {
-  const W = innerWidth, H = innerHeight, pd = Math.min(devicePixelRatio || 1, 1.5);
+  const W = canvas.clientWidth, H = canvas.clientHeight, pd = Math.min(devicePixelRatio || 1, 1.5);
   if (W < 2 || H < 2) return null;
   printCanvas.width = Math.round(W * pd); printCanvas.height = Math.round(H * pd);
   const g = printCanvas.getContext('2d');

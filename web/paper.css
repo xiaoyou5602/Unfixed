@@ -22,6 +22,8 @@ button{font:inherit;color:inherit}
 
 /* 底页：WebGL 画布 + 红线层 */
 #bg{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
+/* 地址栏伸缩不改变底图尺寸，避免网点和印刷标题在滑动中跳位。 */
+@supports (height:100lvh){#bg{height:100lvh}}
 body.no-gl{background:
   radial-gradient(circle,rgba(31,134,184,.35) 1.6px,transparent 2px) 0 0/10px 10px,var(--paper)}
 #threads{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible;transition:opacity .4s}
