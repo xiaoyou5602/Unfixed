@@ -1343,7 +1343,7 @@ window.SCORING_RULES = {
       ],
       "highOnly": false,
       "note": "同 Aro-spec",
-      "definition": "很少或不体验性吸引、以有条件或非典型方式体验，或与\"性吸引\"这个概念关系复杂的人",
+      "definition": "无性恋光谱包括很少或从不体验性吸引的人，也包括只在特定条件下、偶尔或不稳定地体验性吸引的人。有些人难以判断自己是否有性吸引，或觉得自己的体验与常见描述不同，也可能认同这一光谱。",
       "definitionSource": "02-attraction-terms.md#4.3"
     },
     {
@@ -3400,7 +3400,7 @@ window.SCORING_RULES = {
       "term": "Ace-spec",
       "zh": "无性恋光谱",
       "status": null,
-      "definition": "很少或不体验性吸引、以有条件或非典型方式体验，或与\"性吸引\"这个概念关系复杂的人",
+      "definition": "无性恋光谱包括很少或从不体验性吸引的人，也包括只在特定条件下、偶尔或不稳定地体验性吸引的人。有些人难以判断自己是否有性吸引，或觉得自己的体验与常见描述不同，也可能认同这一光谱。",
       "definitionSource": "02-attraction-terms.md#4.3"
     },
     "Asexual": {
