@@ -38,6 +38,8 @@ window.QuestionFlow = (() => {
       for (const o of visibleOptions(q, ctx)) if (sel.has(o.id)) vals.add(o.value);
     }
     if (!vals.size && ctx.shown.has(id)) vals.add('跳过');
+    // Q0-02 选"不拆分"暂时按拆分出题：浪漫、性两部分的题照常都出（06 的出现条件未改，代码先放开）
+    if (id === 'Q0-02' && vals.delete('不拆分')) vals.add('拆分');
     return vals;
   }
   // 逐行题：行名或轴号对得上的每一行各给一组取值；整题选了出口时，每行都记为这个出口

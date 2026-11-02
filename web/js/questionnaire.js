@@ -25,6 +25,17 @@ try {
   if (s && s.answers) { answers = s.answers; savedAt = s.at || null; }
 } catch (e) {}
 const persist = () => { try { localStorage.setItem(STORE, JSON.stringify({ answers, at: savedAt })); } catch (e) {} };
+// 题库改过选项后，旧回答里找不到的选项会被当成没答；能一一对应的在这里换成新选项再存回去。
+// Q1-04 的"体验相同""无法区分"合并成了"感受相同"，原来的细分挪到新题 Q1-22（Q1-22 已经答过就不动）
+function migrateAnswers() {
+  const a = answers['Q1-04'], old = a?.sel?.find(id => id === '体验相同' || id === '无法区分');
+  if (!old) return false;
+  a.sel = ['感受相同'];
+  const b = answers['Q1-22'];
+  if (!b || (!b.exit && !(b.sel || []).length)) answers['Q1-22'] = { ...b, sel: [old], exit: null };
+  return true;
+}
+if (migrateAnswers()) persist();
 // sel：选中的选项 id（排序题按排好的先后，没动手排过时按选项顺序）；ranked：排序题动手排过；rows：逐行题每行的取值；extra：每行的附加勾选；text：自填内容；follow：追问
 const answerOf = id => {
   const a = (answers[id] ||= {});
@@ -33,7 +44,7 @@ const answerOf = id => {
 };
 
 /* ---------------- 匿名统计 ---------------- */
-// 只在线上打开（页面头部的 stats 地址由 deploy_site.py 填上）：从封面进题记一次开始，进结果页记一次完成和各维度的主标签。
+// 只在线上打开（页面头部的 stats 地址由 deploy_site.py 填上）：从封面进题记一次开始，进结果页记一次完成、各维度的主标签和可以一起用的词。
 // 只带这台浏览器生成的随机作答编号，不发回答；清空回答就换一个编号。发不出去时什么也不影响
 const STATS = document.querySelector('meta[name="stats"]')?.content.trim() || '';
 const ATTEMPT = 'arospec-attempt-v1';
@@ -48,9 +59,10 @@ function report(type, labels) {
   fetch(STATS, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ type, attempt, labels }) }).catch(() => {});
 }
-// 其他吸引没有主标签，算它列出的词
+// 其他吸引没有主标签，算它列出的词；浪漫、性、整体吸引里"可以一起用的词"（aego、cupio）另记一组，词名本身分得出是哪一侧
 const labelsOf = r => [...Object.entries(r.dimensions).flatMap(([d, x]) => x ? (d === 'other' ? x.details : x.primary).map(c => [d, c.id]) : []),
-  ...(r.combined ? [['combined', r.combined]] : [])];
+  ...(r.combined ? [['combined', r.combined]] : []),
+  ...['romantic', 'sexual', 'overall'].flatMap(d => (r.dimensions[d]?.modifiers || []).map(c => ['modifier', c.id]))];
 function forgetAttempt() { attempt = null; try { localStorage.removeItem(ATTEMPT); } catch (e) {} }
 
 /* ---------------- 页面列表 ---------------- */
@@ -273,7 +285,10 @@ slip.addEventListener('change', e => {
   const a = answerOf(view.id), el = e.target;
   const opt = el.closest('.opt'), row = el.closest('.qrow');
   if (opt) {
-    choose(+opt.dataset.i, el.checked);
+    if (opt.dataset.exit) {
+      a.exit = el.checked ? opt.dataset.exit : null;
+      if (a.exit) { a.sel = []; a.rows = {}; a.extra = {}; delete a.ranked; }
+    } else choose(+opt.dataset.i, el.checked);
     if (el.checked) pulse(opt);
   } else if (el.dataset.extra != null) {
     if (el.checked) a.extra[el.dataset.extra] = true; else delete a.extra[el.dataset.extra];
@@ -297,7 +312,9 @@ slip.addEventListener('input', e => {
 function syncAnswerDOM() {
   const a = answerOf(view.id), followWas = !!(view.followUp && view.followUp.show);
   view.state = stateOf(view, a);
-  slip.querySelectorAll('.opt').forEach(el => { el.querySelector('input').checked = view.state.sel.has(+el.dataset.i); });
+  slip.querySelectorAll('.opt').forEach(el => {
+    el.querySelector('input').checked = el.dataset.exit ? a.exit === el.dataset.exit : view.state.sel.has(+el.dataset.i);
+  });
   slip.querySelectorAll('.qrow').forEach(el => el.querySelectorAll('input[type=radio]').forEach(r => { r.checked = a.rows[el.dataset.row] === r.value; }));
   slip.querySelectorAll('[data-extra]').forEach(el => { el.checked = !!a.extra[el.dataset.extra]; });
   slip.querySelectorAll('.exit').forEach(el => el.setAttribute('aria-pressed', String(a.exit === el.dataset.exit)));

@@ -40,6 +40,7 @@
 | ✕ | alico- ✕ 任一具体子类 | alico- 的定义就是"现有标签都不贴切" |
 | ＋ | coeo- ＋ fray- | 初遇时产生、之后随熟悉消退，可以同时成立 |
 | ＋ | aro / grey ＋ aego- 或 cupio- | 如 cupio-grey、aego-aro |
+| ＋ | allo / quoi / 探索中 ＋ aego- | aego- 讲自己与情境的距离，不看吸引多少；cupio- 以很少有吸引为前提，不在此列 |
 | ＋ | 吸引模式 ＋ 对象类描述 | 按各词定义核对；auto-、ficto- 不单独推出 aro／ace，auto- 可以与对他人的吸引并存；adexsexual 还需区分欲望与性吸引 |
 | ＋ | 任一吸引节点 ＋ 任一态度 ＋ 任一意愿 | 如 romance-favorable aromantic、sex-favorable asexual |
 | ＋ | quoi- ＋ aro-spec | 很多 quoi 认同自己在 aro-spec 内，也有人不认同；测试应该询问，不默认归入 |

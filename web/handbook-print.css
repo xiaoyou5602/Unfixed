@@ -1,0 +1,13 @@
+/* 打印：只留手册本身，一章一页
+   页面头部以 media="print" 引用，直接打印时生效；下载 PDF 时 handbook-pdf.js 在页面副本里把它打开，
+   所以 PDF 和直接打印共用这一份版面，改打印样式只改这里 */
+.hb-pdf-status{display:none !important}
+#bg,#threads,.topbar,.tune-btn,.tune,.hb-lex,.hb-choice,.hb-toggle,.hb-actions,.hb-end .jump,.hb-star,.hb-name,.px-layer,.hb-more summary{display:none !important}
+html,body{background:#fff}
+main,main[data-kind="done"]{display:block;padding:0}
+.slip-wrap{width:100% !important}
+.hb{gap:0}
+.hb-page{filter:none;break-after:page}
+.hb-sheet{clip-path:none;background:#fff}
+.hb-cover .hb-sheet{min-height:96vh}
+.px-wait{visibility:visible !important}

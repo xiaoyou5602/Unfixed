@@ -226,11 +226,13 @@ window.Handbook = (() => {
   }
   // 估算只是起点：m、w 多的词实际排出来会比估算宽，量一下真实宽度，放不下就再缩，一个词不拆成两行
   // 并列的一对再统一成其中较小的字号，免得一大一小像分了主次
+  // 下载 PDF 时在打印宽度的副本里再量一遍（handbook-pdf.js），按元素所在的窗口取样式
   function fitStair(root) {
+    const view = root.ownerDocument.defaultView;
     root.querySelectorAll('.hb-group').forEach(g => {
       const ws = [...g.children], room = g.parentElement.clientWidth;
       ws.forEach(w => { w.style.fontSize = ''; });
-      const sizes = ws.map(w => { const fs = parseFloat(getComputedStyle(w).fontSize), need = w.scrollWidth; return need > room ? fs * room / need * 0.98 : fs; });
+      const sizes = ws.map(w => { const fs = parseFloat(view.getComputedStyle(w).fontSize), need = w.scrollWidth; return need > room ? fs * room / need * 0.98 : fs; });
       const min = Math.min(...sizes);
       ws.forEach(w => { w.style.fontSize = `${min}px`; });
     });
@@ -254,7 +256,7 @@ window.Handbook = (() => {
       <div class="jump">${env.missing.map(q => `<button type="button" data-q="${esc(q.id)}">${text(env.questionLabel(q.id))} · ${text(q.title)}</button>`).join('')}</div>` : ''}
     <p class="hb-sec-p">回答和这里的选择只保存在这台设备的浏览器里。回去改了前面的回答，手册会按新的回答重新拼。</p>
     <div class="hb-actions hb-end-nav"><button type="button" class="hb-btn ghost" data-step="-1">← 回去改回答</button>
-      <button type="button" class="hb-btn ghost" data-hb-act="print">打印或存成 PDF</button><button type="button" class="hb-btn" data-go="0">回到开头 ↺</button></div>
+      <button type="button" class="hb-btn ghost" data-hb-pdf>下载 PDF</button><button type="button" class="hb-btn" data-go="0">回到开头 ↺</button></div>
     ${repo() ? `<p class="hb-sec-p hb-star">觉得这本手册有帮助的话，可以去 <a href="${esc(repo())}" target="_blank" rel="noopener">GitHub</a> 给项目点个 star ☆</p>` : ''}`;
   // 仓库地址只写在页面头部，空着就不出链接
   const repo = () => document.querySelector('meta[name="repo"]')?.content.trim();
@@ -343,7 +345,6 @@ window.Handbook = (() => {
       if (!act) return;
       const a = act.dataset.hbAct;
       if (a === 'copy-short') copy(result.shorthand, act);
-      else if (a === 'print') { PixelReveal.finishAll(); print(); }
     });
     // 点一下手册就让进场过渡直接放完，不用干等
     el.addEventListener('pointerdown', e => { if (inBook(e)) PixelReveal.finishAll(); });
@@ -361,5 +362,5 @@ window.Handbook = (() => {
     addEventListener('beforeprint', () => { PixelReveal.finishAll(); slip?.querySelectorAll('.hb-more').forEach(d => { d.open = true; }); });
   }
   bind(document.getElementById('slip'));
-  return { html, mount, get result() { return result; } };
+  return { html, mount, fit: fitStair, get result() { return result; } };
 })();

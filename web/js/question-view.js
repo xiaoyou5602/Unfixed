@@ -48,8 +48,14 @@ window.QuestionView = (() => {
   }
 
   function render(q, st, footer = '') {
+    // 这几题的“没有经历”放进答案列表，仍沿用标准出口的取值与计分含义。
+    const optionExits = ['Q1-07', 'Q1-08', 'Q2-09'].includes(q.id) ? q.exits.filter(x => x.value === '没有这类经历') : [];
+    const single = q.kind === 'single';
+    const exitOptions = optionExits.map(x => `<label class="opt${single ? ' single' : ''}" data-exit="${esc(x.value)}">
+      <input type="${single ? 'radio' : 'checkbox'}" name="${esc(q.id)}" ${st.exit === x.value ? 'checked' : ''}>
+      <span class="box"></span><span class="txt">${text(x.text)}</span></label>`).join('');
     const body = q.kind === 'rows' ? rowsHTML(q, st)
-      : `<div class="opts" role="group" aria-label="${text(q.title)}">${optionsHTML(q, st)}</div>
+      : `<div class="opts" role="group" aria-label="${text(q.title)}">${optionsHTML(q, st)}${exitOptions}</div>
          <div class="rank-wrap">${rankHTML(q, st)}</div><div class="follow-wrap">${followHTML(q, st)}</div>`;
     return `<div class="slip-head" data-question-id="${esc(q.id)}"><span class="qid">${esc(q.label || q.id)}</span><span>${text(q.part)}</span><span class="kind">${text(q.response || KIND_LABEL[q.kind])}</span></div>
     ${q.intro ? `<p class="intro">${text(q.intro)}</p>` : ''}
@@ -57,7 +63,7 @@ window.QuestionView = (() => {
     ${q.note ? `<p class="note">${text(q.note)}</p>` : ''}
     ${(q.definitions || []).length ? `<dl class="defs">${q.definitions.map(d => `<dt>${text(d.term)}</dt><dd>${text(d.text)}</dd>`).join('')}</dl>` : ''}
     ${body}
-    <div class="exits">${q.exits.map(x =>
+    <div class="exits">${q.exits.filter(x => !optionExits.includes(x)).map(x =>
       `<button class="exit" data-exit="${esc(x.value)}" aria-pressed="${st.exit === x.value}">${text(x.text)}</button>`).join('')}
     </div>${footer}`;
   }

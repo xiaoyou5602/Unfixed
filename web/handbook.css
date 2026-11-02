@@ -151,6 +151,8 @@ a.hb-step:hover{color:var(--blue);border-color:var(--blue)}
 .hb-btn{font:600 14px/1 var(--sans);letter-spacing:.06em;color:#f7f4ec;background:var(--blue);border:0;padding:13px 18px;cursor:pointer;transition:background .2s;
   clip-path:polygon(0 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) 100%,0 100%)}
 .hb-btn:hover{background:var(--blue-deep)}
+.hb-btn:disabled{opacity:.6;cursor:wait}
+.hb-pdf-status a{color:var(--blue);text-decoration:underline}
 .hb-btn.ghost{color:var(--ink);background:none;box-shadow:inset 0 0 0 1px var(--line);clip-path:none}
 .hb-btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--blue);color:var(--blue)}
 .hb-btn:focus-visible,.hb-toc button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
@@ -171,16 +173,3 @@ a.hb-step:hover{color:var(--blue);border-color:var(--blue)}
   .hb-body{font-size:15px}
 }
 @media (prefers-reduced-motion:reduce){ .hb-toc button,.hb-btn,.hb-pill span{transition:none} }
-
-/* 打印：只留手册本身，一章一页 */
-@media print{
-  #bg,#threads,.topbar,.tune-btn,.tune,.hb-lex,.hb-choice,.hb-toggle,.hb-actions,.hb-end .jump,.hb-star,.hb-name,.px-layer,.hb-more summary{display:none !important}
-  html,body{background:#fff}
-  main,main[data-kind="done"]{display:block;padding:0}
-  .slip-wrap{width:100% !important}
-  .hb{gap:0}
-  .hb-page{filter:none;break-after:page}
-  .hb-sheet{clip-path:none;background:#fff}
-  .hb-cover .hb-sheet{min-height:96vh}
-  .px-wait{visibility:visible !important}
-}

@@ -31,7 +31,8 @@ window.QuestionScoring = (() => {
     }
     const get = ref => (values[ref] || []).filter(v => !MISSING.has(v));
     const is = (ref, v) => get(ref).includes(v);
-    const unsplit = is('Q0-02', '不拆分'), skipSex = !is('Q2-01', '继续');
+    // Q0-02 选"不拆分"暂时按拆分计分和输出，结果页照常给浪漫、性两侧的词，不再写成前缀（15.10 未改，代码先放开）
+    const unsplit = false, skipSex = !is('Q2-01', '继续');
     const inherit = (row, target, source, transform = v => v) => {
       if (!is(`Q2-07[${row}]`, '一样')) return;
       const inherited = get(source).map(transform).flat().filter(Boolean);
@@ -55,7 +56,9 @@ window.QuestionScoring = (() => {
     const scores = window.SCORING_RULES.scores;
     let romantic = get('Q1-21')[0] === '确定没有过' ? 0 : scores['Q1-02'][get('Q1-02')[0]];
     if (get('Q1-03')[0] === '很弱') romantic = Math.min(romantic ?? 1, 1);
-    const axes = { '浪漫①': get('Q1-04')[0] || '缺失',
+    // Q1-04 选感受相同时由 Q1-22 细分为体验相同或无法区分；Q1-22 没答仍记感受相同（15.3）
+    const clarity = get('Q1-04')[0];
+    const axes = { '浪漫①': (clarity === '感受相同' && get('Q1-22')[0]) || clarity || '缺失',
       '浪漫②': Object.keys(scores['浪漫②']).find(v => scores['浪漫②'][v] === romantic) || '缺失',
       '浪漫⑤': get('Q1-13')[0] || '缺失' };
     if (!unsplit && !skipSex) Object.assign(axes, { '性①': get('Q2-03')[0] || '缺失', '性②': get('Q2-02')[0] || '缺失',
@@ -96,11 +99,14 @@ window.QuestionScoring = (() => {
         rule[kind].map(e => ({ ...e, state: evaluate(e.rule, ctx) }))]));
       audit[rule.id] = { ...rule, ...evidence, status: confidence(...['primary', 'corroborating', 'contrary'].map(k => evidence[k].map(e => e.state))) };
     }
-    const extraClues = ['亲密友谊', '以性为主的非浪漫关系'].filter(r => ctx.is(`Q4-03[${r}]`, '会'));
-    if (extraClues.length) {
-      audit.QPR.additionalClues = extraClues.map(r => `Q4-03[${r}]`);
-      if (audit.QPR.status === '无') audit.QPR.status = '线索';
-    }
+    // 只记线索、不算互证的附加证据（15.11、15.12）
+    const addClues = (id, refs) => {
+      if (!refs.length) return;
+      audit[id].additionalClues = refs;
+      if (audit[id].status === '无') audit[id].status = '线索';
+    };
+    addClues('QPR', ['亲密友谊', '以性为主的非浪漫关系'].filter(r => ctx.is(`Q4-03[${r}]`, '会')).map(r => `Q4-03[${r}]`));
+    addClues('RA', ctx.is('Q4-02', 'QPR·不划分') ? ['Q4-02 = QPR·不划分'] : []);
     const ok = id => eligible(audit[id]);
     const clue = id => audit[id] && audit[id].status !== '无';
     const card = id => {
@@ -118,7 +124,7 @@ window.QuestionScoring = (() => {
       const extended = ['Desino', 'Apres', 'Coeo'].map(p => p + suffix);
       const time = sexual ? ['Aceflux', 'Acespike'] : ['Aroflux', 'Arospike'];
       const freq = ctx.axes[axis + '②'], clarity = ctx.axes[axis + '①'], temporal = ['flux', 'spike'].includes(ctx.axes[axis + '⑤']);
-      const quoi = ['体验相同', '无法区分', '无法理解', '不适用'].includes(clarity);
+      const quoi = ['感受相同', '体验相同', '无法区分', '无法理解', '不适用'].includes(clarity);
       const selfSpec = ctx.is(sexual ? 'Q2-04' : 'Q1-05', '在光谱内');
       const objectSpec = ctx.is(sexual ? 'Q2-17' : 'Q1-20', '在光谱内');
       let conflict = false;
@@ -174,12 +180,13 @@ window.QuestionScoring = (() => {
       if (!quoi && ok(names.quoi)) possible.push(names.quoi);
       if (primary.some(id => sub.includes(id)) && !primary.includes(names.a)) parents.push(names.grey);
       if (inSpectrum && !primary.includes(names.spec)) parents.push(names.spec);
-      const modifiers = ['Aego', 'Cupio'].map(p => p + suffix).filter(ok);
+      // aego 讲自己与情境的距离，不看吸引多少，在不在光谱内都留在"可以一起用的词"；cupio 以很少有吸引为前提，光谱外降为延伸区（9.2）
+      const cupio = `Cupio${suffix}`, modifiers = [`Aego${suffix}`, ...(inSpectrum ? [cupio] : [])].filter(ok);
       let extensions = Object.keys(audit).filter(id => audit[id].grade === 'C' &&
         (sexual ? audit[id].section === '15.7' : audit[id].section === '15.5') && ok(id) &&
         (!audit[id].highOnly || audit[id].status === '高') && !time.includes(id));
       extensions.push(...active.filter(id => !primary.includes(id) && !possible.includes(id)), ...umbrella);
-      if (!inSpectrum) extensions.push(...modifiers);
+      if (!inSpectrum && ok(cupio)) extensions.push(cupio);
       possible = unique(possible).filter(id => !primary.includes(id) && (!audit[id]?.highOnly || audit[id].status === '高'));
       // "可能"最多 3 个（12.1 第 5 条）：Aro-spec 始终留在结果页，先占位；其余证据强的在前，同级按分类树顺序。
       // 挤掉的 C 级"高""中"回到延伸区，线索级不再列，相邻的词照常可以补上
@@ -189,7 +196,7 @@ window.QuestionScoring = (() => {
       extensions = extensions.filter(id => !possible.includes(id));
       // 相邻的词（15.17）：不看证据，前面一题答偏也有路可退；已经出现过的不重复，最多 2 个
       const near = window.SCORING_RULES.adjacent || {}, top = primary.slice(0, 2);
-      const seen = new Set([...top, ...parents, ...possible, ...(inSpectrum ? modifiers : []), ...extensions]);
+      const seen = new Set([...top, ...parents, ...possible, ...modifiers, ...extensions]);
       const adjacent = unique(top.flatMap(id => near[id === '探索中' ? `探索中（维度${sexual ? '二' : '一'}）` : id] || []))
         .filter(id => !seen.has(id)).slice(0, 2);
       const makeCard = id => {
@@ -199,7 +206,7 @@ window.QuestionScoring = (() => {
         if (id === names.grey && conflict) result.basis.push(...unique(incompatible.flat()).flatMap(k => card(k).basis));
         return result;
       };
-      return { primary: primary.slice(0, 2).map(makeCard), modifiers: inSpectrum ? modifiers.map(card) : [],
+      return { primary: primary.slice(0, 2).map(makeCard), modifiers: modifiers.map(card),
         parents: unique(parents), possible: possible.map(id => ({ ...card(id), tentative: true })),
         extensions: unique(extensions).map(card), adjacent: adjacent.map(id => ({ ...card(id), basis: [], tentative: true })), inSpectrum, exploring: primary.includes('探索中'),
         optionalExit: inSpectrum ? `Alico${suffix}` : null };
