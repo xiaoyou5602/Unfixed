@@ -56,14 +56,14 @@ Unfixed 从五个方向出发，邀请你认识自己的感受，也看看世界
 
 文档里偶尔会提到 `tools/`、`generated/` 等目录或检查脚本，它们是作者本地维护用的工具，没有放进公开仓库。
 
-## 许可
-
-文字内容（名词库、文档、题目）采用 CC BY-SA 4.0，网页代码采用 MIT，详见 [LICENSE-CONTENT.md](LICENSE-CONTENT.md) 和 [LICENSE](LICENSE)。
-
 ## 关于数据
 
 网站会简单统计测试的开始、完成次数，以及结果标签的整体分布，仅用于了解测试的使用情况和优化方向。
 每道题的具体回答只保存在你的浏览器中，不会上传用于统计。
+
+## 许可
+
+文字内容（名词库、文档、题目）采用 CC BY-SA 4.0，网页代码采用 MIT，详见 [LICENSE-CONTENT.md](LICENSE-CONTENT.md) 和 [LICENSE](LICENSE)。
 
 ## 最后
 
