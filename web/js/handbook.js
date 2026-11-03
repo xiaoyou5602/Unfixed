@@ -35,6 +35,12 @@ window.Handbook = (() => {
   if (!GRANS.includes(choices.granularity)) choices.granularity = DEFAULTS.granularity;
   delete choices.edited;
   const save = () => { try { localStorage.setItem(STORE, JSON.stringify(choices)); } catch (e) {} };
+  // 清空重来时同时重置内存和存档，避免上一轮的自选标签进入新结果。
+  function reset() {
+    choices = { ...DEFAULTS, pick: {}, exits: [], include: [] };
+    opened.clear();
+    save();
+  }
   const options = () => ({ granularity: choices.granularity, pick: choices.pick, exits: choices.exits,
     includeInShorthand: choices.include, includeDirections: choices.directions, overallName: choices.overallName.trim() });
 
@@ -362,5 +368,5 @@ window.Handbook = (() => {
     addEventListener('beforeprint', () => { PixelReveal.finishAll(); slip?.querySelectorAll('.hb-more').forEach(d => { d.open = true; }); });
   }
   bind(document.getElementById('slip'));
-  return { html, mount, fit: fitStair, get result() { return result; } };
+  return { html, mount, reset, fit: fitStair, get result() { return result; } };
 })();

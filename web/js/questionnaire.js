@@ -234,7 +234,7 @@ slip.addEventListener('click', e => {
     else if (t.dataset.step != null) go(cur + +t.dataset.step);
     else if (t.dataset.q != null) go(pageOf(t.dataset.q));
     else if (confirm('清空这台设备上保存的回答，从头开始？')) {
-      answers = {}; savedAt = null; persist(); forgetAttempt(); buildPages(); render();
+      answers = {}; savedAt = null; persist(); forgetAttempt(); Handbook.reset(); buildPages(); render();
     }
     return;
   }

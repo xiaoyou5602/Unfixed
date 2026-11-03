@@ -26,12 +26,28 @@ window.HandbookPDF = (() => {
     });
   }
 
-  // 副本里打开打印样式，展开全部特征和体验举例（和直接打印前一样），等新露出来的字的字体到齐，再按打印宽度量封面的词
-  async function printLayout(doc) {
-    const link = doc.querySelector('link[href$="handbook-print.css"]');
+  // 打印样式的原文：副本里直接插一份 <style>。只把副本里 <link> 的 media 改成 all 时，安卓 Edge 不重排，
+  // 画出来还是网页版式（背景发黄、留着按钮、每章只有 632px 宽），再拉到 A4 宽就成了扁字。本地 file:// 读不到原文时才退回改 media
+  async function printCSS() {
+    const link = document.querySelector('link[href*="handbook-print.css"]');
     if (!link) throw new Error('页面缺少打印样式。');
-    link.media = 'all';
-    if (!link.sheet) await new Promise(resolve => { link.addEventListener('load', resolve, { once: true }); link.addEventListener('error', resolve, { once: true }); });
+    try { return [...link.sheet.cssRules].map(r => r.cssText).join('\n'); } catch (e) {}
+    try { const r = await fetch(link.href); if (r.ok) return await r.text(); } catch (e) {}
+    return null;
+  }
+
+  // 副本里打开打印样式，展开全部特征和体验举例（和直接打印前一样），等新露出来的字的字体到齐，再按打印宽度量封面的词
+  async function printLayout(doc, css) {
+    const link = doc.querySelector('link[href*="handbook-print.css"]');
+    if (!link) throw new Error('页面缺少打印样式。');
+    if (css) {
+      const style = doc.createElement('style');
+      style.textContent = css;
+      doc.head.appendChild(style);
+    } else {
+      link.media = 'all';
+      if (!link.sheet) await new Promise(resolve => { link.addEventListener('load', resolve, { once: true }); link.addEventListener('error', resolve, { once: true }); });
+    }
     doc.querySelectorAll('.hb-more').forEach(d => { d.open = true; });
     void doc.body.offsetHeight;
     await doc.fonts.ready;
@@ -76,27 +92,32 @@ window.HandbookPDF = (() => {
     if (!chapters.length) throw new Error('没有找到可导出的结果。');
     const sheet = document.createElement('canvas'), ctx = sheet.getContext('2d');
     if (!ctx) throw new Error('当前浏览器无法生成页面图像。');
+    const css = await printCSS(), contentW = A4.w - 2 * A4.margin;
     let pages = 0;
     try {
       for (let i = 0; i < chapters.length; i++) {
-        let spans = [], total = 0;
+        let spans = [], total = 0, width = WIDTH;
         // 清晰度取 2 倍；很长的一章按手机画布的面积上限降一点，免得画不出来
         const scale = Math.min(2, Math.sqrt(16e6 / (WIDTH * chapters[i].offsetHeight * 2)));
         const shot = await html2canvas(chapters[i], {
           backgroundColor: '#fff', scale, logging: false, scrollX: 0, scrollY: 0,
           windowWidth: WIDTH, windowHeight: HEIGHT,
           ignoreElements: el => el.id === 'bg' || el.id === 'threads' || el.classList.contains('px-layer'),
-          onclone: async (doc, el) => { await printLayout(doc); spans = spansOf(el); total = el.getBoundingClientRect().height; }
+          onclone: async (doc, el) => {
+            await printLayout(doc, css); spans = spansOf(el);
+            ({ width, height: total } = el.getBoundingClientRect());
+          }
         });
-        const k = shot.height / total, cuts = cutsOf(spans, total, HEIGHT);
+        // 比例按宽度算，放进 PDF 时宽高同比缩放：版式万一没按打印宽度排，也只是留白不同，字不会被拉变形
+        const k = shot.width / width, cuts = cutsOf(spans, total, HEIGHT * width / WIDTH);
         for (let j = 1; j < cuts.length; j++) {
-          const y = Math.round(cuts[j - 1] * k), h = Math.round(cuts[j] * k) - y;
+          const y = Math.round(cuts[j - 1] * k), h = Math.min(Math.round(cuts[j] * k), shot.height) - y;
           if (h <= 0) continue;
           sheet.width = shot.width; sheet.height = h;
           ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, sheet.width, h);
           ctx.drawImage(shot, 0, y, shot.width, h, 0, 0, shot.width, h);
           if (pages++) pdf.addPage();
-          pdf.addImage(sheet.toDataURL('image/jpeg', 0.92), 'JPEG', A4.margin, A4.margin, A4.w - 2 * A4.margin, h / k / PX);
+          pdf.addImage(sheet.toDataURL('image/jpeg', 0.92), 'JPEG', A4.margin, A4.margin, contentW, contentW * h / shot.width);
         }
         shot.width = shot.height = 0;
         progress(i + 1, chapters.length);
