@@ -74,6 +74,6 @@ Written content (the glossary, documentation, and questions) is licensed under C
 
 ## A final note
 
-If you spot an inaccurate definition, an awkward translation, or a question that is confusing or uncomfortable, please open an [Issue](https://github.com/xiaoyou5602/Unfixed/issues) and let me know.
+If you find an inaccurate definition, an awkward translation, or a question that feels confusing or uncomfortable—or simply want to share your thoughts and experiences—you're welcome to leave a message through the [anonymous message box](https://tally.so/r/4aQbxo).
 
-If this project is useful to you, consider leaving a star (๑¯◡¯๑)～
+If you find this project useful, consider giving it a star～
