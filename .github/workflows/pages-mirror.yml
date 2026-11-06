@@ -1,0 +1,42 @@
+name: Backup published Unfixed to GitHub Pages
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 15-minute target interval. GitHub may delay scheduled runs.
+    - cron: '7,22,37,52 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/pages-mirror.yml
+      - .github/scripts/mirror_site.py
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: unfixed-github-pages
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Check out only the public mirror script
+        uses: actions/checkout@v4
+      - name: Prepare GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Download validated live-site snapshot
+        run: python3 .github/scripts/mirror_site.py --output _site
+      - name: Upload static site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy backup to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
