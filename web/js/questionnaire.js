@@ -198,7 +198,7 @@ function renderDots() {
   });
   dots.innerHTML = h;
   document.getElementById('progressText').textContent =
-    pg.kind === 'cover' ? '' : pg.kind === 'done' ? '结果页' : `${questionLabel(pg.q)} · ${view.title}`;
+    pg.kind === 'cover' ? '按回答出题' : pg.kind === 'done' ? '结果页' : `${questionLabel(pg.q)} · ${view.title}`;
 }
 function go(i) {
   if (busy || i === cur || i < 0 || i >= PAGES.length) return;
