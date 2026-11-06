@@ -109,7 +109,7 @@ window.Handbook = (() => {
       ${t.definition ? `<p>${md(t.definition)}。</p>` : ''}
       <p class="hb-exit-note">有人用这个词称呼自己，但是否使用这个词永远由你自己决定。</p>
       ${lexMore(id)}
-      ${toggle('exit', id, choices.exits.includes(id), '用这个词，加进结果卡')}</div>`;
+      ${toggle('exit', id, choices.exits.includes(id), '加进结果卡')}</div>`;
   }
   const nothing = '<p class="hb-sec-p">这一部分的回答没有对应到具体的词。</p>';
   const EXT_NOTE = '这些词用的人比较少，各处的说法也不完全一样，放在这里供你对照。';
@@ -150,7 +150,7 @@ window.Handbook = (() => {
     h += sec('也有人这样称呼自己', (d.optionalDerived || []).map(id => {
       const e = LEX_ENTRY[lexId(id)] || {};
       return card({ id, label: e.zh || id, definition: e.summary }, 'detail', 'other',
-        toggle('exit', id, choices.exits.includes(id), '用这个词，加进结果卡'));
+        toggle('exit', id, choices.exits.includes(id), '加进结果卡'));
     }).join(''), '如果上面的某种吸引对你的身份很重要，有人会把它和无浪漫、无性恋的身份放在一起说。适不适合、用不用，都由你决定。');
     if (g === 'all') h += sec('你可能也会想了解', d.extensions.map(c => card(c, 'ext', 'other', includeToggle(c.id))).join(''), EXT_NOTE);
     return h;
