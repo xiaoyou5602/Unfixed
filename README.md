@@ -8,7 +8,7 @@
 
 Unfixed 从五个方向出发，邀请你认识自己的感受，也看看世界上还有哪些描述吸引与关系的词。你可以跟着问题探索，也可以直接翻阅名词库。
 
-**[在线体验 Unfixed](https://unfixed.lumenw.withtoge.us)**（国内可直接打开） · [备用地址](https://unfixed.lumenw.workers.dev)
+**[在线体验 Unfixed](https://unfixed.lumenw.withtoge.us)**（国内可直接打开） · [备用地址1](https://unfixed.lumenw.workers.dev)[备用地址2](https://xiaoyou5602.github.io/Unfixed)
 
 ## 探索什么
 
