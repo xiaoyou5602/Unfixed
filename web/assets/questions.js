@@ -7,7 +7,8 @@ window.QUESTION_BANK = {
     "06-items/2-sexual.md",
     "06-items/3-other-attraction.md",
     "06-items/4-relationship.md",
-    "06-items/5-structure.md"
+    "06-items/5-structure.md",
+    "06-items/6-source.md"
   ],
   "condition_ops": {
     "=": "单选题选了这一项",
@@ -128,6 +129,12 @@ window.QUESTION_BANK = {
       "id": "Q5",
       "title": "维度五 · 结构与理念",
       "section": "14.10",
+      "intro": []
+    },
+    {
+      "id": "Q6",
+      "title": "来源",
+      "section": "14.15",
       "intro": []
     }
   ],
@@ -331,7 +338,7 @@ window.QUESTION_BANK = {
       ],
       "response": "单选",
       "stem": "你会根据对方的情况，从而来判断自己这份喜欢算恋爱式还是朋友式吗？",
-      "note": "比如对方的情况，比如年龄、身份，身边人怎么认为你们的关系，或者你们有多亲近。",
+      "note": "比如对方的情况，比如性别、身份，身边人怎么认为你们的关系，或者你们有多亲近。",
       "exits": [
         {
           "value": "跳过",
@@ -370,7 +377,7 @@ window.QUESTION_BANK = {
         9
       ],
       "response": "单选",
-      "stem": "回想你对某个人（也可以是虚构角色）产生过的喜欢或在意。你觉得其中有属于「恋爱式喜欢」的吗？",
+      "stem": "回想你对某个人（也可以是虚构角色）产生过的喜欢或在意，你觉得其中有属于「恋爱式喜欢」的吗？",
       "exits": [
         {
           "value": "跳过",
@@ -562,7 +569,7 @@ window.QUESTION_BANK = {
         {
           "term": "Aro-spec",
           "section": "3.4",
-          "text": "无浪漫光谱包括很少或从不产生浪漫吸引的人，也包括只在特定条件下、偶尔或不稳定地体验浪漫吸引的人。有些人难以判断自己是否有浪漫吸引，或觉得自己的浪漫体验与常见描述不同，也可能认同这一光谱。"
+          "text": "包括很少或从不体验浪漫吸引，以及只在特定条件下、偶尔或不稳定地体验浪漫吸引等情况。"
         }
       ],
       "exits": [
@@ -742,7 +749,7 @@ window.QUESTION_BANK = {
       ],
       "response": "多选",
       "stem": "这种对他人的在意感通常会在什么情况下出现？可以多选。",
-      "note": "很少有或几乎没有过的话，按记得的那几次来选；一次都没有过，选\"没有这类经历\"。",
+      "note": "很少有或几乎没有过的话，按记得的那几次来选；一次都没有过，选\"没有这类经历\"就好",
       "exclusive": [
         "无特定条件"
       ],
@@ -1459,7 +1466,7 @@ window.QUESTION_BANK = {
       ],
       "response": "单选",
       "stem": "你想不想要一段恋爱关系？",
-      "note": "这里只问你想不想要这样的关系，和前面问的感受分开记录。",
+      "note": "这里只问你想不想要这样的关系，和前面问的感受分开记录",
       "exits": [
         {
           "value": "跳过",
@@ -1589,12 +1596,12 @@ window.QUESTION_BANK = {
       "enabled_by_default": true,
       "response": "单选",
       "stem": "你前面选了这种感受不指向现实中有可能建立关系的人。下面是\"无浪漫光谱\"（aro-spec）的定义，读完后，你会把自己放在这个范围里吗？",
-      "note": "感受只指向虚构角色、遥不可及的人或自己时算不算在这个范围里，社群里看法不一，所以请你自己判断。",
+      "note": "感受只指向虚构角色、遥不可及的人或自己时算不算在这个范围里，社群里看法不一，所以请你自己判断",
       "definitions": [
         {
           "term": "Aro-spec",
           "section": "3.4",
-          "text": "无浪漫光谱包括很少或从不产生浪漫吸引的人，也包括只在特定条件下、偶尔或不稳定地体验浪漫吸引的人。有些人难以判断自己是否有浪漫吸引，或觉得自己的浪漫体验与常见描述不同，也可能认同这一光谱。"
+          "text": "包括很少或从不体验浪漫吸引，以及只在特定条件下、偶尔或不稳定地体验浪漫吸引等情况。"
         }
       ],
       "exits": [
@@ -1693,7 +1700,7 @@ window.QUESTION_BANK = {
       ],
       "response": "单选",
       "stem": "你有没有对某个特定的人（或角色）产生过想和对方有性接触的渴望？",
-      "note": "这里只问你想和某个人有性接触的感觉，单纯的身体反应或没有具体对象的性冲动都不算在内。",
+      "note": "这里只问你想自己和对方有性接触的感觉，单纯的身体反应、没有具体对象的性冲动都不算。",
       "exits": [
         {
           "value": "跳过",
@@ -1708,26 +1715,26 @@ window.QUESTION_BANK = {
       ],
       "options": [
         {
-          "id": "从不",
-          "text": "我几乎没有，或者从来没有过",
-          "value": "从不",
+          "id": "从来没有",
+          "text": "我确定从来没有过",
+          "value": "从来没有",
           "free_text": false
         },
         {
-          "id": "极少或很弱",
-          "text": "我很少有，或者有但很弱",
-          "value": "极少或很弱",
+          "id": "很少或微弱",
+          "text": "有过，但很少或很微弱",
+          "value": "很少或微弱",
           "free_text": false
         },
         {
           "id": "有时",
-          "text": "我有时会有",
+          "text": "有时会有",
           "value": "有时",
           "free_text": false
         },
         {
           "id": "经常",
-          "text": "我经常有",
+          "text": "经常会有",
           "value": "经常",
           "free_text": false
         }
@@ -1814,7 +1821,7 @@ window.QUESTION_BANK = {
     },
     {
       "id": "Q2-04",
-      "title": "无性恋光谱归属",
+      "title": "无性吸引光谱归属",
       "part": "Q2",
       "measures": "光谱归属（9.2）",
       "show_if": {
@@ -1831,12 +1838,12 @@ window.QUESTION_BANK = {
       },
       "enabled_by_default": true,
       "response": "单选",
-      "stem": "下面是“无性恋光谱”（ace-spec）的定义。读完后，你觉得自己在这个范围里吗？",
+      "stem": "下面是“无性吸引光谱”（ace-spec）的定义。读完后，你觉得自己在这个范围里吗？",
       "definitions": [
         {
           "term": "Ace-spec",
           "section": "4.3",
-          "text": "无性恋光谱包括很少或从不体验性吸引的人，也包括只在特定条件下、偶尔或不稳定地体验性吸引的人。有些人难以判断自己是否有性吸引，或觉得自己的体验与常见描述不同，也可能认同这一光谱。"
+          "text": "也常译作「无性恋光谱」，包括很少或从不体验性吸引，以及只在特定条件下才会产生性吸引等情况。"
         }
       ],
       "exits": [
@@ -1878,7 +1885,7 @@ window.QUESTION_BANK = {
       "part": "Q2",
       "measures": "轴 ⑨",
       "show_if": {
-        "source": "Q2-03 ∈ {有点模糊、无法区分} 或 Q2-02 ∈ {极少或很弱、有时}",
+        "source": "Q2-03 ∈ {有点模糊、无法区分} 或 Q2-02 ∈ {很少或微弱、有时}",
         "rule": {
           "any": [
             {
@@ -1893,7 +1900,7 @@ window.QUESTION_BANK = {
               "question": "Q2-02",
               "op": "∈",
               "values": [
-                "极少或很弱",
+                "很少或微弱",
                 "有时"
               ]
             }
@@ -2018,7 +2025,7 @@ window.QUESTION_BANK = {
         },
         {
           "id": "波动",
-          "text": "我的性欲时有时无，也说不准它会指向哪里",
+          "text": "我的性欲时有时无，说不准它会指向哪里",
           "value": "波动",
           "free_text": false
         }
@@ -2075,7 +2082,7 @@ window.QUESTION_BANK = {
             "question": "Q1-07"
           },
           "show_if": {
-            "source": "Q1-07 不含 {跳过、不确定} 且 Q1-07 不含 demi 且 Q2-02 ≠ 从不",
+            "source": "Q1-07 不含 {跳过、不确定} 且 Q1-07 不含 demi 且 Q2-02 ≠ 从来没有",
             "rule": {
               "all": [
                 {
@@ -2097,7 +2104,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 }
               ]
@@ -2125,7 +2132,7 @@ window.QUESTION_BANK = {
             ]
           },
           "show_if": {
-            "source": "Q1-09 不含 {跳过、不确定} 且 Q2-02 ≠ 从不",
+            "source": "Q1-09 不含 {跳过、不确定} 且 Q2-02 ≠ 从来没有",
             "rule": {
               "all": [
                 {
@@ -2140,7 +2147,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 }
               ]
@@ -2175,7 +2182,7 @@ window.QUESTION_BANK = {
             ]
           },
           "show_if": {
-            "source": "Q1-09 不含 {跳过、不确定} 且 Q2-02 ≠ 从不",
+            "source": "Q1-09 不含 {跳过、不确定} 且 Q2-02 ≠ 从来没有",
             "rule": {
               "all": [
                 {
@@ -2190,7 +2197,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 }
               ]
@@ -2226,7 +2233,7 @@ window.QUESTION_BANK = {
             "question": "Q1-10"
           },
           "show_if": {
-            "source": "Q1-10 ∉ {跳过、不确定} 且 Q2-02 ≠ 从不",
+            "source": "Q1-10 ∉ {跳过、不确定} 且 Q2-02 ≠ 从来没有",
             "rule": {
               "all": [
                 {
@@ -2241,7 +2248,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 }
               ]
@@ -2359,7 +2366,7 @@ window.QUESTION_BANK = {
             ]
           },
           "show_if": {
-            "source": "Q1-12 不含 {跳过、不确定} 且 Q2-02 ≠ 从不",
+            "source": "Q1-12 不含 {跳过、不确定} 且 Q2-02 ≠ 从来没有",
             "rule": {
               "all": [
                 {
@@ -2374,7 +2381,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 }
               ]
@@ -2437,7 +2444,7 @@ window.QUESTION_BANK = {
       "part": "Q2",
       "measures": "轴 ③",
       "show_if": {
-        "source": "Q2-07[③] ∈ {不一样、不确定} 或 (Q2-02 ≠ 从不 且 (Q1-07 未出现 或 Q1-07 含 {跳过、不确定} 或 Q1-07 含 demi))",
+        "source": "Q2-07[③] ∈ {不一样、不确定} 或 (Q2-02 ≠ 从来没有 且 (Q1-07 未出现 或 Q1-07 含 {跳过、不确定} 或 Q1-07 含 demi))",
         "rule": {
           "any": [
             {
@@ -2455,7 +2462,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 },
                 {
@@ -2496,7 +2503,7 @@ window.QUESTION_BANK = {
         43
       ],
       "response": "多选",
-      "stem": "你一般会在什么情况下，对某个人产生想和对方有性接触的渴望？可以多选。",
+      "stem": "你一般会在什么情况下，会对某个人产生想和对方有性接触的渴望？可以多选。",
       "exclusive": [
         "无特定条件"
       ],
@@ -2562,7 +2569,7 @@ window.QUESTION_BANK = {
       "part": "Q2",
       "measures": "轴 ④",
       "show_if": {
-        "source": "Q2-07[④] ∈ {不一样、不确定} 或 (Q2-02 ≠ 从不 且 (Q1-09 未出现 或 Q1-10 未出现 或 Q1-09 含 {跳过、不确定} 或 Q1-10 ∈ {跳过、不确定})) 或 (Q2-02 ≠ 经常 且 (Q1-11 未出现 或 Q1-11 ∈ {跳过、不确定}))",
+        "source": "Q2-07[④] ∈ {不一样、不确定} 或 (Q2-02 ≠ 从来没有 且 (Q1-09 未出现 或 Q1-10 未出现 或 Q1-09 含 {跳过、不确定} 或 Q1-10 ∈ {跳过、不确定})) 或 (Q2-02 ≠ 经常 且 (Q1-11 未出现 或 Q1-11 ∈ {跳过、不确定}))",
         "rule": {
           "any": [
             {
@@ -2580,7 +2587,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 },
                 {
@@ -2679,12 +2686,12 @@ window.QUESTION_BANK = {
           "value": "希望相互",
           "free_text": false,
           "show_if": {
-            "source": "Q2-02 ≠ 从不",
+            "source": "Q2-02 ≠ 从来没有",
             "rule": {
               "question": "Q2-02",
               "op": "≠",
               "values": [
-                "从不"
+                "从来没有"
               ]
             }
           }
@@ -2695,12 +2702,12 @@ window.QUESTION_BANK = {
           "value": "无所谓",
           "free_text": false,
           "show_if": {
-            "source": "Q2-02 ≠ 从不",
+            "source": "Q2-02 ≠ 从来没有",
             "rule": {
               "question": "Q2-02",
               "op": "≠",
               "values": [
-                "从不"
+                "从来没有"
               ]
             }
           }
@@ -2711,12 +2718,12 @@ window.QUESTION_BANK = {
           "value": "akoi·不需要或不希望被回应",
           "free_text": false,
           "show_if": {
-            "source": "Q2-02 ≠ 从不",
+            "source": "Q2-02 ≠ 从来没有",
             "rule": {
               "question": "Q2-02",
               "op": "≠",
               "values": [
-                "从不"
+                "从来没有"
               ]
             }
           }
@@ -2727,12 +2734,12 @@ window.QUESTION_BANK = {
           "value": "akoi·回应后消退",
           "free_text": false,
           "show_if": {
-            "source": "Q2-02 ≠ 从不",
+            "source": "Q2-02 ≠ 从来没有",
             "rule": {
               "question": "Q2-02",
               "op": "≠",
               "values": [
-                "从不"
+                "从来没有"
               ]
             }
           }
@@ -2767,7 +2774,7 @@ window.QUESTION_BANK = {
       "part": "Q2",
       "measures": "轴 ⑦；adexsexual 联动 2A、2C",
       "show_if": {
-        "source": "Q2-07[⑦] ∈ {不一样、不确定} 或 (Q2-02 ≠ 从不 且 (Q1-12 未出现 或 Q1-12 含 {跳过、不确定})) 或 (Q2-06 = 有·指向幻想或虚构 且 Q2-02 ∈ {从不、极少或很弱})",
+        "source": "Q2-07[⑦] ∈ {不一样、不确定} 或 (Q2-02 ≠ 从来没有 且 (Q1-12 未出现 或 Q1-12 含 {跳过、不确定})) 或 (Q2-06 ∈ {有·无指向、有·指向现实中的人、有·指向幻想或虚构、波动} 且 Q2-02 ∈ {从来没有、很少或微弱})",
         "rule": {
           "any": [
             {
@@ -2785,7 +2792,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "≠",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 },
                 {
@@ -2810,17 +2817,20 @@ window.QUESTION_BANK = {
               "all": [
                 {
                   "question": "Q2-06",
-                  "op": "=",
+                  "op": "∈",
                   "values": [
-                    "有·指向幻想或虚构"
+                    "有·无指向",
+                    "有·指向现实中的人",
+                    "有·指向幻想或虚构",
+                    "波动"
                   ]
                 },
                 {
                   "question": "Q2-02",
                   "op": "∈",
                   "values": [
-                    "从不",
-                    "极少或很弱"
+                    "从来没有",
+                    "很少或微弱"
                   ]
                 }
               ]
@@ -3319,7 +3329,7 @@ window.QUESTION_BANK = {
       "part": "Q2",
       "measures": "bellussexual（2.2）",
       "show_if": {
-        "source": "Q2-15 = 不想要 且 (Q2-02 = 从不 或 (Q0-02 = 不拆分 且 (Q1-02 = 从不 或 Q1-21 = 确定没有过)))",
+        "source": "Q2-15 = 不想要 且 (Q2-02 = 从来没有 或 (Q0-02 = 不拆分 且 (Q1-02 = 从不 或 Q1-21 = 确定没有过)))",
         "rule": {
           "all": [
             {
@@ -3335,7 +3345,7 @@ window.QUESTION_BANK = {
                   "question": "Q2-02",
                   "op": "=",
                   "values": [
-                    "从不"
+                    "从来没有"
                   ]
                 },
                 {
@@ -3408,7 +3418,7 @@ window.QUESTION_BANK = {
       "part": "Q2",
       "measures": "光谱归属（9.2）",
       "show_if": {
-        "source": "Q2-04 未出现 且 Q2-02 ≠ 从不 且 ((Q2-10 含 {procul、ficto、auto、adex} 且 Q2-10 不含 现实可及) 或 (Q2-07[⑦] = 一样 且 Q1-12 含 {procul、ficto、auto} 且 Q1-12 不含 现实可及))",
+        "source": "Q2-04 未出现 且 Q2-02 ≠ 从来没有 且 ((Q2-10 含 {procul、ficto、auto、adex} 且 Q2-10 不含 现实可及) 或 (Q2-07[⑦] = 一样 且 Q1-12 含 {procul、ficto、auto} 且 Q1-12 不含 现实可及))",
         "rule": {
           "all": [
             {
@@ -3419,7 +3429,7 @@ window.QUESTION_BANK = {
               "question": "Q2-02",
               "op": "≠",
               "values": [
-                "从不"
+                "从来没有"
               ]
             },
             {
@@ -3480,13 +3490,13 @@ window.QUESTION_BANK = {
       },
       "enabled_by_default": true,
       "response": "单选",
-      "stem": "你前面提到，这种渴望并不指向现实中可能和你建立关系的人。读完下面“无性恋光谱”（ace-spec）的定义，你觉得自己在这个范围里吗？",
+      "stem": "你前面提到，这种渴望并不指向现实中可能和你建立关系的人。读完下面“无性吸引光谱”（ace-spec）的定义，你觉得自己在这个范围里吗？",
       "note": "如果你的渴望只指向虚构角色、现实中无法接近的人或自己，或者只在想象里出现，是否属于这个范围，社群里有不同看法。你可以按自己的理解来选。",
       "definitions": [
         {
           "term": "Ace-spec",
           "section": "4.3",
-          "text": "无性恋光谱包括很少或从不体验性吸引的人，也包括只在特定条件下、偶尔或不稳定地体验性吸引的人。有些人难以判断自己是否有性吸引，或觉得自己的体验与常见描述不同，也可能认同这一光谱。"
+          "text": "也常译作「无性恋光谱」，包括很少或从不体验性吸引，以及只在特定条件下才会产生性吸引等情况。"
         }
       ],
       "exits": [
@@ -4521,7 +4531,7 @@ window.QUESTION_BANK = {
       ],
       "response": "单选",
       "stem": "理想中，你希望伴侣关系是一对一、彼此排他的，还是可以同时拥有多段关系？",
-      "note": "这里说的伴侣关系不一定是恋爱，也可以是其他形式的伴侣关系。",
+      "note": "这里说的伴侣关系不一定是恋爱，也可以是其他形式的伴侣关系",
       "exits": [
         {
           "value": "跳过",
@@ -4908,6 +4918,97 @@ window.QUESTION_BANK = {
           "text": "我想自己描述",
           "value": "自填",
           "free_text": true
+        }
+      ]
+    },
+    {
+      "id": "Q6-01",
+      "title": "了解渠道",
+      "part": "Q6",
+      "measures": "不计分",
+      "enabled_by_default": true,
+      "response": "单选或自填",
+      "stem": "你是通过什么渠道了解到本测试的？（选填）",
+      "note": "仅用于匿名统计测试的传播来源，不影响测试结果。",
+      "exits": [
+        {
+          "value": "跳过",
+          "text": "跳过这题",
+          "handling": "记为缺失"
+        },
+        {
+          "value": "不确定",
+          "text": "我不确定",
+          "handling": "体验本身说不清，记为缺失"
+        }
+      ],
+      "collect_text": true,
+      "options": [
+        {
+          "id": "小红书",
+          "text": "小红书",
+          "value": "小红书",
+          "free_text": false
+        },
+        {
+          "id": "QQ",
+          "text": "QQ（群聊、空间等）",
+          "value": "QQ",
+          "free_text": false
+        },
+        {
+          "id": "微信",
+          "text": "微信（群聊、朋友圈等）",
+          "value": "微信",
+          "free_text": false
+        },
+        {
+          "id": "微博",
+          "text": "微博",
+          "value": "微博",
+          "free_text": false
+        },
+        {
+          "id": "抖音",
+          "text": "抖音",
+          "value": "抖音",
+          "free_text": false
+        },
+        {
+          "id": "豆瓣",
+          "text": "豆瓣",
+          "value": "豆瓣",
+          "free_text": false
+        },
+        {
+          "id": "Reddit或Mastodon",
+          "text": "Reddit / Mastodon 等社区",
+          "value": "Reddit或Mastodon",
+          "free_text": false
+        },
+        {
+          "id": "GitHub",
+          "text": "GitHub",
+          "value": "GitHub",
+          "free_text": false
+        },
+        {
+          "id": "朋友推荐",
+          "text": "朋友分享",
+          "value": "朋友推荐",
+          "free_text": false
+        },
+        {
+          "id": "其他",
+          "text": "其他",
+          "value": "其他",
+          "free_text": true
+        },
+        {
+          "id": "不记得",
+          "text": "不记得 / 不确定",
+          "value": "不记得",
+          "free_text": false
         }
       ]
     }

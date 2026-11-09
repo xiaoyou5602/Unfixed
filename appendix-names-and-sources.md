@@ -12,18 +12,18 @@
 
 1. 结果页上英文原词与中文名并列：英文便于检索和跨语言交流，中文降低理解门槛。每个词条都要有中文名，找不到现成叫法的按规则 2 拟名，不只写英文
 2. 中文名的优先级：通行译名 > 社区中见到的译名 > 本稿拟名；拟名一律标注。社区译名以社区中实际有人使用为准，不要求找到最早出处；同一个词有几种叫法时并列记录，不裁定哪个正确，方便参与者在社区里检索。不把英文定义来源当作中文译名的证据
-3. 构词与现有通行名一致：浪漫侧用"X浪漫倾向"，性侧用"X性恋"。社区叫法的后缀不同时（如 AUREA 简体中文版的"X浪漫吸引"），按此统一，原叫法记在状态栏
+3. 构词与现有通行名一致：浪漫侧用"X浪漫倾向"，性侧用"X性恋"。社区叫法的后缀不同时（如 AUREA 简体中文版的"X浪漫吸引"），按此统一，原叫法记在状态栏。**例外（2026-11 起）**：asexual 一族（asexual、ace-spec、grey-asexual、aceflux、acespike，以及 aspec、aroace、alloace、oriented / angled aroace 等组合名）和与之对照的 allosexual（含 alloaro）改用"无性吸引""有性吸引"作主名。通行译名"无性恋"的「恋」字容易让人把"很少或从不体验性吸引"读成"不谈恋爱、没有感情"，社群也在倡议改称；AUREA 简体中文版同样用"无性吸引"。2026-11-09 起，性侧主树（4.2）的其余词也改用"X性吸引"：demi、recip、fray、akoi、desino、apres、coeo 等 grey 子类，以及 quoi、aego、cupio、ficto、auto；ficto、auto 直接用社群已有的"虚拟角色性吸引""自体性吸引"。原通行名在中文名栏写成"也说"，名词库里列为别名，方便检索；原拟名"X性恋"不再保留。Bellussexual 描述对性活动的感受、不描述性吸引，不套"性吸引"，仍叫"美感性恋"。延伸区（4.6）其余词仍用"X性恋"，等社群对这些词形成新的共识再议
 4. 拟名尽量帮助理解体验，而不是音译。例如 aego- 暂取"旁观"，但这只是便于阅读的简称，不能把"必须第三人称观看"当作定义或题目门槛
 
 **对照表**
 
 | 英文 | 中文名 | 状态 |
 |---|---|---|
-| Asexual | 无性恋 | 通行 |
-| Allosexual | 有性恋 | 通行 |
-| Ace-spec | 无性恋光谱 | 通行 |
-| Grey-asexual / Greysexual | 灰性恋、灰色无性恋 | 通行 |
-| Demisexual | 半性恋 | 通行 |
+| Asexual | 无性吸引（也说"无性恋"） | "无性恋"是通行译名；"无性吸引"是社群倡议的叫法，AUREA 简体中文版也这样用；按规则 3 用作主名 |
+| Allosexual | 有性吸引（也说"有性恋"） | "有性恋"是通行译名；"有性吸引"见 AUREA 简体中文版（"有性吸引无浪漫吸引者"）；按规则 3 与无性吸引成对使用 |
+| Ace-spec | 无性吸引光谱（也说"无性恋光谱""无性吸引谱系"） | "无性恋光谱"是通行译名；按规则 3 用"无性吸引"作主名 |
+| Grey-asexual / Greysexual | 灰色性吸引（也说"灰性恋""灰色无性恋""灰色性向"） | 拟；"灰性恋""灰色无性恋"是通行译名，中文维基作"灰色性向"。2026-11-09 按规则 3 并入无性吸引一族，主名构词同灰色浪漫倾向，AUREA 简体中文版浪漫侧对应词作"灰色浪漫吸引"；"灰色性吸引"本身未查到社区用例 |
+| Demisexual | 半性吸引（也说"半性恋"） | 拟；"半性恋"是通行译名，按规则 3 改用"性吸引"作主名，AUREA 简体中文版浪漫侧对应词作"半浪漫吸引" |
 | Aromantic | 无浪漫倾向 | 通行 |
 | Alloromantic | 有浪漫倾向 | 通行 |
 | Greyromantic | 灰色浪漫倾向（也说"灰浪漫"） | 通行 |
@@ -31,12 +31,12 @@
 | QPR | 酷儿柏拉图关系 | 通行 |
 | QPP | 酷儿柏拉图伴侣 | AUREA 简体中文版，已核实 |
 | Aro-spec | 无浪漫光谱 | 拟 |
-| Aspec（a-spec） | 无性恋／无浪漫光谱（也说"A谱系"） | AUREA 中文版：繁体作"無性戀／無浪漫光譜"，简体作"A谱系"；已核实 |
-| Aroace | 无浪漫倾向无性恋（也说"无浪漫无性恋"；不少人直接用 aroace） | 社群流传：豆瓣小组与科普帖、微博科普文、中文维基（"无浪漫倾向的无性恋"）；AUREA 繁体中文版作"無性戀無浪漫"，简体中文版释为"无浪漫吸引无性吸引者" |
-| Alloaro | 有性恋无浪漫倾向 | AUREA 中文版：繁体作"有性戀無浪漫"，简体释为"有性吸引无浪漫吸引者"；已核实，"倾向"按规则 3 补上 |
-| Alloace | 有浪漫倾向无性恋 | 社群流传：微博科普文、中文维基"浪漫取向"条目（"有浪漫倾向的无性恋者"） |
-| Oriented aroace | 第三吸引力型无浪漫无性恋（也说"定向无浪漫无性吸引"） | AUREA 中文版：繁体作"第三吸引力型無浪漫無性戀"，简体作"定向无浪漫无性吸引"；已核实 |
-| Angled aroace | 第三吸引力型泛无浪漫无性恋（也说"他向无浪漫无性吸引者"） | AUREA 繁体中文版作"第三吸引力型泛無浪漫無性戀"，已核实；AUREA 简体中文身份术语页标题为"他向无浪漫无性吸引者（Angled aroace）"，已核对释义 |
+| Aspec（a-spec） | 无性吸引／无浪漫光谱（也说"无性恋／无浪漫光谱""A谱系"） | AUREA 中文版：繁体作"無性戀／無浪漫光譜"，简体作"A谱系"；已核实；性侧按规则 3 改用"无性吸引" |
+| Aroace | 无浪漫倾向无性吸引（也说"无浪漫倾向无性恋""无浪漫无性恋"；不少人直接用 aroace） | 社群流传：豆瓣小组与科普帖、微博科普文、中文维基（"无浪漫倾向的无性恋"）；AUREA 繁体中文版作"無性戀無浪漫"，简体中文版释为"无浪漫吸引无性吸引者"；性侧按规则 3 改用"无性吸引" |
+| Alloaro | 有性吸引无浪漫倾向（也说"有性恋无浪漫倾向"） | AUREA 中文版：繁体作"有性戀無浪漫"，简体释为"有性吸引无浪漫吸引者"；已核实，"倾向"按规则 3 补上，性侧按规则 3 用"有性吸引" |
+| Alloace | 有浪漫倾向无性吸引（也说"有浪漫倾向无性恋"） | 社群流传：微博科普文、中文维基"浪漫取向"条目（"有浪漫倾向的无性恋者"）；性侧按规则 3 改用"无性吸引" |
+| Oriented aroace | 第三吸引力型无浪漫无性吸引（也说"第三吸引力型无浪漫无性恋""定向无浪漫无性吸引"） | AUREA 中文版：繁体作"第三吸引力型無浪漫無性戀"，简体作"定向无浪漫无性吸引"；已核实；性侧按规则 3 改用"无性吸引" |
+| Angled aroace | 第三吸引力型泛无浪漫无性吸引（也说"第三吸引力型泛无浪漫无性恋""他向无浪漫无性吸引者"） | AUREA 繁体中文版作"第三吸引力型泛無浪漫無性戀"，已核实；AUREA 简体中文身份术语页标题为"他向无浪漫无性吸引者（Angled aroace）"，已核对释义；性侧按规则 3 改用"无性吸引" |
 | Quoiromantic | 困惑浪漫倾向（也说"困惑浪漫"） | 社群流传 |
 | Recipromantic | 互惠浪漫倾向 | 社群流传 |
 | Frayromantic | 磨损浪漫倾向 | 社群流传 |
@@ -45,30 +45,39 @@
 | Arospike | 尖峰无浪漫倾向 | 社群流传 |
 | Apothiromantic | 排斥浪漫倾向 | 社群流传 |
 | Fictoromantic | 虚拟浪漫倾向 | 社群流传 |
-| Fictosexual | 纸性恋 | 社群流传 |
+| Fictosexual | 虚拟角色性吸引（也说"纸性恋"） | 社群流传；两个都是社群叫法，按规则 3 以"虚拟角色性吸引"作主名 |
+| Fictoasexual | 仅虚拟角色性吸引 | 社群流传：社群资料的叫法，未另找到出处 |
+| Semifictosexual / Kaitasexual | 现实＋虚拟角色性吸引 | 社群流传：同上 |
+| Analloerotic | 非ta性欲 | 社群流传：同上 |
+| Emotuasexual / Emotuace | 情绪无性吸引 | 社群流传：同上 |
+| Auto-spec | 自体光谱 | 社群流传：同上 |
+| Centrispec | 中心光谱吸引 | 拟；资料里的这个译名带问号，未能确认是否有人使用 |
+| Myrsexual / Propeestsexual / Agneasian | 多重无性吸引 / 混合性吸引 / 无性吸引收集者 | 社群流传：同上；只进词汇表 |
+| Fictorose | 虚拟角色玫瑰吸引 | 拟；资料里的这个译名带问号；只进词汇表 |
+| Fictollosexual / Brickhillsexual / Duosexual | 虚拟与现实吸引对象不一致 / 多层性恋 / 双取向切换性恋 | 拟；资料只给了释义，没有中文名；只进词汇表 |
 | 3.7 中新增的 14 个词 | 终止、后置、初遇、同感、柏拉图、迷惑、遥远、抽象、自我、被恋、蝶、伪、错位、某（均为"X浪漫倾向"） | 社群流传（社区中见到，未记具体出处） |
-| Aegoromantic / Aegosexual | 旁观浪漫倾向 / 旁观性恋 | 拟 |
-| Cupioromantic / Cupiosexual | 渴望浪漫倾向 / 渴望性恋（已有"渴望浪漫"等零星说法） | 拟 |
+| Aegoromantic / Aegosexual | 旁观浪漫倾向 / 旁观性吸引 | 拟；性侧原拟名"旁观性恋" |
+| Cupioromantic / Cupiosexual | 渴望浪漫倾向 / 渴望性吸引（已有"渴望浪漫"等零星说法） | 拟；性侧原拟名"渴望性恋" |
 | Placioromantic / Placiosexual | 给予浪漫倾向 / 给予性恋 | 拟 |
-| Recipsexual | 互惠性恋 | 拟（与浪漫侧对齐） |
-| Fraysexual | 磨损性恋 | 拟 |
-| Akoisexual / Lithsexual | 单向性恋 | 拟 |
-| Aceflux | 波动无性恋 | 拟 |
-| Acespike | 尖峰无性恋 | 拟 |
-| Quoisexual | 困惑性恋 | 拟 |
+| Recipsexual | 互惠性吸引 | 拟（与浪漫侧对齐）；原拟名"互惠性恋" |
+| Fraysexual | 磨损性吸引（社群资料另有"磨散无性吸引"） | 拟，前缀与磨损浪漫倾向对齐；原拟名"磨损性恋"；"磨散无性吸引"为社群流传叫法，列为别名 |
+| Akoisexual / Lithsexual | 单向性吸引 | 拟；原拟名"单向性恋" |
+| Aceflux | 波动无性吸引 | 拟 |
+| Acespike | 尖峰无性吸引 | 拟 |
+| Quoisexual | 困惑性吸引 | 拟；原拟名"困惑性恋"，AUREA 简体中文版浪漫侧对应词作"困惑浪漫吸引" |
 | Apothisexual | 排斥性恋 | 拟 |
 | Adexsexual | 抽象性恋 | 拟 |
-| Autosexual | 自我性恋 | 拟 |
+| Autosexual | 自体性吸引 | 社群流传；按规则 3 用作主名，原拟名"自我性恋"不再保留 |
 | Disakoisexual | 被欲性恋 | 拟 |
 | Pseudosexual | 伪性恋 | 拟 |
 | Vexsexual / Vexesexual | 迷惑性恋 | 拟；英文词有独立定义来源 |
-| Coeosexual | 初遇性恋 | 拟；英文词有社区定义记录 |
+| Coeosexual | 初遇性吸引 | 拟，原拟名"初遇性恋"；英文词有社区定义记录 |
 | Proculsexual | 遥远性恋 | 拟；英文词有独立定义来源 |
 | Acrisexual | 错位性恋 | 拟；英文词有独立定义来源 |
-| Apressexual / Alicosexual | 后置性恋 / 某性恋 | 拟；已有对应词名与定义记录，来源限制见附录 B |
+| Apressexual / Alicosexual | 后置性吸引 / 某性恋 | 拟，apres 原拟名"后置性恋"，alico 在延伸区不改；已有对应词名与定义记录，来源限制见附录 B |
 | Morphosexual | 蝶性恋 | 拟；已有英文用例，独立定义待核 |
 | Idemsexual | 同感性恋 | 拟；有词名与简短释义记录，与浪漫侧的对应待核 |
-| Desinosexual | 终止性恋 | 拟；只沿用浪漫侧的前缀名"终止"，不套用浪漫侧"喜欢／爱"的释义 |
+| Desinosexual | 终止性吸引 | 拟，原拟名"终止性恋"；只沿用浪漫侧的前缀名"终止"，不套用浪漫侧"喜欢／爱"的释义 |
 | Bellusromantic | 美感浪漫倾向 | AUREA 中文版：简体作"美感浪漫吸引"，繁体作"擬浪漫"；已核实，"倾向"按规则 3 统一 |
 | Bellussexual | 美感性恋 | 拟（与浪漫侧对齐）；性侧有定义记录 |
 | Orchidromantic | 兰花浪漫倾向 | 社群流传：社群图文的叫法，未另找到出处；没有性侧对应词 |
@@ -142,9 +151,19 @@
 | placiosexual | lgbtqia.wiki（词名 Placiosexual） | 与 4.6 定义相符，并补充：对接受性行为可能无所谓、回避或排斥。正文按 wiki 写，02 的 4.6 已按 wiki 同步（原先写的是“不想接受”） |
 | apothisexual | lgbtqia.wiki（词名 Apothisexual） | 与常见定义相符，wiki 称它是"性排斥"的另一种说法；wiki 中把它与成因相连的说法未采用 |
 | bellussexual | lgbtqia.wiki（词名 Bellussexual） | 定义以 wiki 为依据：它描述的是对性活动与性关系的感受，不描述性吸引，上位类为 sex-ambivalent 伞。02 的 4.6 已按 wiki 同步（原先的派生条件是“不体验性吸引”） |
-| desinosexual | lgbtqia.wiki（词名 Desinosexual） | 定义以 wiki 为依据；上位类按 wiki 改为 Ace-spec，02 的 4.6 已同步 |
+| desinosexual | lgbtqia.wiki（词名 Desinosexual） | 定义以 wiki 为依据；上位类按 wiki 改为 Ace-spec，02 已同步 |
 | alicosexual | lgbtqia.wiki（词名 Alicosexual） | 词条页注明未经核实，只作参考，不作依据 |
 | caedsexual | lgbtqia.wiki（词名 Caedsexual） | wiki 限定只给创伤幸存者和有 PTSD 的人使用；本测试不采用，只进词汇表 |
+
+**2026-11-09** 补录 作者 提供的一份社群流传资料（无网址，未另找到出处）：
+
+| 词条 | 来源 | 处理 |
+|---|---|---|
+| fictoasexual、semifictosexual（Kaitasexual） | 作者 提供的社群流传资料 | 新增为延伸区词条，定义只取资料所写；中文名按资料叫法，标社群流传 |
+| fictosexual、autosexual、fraysexual | 同上 | 补别名、对象范围、消退节奏和较窄用法，主定义不改；资料说纸性恋"通常属于"无性吸引光谱，词条仍写"是否属于有争议" |
+| veritasexual | 同上 | 只作 fictosexual 概念边界里的一行对照，不单独立条 |
+| analloerotic、emotuasexual、auto-spec、centrispec | 同上 | 第二批新增为延伸区词条；auto-spec、centrispec 跨两侧，放在 `lexicon/combined.md`；centrispec 的译名带问号，按拟名记 |
+| fictollosexual、fictorose、myrsexual、propeestsexual、agneasian、brickhillsexual、duosexual | 同上 | 第二批只进词汇表，只写基本信息；fictollosexual 属于方向，性侧方向模块尚未建；duosexual 不专属于无性吸引光谱 |
 
 上面 lgbtqia.wiki 的几条，2026-10-31 按 作者 提供的词条页内容核对；具体页面网址未逐条记录，查找时在 https://lgbtqia.wiki 搜索对应词名。
 

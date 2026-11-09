@@ -6,7 +6,7 @@ window.QuestionScoring = (() => {
   const hit = x => x === '成立';
   const eligible = x => x && ['高', '中'].includes(x.status);
   const unique = xs => [...new Set(xs)];
-  const POSSIBLE_MAX = 3;
+  const POSSIBLE_MAX = 3, MODIFIER_MAX = 1;
   function confidence(primary, corroborating, contrary) {
     const p = primary.some(hit), c = corroborating.some(hit), n = contrary.some(hit);
     if (p && !n && corroborating.every(hit)) return '高';
@@ -63,6 +63,8 @@ window.QuestionScoring = (() => {
       '浪漫⑤': get('Q1-13')[0] || '缺失' };
     if (!unsplit && !skipSex) Object.assign(axes, { '性①': get('Q2-03')[0] || '缺失', '性②': get('Q2-02')[0] || '缺失',
       '性⑤': get('Q2-11')[0] || (is('Q2-07[⑤]', '一样') ? axes['浪漫⑤'] : '缺失') });
+    // 性② 同样按 Q2-02 的分换回取值："从来没有""几乎没有"都记从不，区别只在出不出前提题（15.3）
+    if (axes['性②']) axes['性②'] = Object.keys(scores['性②']).find(v => scores['性②'][v] === scores['Q2-02'][axes['性②']]) || '缺失';
     for (const [k, v] of Object.entries(axes)) values[k] = [v];
     return { flow, values, selected, provenance, axes, unsplit, skipSex, get, is };
   }
@@ -121,6 +123,7 @@ window.QuestionScoring = (() => {
       const names = { a: sexual ? 'Asexual' : 'Aromantic', grey: `Grey${suffix}`, quoi: `Quoi${suffix}`,
         allo: sexual ? 'Allosexual' : 'Alloromantic', spec: sexual ? 'Ace-spec' : 'Aro-spec' };
       const sub = ['Demi', 'Recip', 'Fray', 'Akoi'].map(p => p + suffix);
+      // desino、apres、coeo 是主树子类，但各只有一道题，和 flux、spike 一样只作"可能"（15.5）
       const extended = ['Desino', 'Apres', 'Coeo'].map(p => p + suffix);
       const time = sexual ? ['Aceflux', 'Acespike'] : ['Aroflux', 'Arospike'];
       const freq = ctx.axes[axis + '②'], clarity = ctx.axes[axis + '①'], temporal = ['flux', 'spike'].includes(ctx.axes[axis + '⑤']);
@@ -160,7 +163,8 @@ window.QuestionScoring = (() => {
         if (!conflict && active.length) primary.push(active[0]);
         else if (conflict || greyActive.length || clarity === '有点模糊') primary.push(names.grey);
         inSpectrum = true;
-      } else if (freq === '极少或很弱' || conflict || greyActive.length || clarity === '有点模糊') {
+      } else if (freq === '极少或很弱' || conflict || active.length) {
+        // ② 有时或经常时，偶尔模糊和只靠一题成立的子类不改主结果，照常作为"可能"列出（15.4 规则 6）
         primary = [names.grey];
         if (!conflict && active.length) {
           primary = [active[0]];
@@ -174,20 +178,26 @@ window.QuestionScoring = (() => {
       if (primary.includes('探索中')) possible.push(...Object.keys(audit).filter(id =>
         (sexual ? audit[id].section === '15.7' : ['15.4', '15.5'].includes(audit[id].section)) && clue(id)));
       if (primary.some(id => [names.a, names.grey, names.spec, names.allo, '探索中'].includes(id))) {
-        possible.push(...[...sub, ...extended].filter(id => audit[id]?.status === '线索'));
+        possible.push(...sub.filter(id => audit[id]?.status === '线索'));
       }
+      possible.push(...extended.filter(clue));
       // 不在 quoi 路径、却说不清渴望指向谁（Q2-10）时，Quoisexual 作为"可能"列出（15.7）
       if (!quoi && ok(names.quoi)) possible.push(names.quoi);
       if (primary.some(id => sub.includes(id)) && !primary.includes(names.a)) parents.push(names.grey);
       if (inSpectrum && !primary.includes(names.spec)) parents.push(names.spec);
-      // aego 讲自己与情境的距离，不看吸引多少，在不在光谱内都留在"可以一起用的词"；cupio 以很少有吸引为前提，光谱外降为延伸区（9.2）
-      const cupio = `Cupio${suffix}`, modifiers = [`Aego${suffix}`, ...(inSpectrum ? [cupio] : [])].filter(ok);
+      // aego 讲自己与情境的距离，ficto、auto 讲吸引指向谁，bellus 讲对活动有兴趣却不想要关系，都不看吸引多少，在不在光谱内都留在"可以一起用的词"；
+      // cupio 以很少有吸引为前提，光谱外降为延伸区（9.2）。修饰最多 1 个，其余放进延伸区（9.3）
+      const cupio = `Cupio${suffix}`;
+      const modifierPool = [`Aego${suffix}`, ...(inSpectrum ? [cupio] : []), `Ficto${suffix}`, `Auto${suffix}`, `Bellus${suffix}`].filter(ok);
+      const modifiers = modifierPool.slice(0, MODIFIER_MAX);
       let extensions = Object.keys(audit).filter(id => audit[id].grade === 'C' &&
         (sexual ? audit[id].section === '15.7' : audit[id].section === '15.5') && ok(id) &&
         (!audit[id].highOnly || audit[id].status === '高') && !time.includes(id));
+      extensions.push(...modifierPool.slice(MODIFIER_MAX));
       extensions.push(...active.filter(id => !primary.includes(id) && !possible.includes(id)), ...umbrella);
       if (!inSpectrum && ok(cupio)) extensions.push(cupio);
-      possible = unique(possible).filter(id => !primary.includes(id) && (!audit[id]?.highOnly || audit[id].status === '高'));
+      // 已经作为修饰的词不再列进"可能"（探索中时同一维度有线索的词都会进"可能"）
+      possible = unique(possible).filter(id => !primary.includes(id) && !modifiers.includes(id) && (!audit[id]?.highOnly || audit[id].status === '高'));
       // "可能"最多 3 个（12.1 第 5 条）：Aro-spec 始终留在结果页，先占位；其余证据强的在前，同级按分类树顺序。
       // 挤掉的 C 级"高""中"回到延伸区，线索级不再列，相邻的词照常可以补上
       const rank = id => id === names.spec ? -1 : { '高': 0, '中': 1, '线索': 2 }[audit[id]?.status] ?? 3;
@@ -297,7 +307,8 @@ window.QuestionScoring = (() => {
     };
     const main = [ctx.unsplit ? options.overallName || '' : nameOf(romantic, 'romantic'),
       nameOf(sexual, 'sexual'), nameOf(relationship, 'relationship'), nameOf(structure, 'structure')];
-    const allowed = new Set(Object.values(dimensions).filter(Boolean).flatMap(d => [...(d.extensions || []), ...(d.details || [])].map(c => c.id)).filter(Boolean));
+    const allowed = new Set(Object.values(dimensions).filter(Boolean).flatMap(d => [...(d.extensions || []), ...(d.details || []),
+      ...(['romantic', 'sexual', 'overall'].some(k => dimensions[k] === d) ? d.modifiers : [])].map(c => c.id)).filter(Boolean));
     const extras = [...[ctx.unsplit ? overall : romantic, sexual].map(d => d?.optionalExit), ...other.optionalDerived]
       .filter(id => id && (options.exits || []).includes(id));
     extras.push(...(options.includeInShorthand || []).filter(id => allowed.has(id)));

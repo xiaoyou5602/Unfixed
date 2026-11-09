@@ -159,7 +159,8 @@ function drawPrint(page) {
   g.globalCompositeOperation = 'source-over'; g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
   g.globalCompositeOperation = 'lighter';
   const m = Math.max(16, W * 0.035);
-  const pr = page.print;
+  // 新分册还没在 PRINTS 登记时照常画底色，不让一次翻页把整个作答锁死
+  const pr = page.print || { no: '', latin: '', big: '' };
 
   if (page.kind === 'cover') {
     setFont(g, `900 100px ${CJK_SANS}`);

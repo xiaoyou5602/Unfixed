@@ -131,7 +131,7 @@ window.Handbook = (() => {
       slot === 'overall' ? '这一章的定义借用对应的浪漫倾向词条，读的时候把"浪漫吸引"换成你整体的吸引体验。' : '');
     if (d.primary.length === 2 && slot !== 'overall') h += pick(slot, d.primary, '两个词都和你的回答接近，放进结果卡时：');
     if (d.parents.length) h += sec('所属范围', path(d));
-    h += sec('可以一起用的词', d.modifiers.map(c => card(c, 'mod', slot)).join(''), '它们描述态度或意愿，可以和上面的词一起用。');
+    h += sec('可以一起用的词', d.modifiers.map(c => card(c, 'mod', slot, includeToggle(c.id))).join(''), '它们描述态度、意愿或吸引指向谁，可以和上面的词一起用。');
     h += sec('可能也接近，可以自己对照', d.possible.map(c => card(c, 'maybe', slot)).join(''),
       '你的回答里有几处接近这些词。题目未必对得上每个人的体验，看过定义，你自己更清楚哪部分符合。');
     // 相邻的词（15.17）：不看证据，前面哪题没太明白时也有路可退
@@ -151,7 +151,7 @@ window.Handbook = (() => {
       const e = LEX_ENTRY[lexId(id)] || {};
       return card({ id, label: e.zh || id, definition: e.summary }, 'detail', 'other',
         toggle('exit', id, choices.exits.includes(id), '加进结果卡'));
-    }).join(''), '如果上面的某种吸引对你的身份很重要，有人会把它和无浪漫、无性恋的身份放在一起说。适不适合、用不用，都由你决定。');
+    }).join(''), '如果上面的某种吸引对你的身份很重要，有人会把它和无浪漫、无性吸引的身份放在一起说。适不适合、用不用，都由你决定。');
     if (g === 'all') h += sec('你可能也会想了解', d.extensions.map(c => card(c, 'ext', 'other', includeToggle(c.id))).join(''), EXT_NOTE);
     return h;
   }

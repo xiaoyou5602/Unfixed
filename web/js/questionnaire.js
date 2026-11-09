@@ -10,7 +10,7 @@ const PRINTS = {
   Q0: { no: '00', latin: 'OPENING', big: '开场' }, Q1: { no: '01', latin: 'ROMANTIC', big: '浪漫' },
   Q2: { no: '02', latin: 'SEXUAL', big: '性' }, Q3: { no: '03', latin: 'ATTRACTION', big: '吸引' },
   QM: { no: 'M', latin: 'DIRECTION', big: '方向' }, Q4: { no: '04', latin: 'RELATIONSHIP', big: '关系' },
-  Q5: { no: '05', latin: 'STRUCTURE', big: '结构' }
+  Q5: { no: '05', latin: 'STRUCTURE', big: '结构' }, Q6: { no: '06', latin: 'SOURCE', big: '来源' }
 };
 const KINDS = { '单选': 'single', '单选或自填': 'single', '多选': 'multi', '多选或自填': 'multi', '多选并排序': 'multi', '逐行': 'rows' };  // 题库出现新题型时先显示占位，可以跳过
 
@@ -27,13 +27,21 @@ try {
 const persist = () => { try { localStorage.setItem(STORE, JSON.stringify({ answers, at: savedAt })); } catch (e) {} };
 // 题库改过选项后，旧回答里找不到的选项会被当成没答；能一一对应的在这里换成新选项再存回去。
 // Q1-04 的"体验相同""无法区分"合并成了"感受相同"，原来的细分挪到新题 Q1-22（Q1-22 已经答过就不动）
+// Q2-02 改过三次：先把"几乎没有"挪进很少一档，后来又单独成一档（记从不），再后来删去这一档，拿不准的人按补充说明选从来没有。
+// 每次改了含义的选项都换了新编号；旧回答按原来的档位换过去。旧的很少一档里混着几乎没有的人，分不出来，一律换到现在的很少一档；
+// 几乎没有原本就记从不，换到从来没有，主结果不变，只是前提题收起、上面的旧回答不再计入
 function migrateAnswers() {
+  let changed = false;
   const a = answers['Q1-04'], old = a?.sel?.find(id => id === '体验相同' || id === '无法区分');
-  if (!old) return false;
-  a.sel = ['感受相同'];
-  const b = answers['Q1-22'];
-  if (!b || (!b.exit && !(b.sel || []).length)) answers['Q1-22'] = { ...b, sel: [old], exit: null };
-  return true;
+  if (old) {
+    a.sel = ['感受相同'];
+    const b = answers['Q1-22'];
+    if (!b || (!b.exit && !(b.sel || []).length)) answers['Q1-22'] = { ...b, sel: [old], exit: null };
+    changed = true;
+  }
+  const renamed = { '从不': '从来没有', '几乎没有': '从来没有', '极少或很弱': '很少或微弱', '很少或很弱': '很少或微弱' }, c = answers['Q2-02'];
+  if (c?.sel?.some(id => id in renamed)) { c.sel = c.sel.map(id => renamed[id] || id); changed = true; }
+  return changed;
 }
 if (migrateAnswers()) persist();
 // sel：选中的选项 id（排序题按排好的先后，没动手排过时按选项顺序）；ranked：排序题动手排过；rows：逐行题每行的取值；extra：每行的附加勾选；text：自填内容；follow：追问
@@ -45,25 +53,135 @@ const answerOf = id => {
 
 /* ---------------- 匿名统计 ---------------- */
 // 只在线上打开（页面头部的 stats 地址由 deploy_site.py 填上）：从封面进题记一次开始，进结果页记一次完成、各维度的主标签和可以一起用的词。
-// 只带这台浏览器生成的随机作答编号，不发回答；清空回答就换一个编号。发不出去时什么也不影响
+// 随机编号去重；选项只发固定编码，不发自填、追问或排序。服务端只累加人数，不存答卷。
 const STATS = document.querySelector('meta[name="stats"]')?.content.trim() || '';
 const ATTEMPT = 'arospec-attempt-v1';
-let attempt = null;
-try { attempt = localStorage.getItem(ATTEMPT); } catch (e) {}
-function report(type, labels) {
+const OUTBOX = 'arospec-stats-outbox-v1';
+let attempt = null, pending = {}, acknowledged = {}, sending = false, retryTimer = null, retryDelay = 30000;
+// 永久无效的内容保留在本地，本页不反复发送；刷新后可用新版规则再试。
+const blockedReports = new Map();
+try {
+  attempt = localStorage.getItem(ATTEMPT);
+  const saved = JSON.parse(localStorage.getItem(OUTBOX) || '{}');
+  pending = saved.pending || {}; acknowledged = saved.acknowledged || {};
+} catch (e) {}
+function saveReports() {
+  try { localStorage.setItem(OUTBOX, JSON.stringify({ pending, acknowledged })); } catch (e) {}
+}
+async function flushReports() {
+  if (!STATS || sending) return;
+  clearTimeout(retryTimer);
+  sending = true;
+  let failed = false;
+  try {
+    for (const [key, body] of Object.entries(pending)) {
+      if (pending[key] !== body || blockedReports.get(key) === body) continue;
+      try {
+        const send = data => fetch(STATS, { method: 'POST', keepalive: true,
+          signal: AbortSignal.timeout(15000), headers: { 'Content-Type': 'application/json' }, body: data });
+        let response = await send(body);
+        // 旧题库的选项可能已下线；先用原编号补记完成与标签，不伪造缺失选项。
+        if (response.status === 400) {
+          const event = JSON.parse(body);
+          if (event.type === 'complete' && event.options !== undefined) {
+            delete event.options;
+            response = await send(JSON.stringify(event));
+          }
+        }
+        if (!response.ok) {
+          if (response.status === 400 || response.status === 413 || response.status === 422) {
+            blockedReports.set(key, body);
+            continue;
+          }
+          throw Error('retry');
+        }
+        acknowledged[key] = body;
+        blockedReports.delete(key);
+        retryDelay = 30000;
+        if (pending[key] === body) delete pending[key];
+        saveReports();
+      } catch (e) { failed = true; }
+    }
+  } finally {
+    sending = false;
+    if (Object.entries(pending).some(([key, body]) => blockedReports.get(key) !== body)) {
+      retryTimer = setTimeout(flushReports, failed ? retryDelay : 0);
+    }
+    if (failed) retryDelay = Math.min(retryDelay * 2, 300000);
+  }
+}
+function optionCounts() {
+  const entries = [];
+  for (const q of FLOW.list) {
+    const a = answers[q.id] || {}, exit = (q.exits || []).find(e => e.value === a.exit);
+    if (exit) { entries.push([q.id, ['exit:' + exit.value]]); continue; }
+    if (q.rows) {
+      entries.push([q.id, ['rows:']]);
+      for (const r of QuestionFlow.visibleRows(q, FLOW.ctx)) {
+        const value = a.rows?.[r.id];
+        const choices = (q.row_options || []).some(o => o.value === value) ? ['option:' + value]
+          : (q.exits || []).some(e => e.value === value) ? ['exit:' + value] : ['skip:'];
+        if (q.row_extra && a.extra?.[r.id]) choices.push('extra:');
+        entries.push([q.id + '/' + r.id, choices]);
+      }
+    } else {
+      const choices = QuestionFlow.visibleOptions(q, FLOW.ctx).filter(o => (a.sel || []).includes(o.id)).map(o => {
+        if (!q.collect_text || !o.free_text) return 'option:' + o.id;
+        // 自填文字只在这道题标注「自填统计：上传」时随选项上报，和选项一起按文字汇总人数
+        const typed = String(a.text?.[o.id] || '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, 100);
+        return typed ? 'option:' + o.id + '=' + typed : 'option:' + o.id;
+      });
+      entries.push([q.id, choices.length ? choices : ['skip:']]);
+    }
+  }
+  return entries;
+}
+function newReportId() {
+  return crypto.randomUUID?.() || Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+}
+function enqueueReport(key, body) {
+  if (acknowledged[key] === body || pending[key] === body) return;
+  pending[key] = body; saveReports(); void flushReports();
+}
+function recordCoverEntry(explicitStart) {
+  if (!STATS) return;
+  if (explicitStart && attempt) {
+    // 旧编号已代表一轮；这次明确点「开始」单独计数，继续原进度则沿用旧轮次。
+    const round = newReportId();
+    enqueueReport(round + ':round', JSON.stringify({ type: 'round', round }));
+  }
+  report('start');
+}
+function report(type, labels, { includeOptions = true } = {}) {
   if (!STATS) return;
   if (!attempt) {
-    attempt = crypto.randomUUID?.() || Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+    attempt = newReportId();
     try { localStorage.setItem(ATTEMPT, attempt); } catch (e) {}
   }
-  fetch(STATS, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type, attempt, labels }) }).catch(() => {});
+  const key = attempt + ':' + type;
+  const body = JSON.stringify({ type, attempt, labels, ...(type === 'complete' && includeOptions ? { options: optionCounts() } : {}) });
+  enqueueReport(key, body);
 }
-// 其他吸引没有主标签，算它列出的词；浪漫、性、整体吸引里"可以一起用的词"（aego、cupio）另记一组，词名本身分得出是哪一侧
+window.addEventListener('online', () => { void flushReports(); });
+window.addEventListener('pagehide', () => { void flushReports(); });
+void flushReports();
+// 其他吸引没有主标签，算它列出的词；浪漫、性、整体吸引里"可以一起用的词"（aego、cupio、ficto、auto、bellus）另记一组，词名本身分得出是哪一侧
 const labelsOf = r => [...Object.entries(r.dimensions).flatMap(([d, x]) => x ? (d === 'other' ? x.details : x.primary).map(c => [d, c.id]) : []),
   ...(r.combined ? [['combined', r.combined]] : []),
   ...['romantic', 'sexual', 'overall'].flatMap(d => (r.dimensions[d]?.modifiers || []).map(c => ['modifier', c.id]))];
-function forgetAttempt() { attempt = null; try { localStorage.removeItem(ATTEMPT); } catch (e) {} }
+function forgetAttempt() {
+  // 只更换当前编号，旧作答尚未成功发送的事件继续按原编号补报。
+  attempt = null; try { localStorage.removeItem(ATTEMPT); } catch (e) {}
+  void flushReports();
+}
+
+function recoverCompletion() {
+  if (!STATS || !attempt || savedAt !== 'done') return;
+  const key = attempt + ':complete';
+  if (acknowledged[key] || pending[key]) return;
+  // 旧版 4xx 丢弃过请求时，用仍保存的答完标记和回答恢复；不补造历史选项分布。
+  try { report('complete', labelsOf(window.getQuestionnaireResult()), { includeOptions: false }); } catch (e) {}
+}
 
 /* ---------------- 页面列表 ---------------- */
 // PAGES：封面 + 按当前回答会出现的题 + 答完页。改了回答就重排，当前题之前的页不会变（条件只看前面的题）
@@ -147,7 +265,7 @@ function coverHTML() {
     <p class="body">${text(opening.slice(cut).trimStart())}</p>
     ${resume > 0 ? `<button class="next" data-go="${resume}">继续作答 →</button>
       <button class="restart" data-restart>清空回答，重新开始</button>`
-    : `<button class="next" data-go="1">开始 →</button>`}
+    : `<button class="next" data-go="1" data-start>开始 →</button>`}
     <p class="sample-note">${text(coverNote())}</p>`;
 }
 // 封面小字写在开场分册的"封面小字"表里
@@ -200,7 +318,7 @@ function renderDots() {
   document.getElementById('progressText').textContent =
     pg.kind === 'cover' ? '按回答出题' : pg.kind === 'done' ? '结果页' : `${questionLabel(pg.q)} · ${view.title}`;
 }
-function go(i) {
+function go(i, explicitStart = false) {
   if (busy || i === cur || i < 0 || i >= PAGES.length) return;
   busy = true;
   setPrint(PAGES[i], true);
@@ -210,7 +328,7 @@ function go(i) {
     cur = i; render(); window.scrollTo(0, 0);
     if (PAGES[cur].kind !== 'cover') { savedAt = PAGES[cur].q || PAGES[cur].kind; persist(); }
     // 从封面进题、这次作答还没记过开始时记一次；每次进结果页都记完成，后台按最新一次的标签算
-    if (PAGES[from].kind === 'cover' && PAGES[cur].kind !== 'cover' && !attempt) report('start');
+    if (PAGES[from].kind === 'cover' && PAGES[cur].kind !== 'cover') recordCoverEntry(explicitStart);
     if (PAGES[cur].kind === 'done' && RESULT) report('complete', labelsOf(RESULT));
     slipWrap.classList.remove('leaving');
     setTimeout(() => { busy = false; }, 420);
@@ -230,7 +348,7 @@ function changed() {
 slip.addEventListener('click', e => {
   const t = e.target.closest('[data-go],[data-step],[data-q],[data-restart]');
   if (t) {
-    if (t.dataset.go != null) go(+t.dataset.go);
+    if (t.dataset.go != null) go(+t.dataset.go, t.hasAttribute('data-start'));
     else if (t.dataset.step != null) go(cur + +t.dataset.step);
     else if (t.dataset.q != null) go(pageOf(t.dataset.q));
     else if (confirm('清空这台设备上保存的回答，从头开始？')) {
@@ -326,3 +444,4 @@ function syncAnswerDOM() {
 }
 
 buildPages();
+recoverCompletion();

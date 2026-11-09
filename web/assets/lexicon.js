@@ -15,7 +15,7 @@ window.LEXICON = {
        "id": "aspec",
        "name": "Aspec",
        "en": "Aspec",
-       "zh": "无性恋／无浪漫光谱",
+       "zh": "无性吸引／无浪漫光谱",
        "zhStatus": "AUREA 中文版",
        "complete": true,
        "summary": "aro-spec 与 ace-spec 的总称：只要浪漫或性其中一边落在光谱内，就在 aspec 范围内；部分语境还包括 aplatonic",
@@ -56,7 +56,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aroace\">Aroace</a></td><td>aroace 要求浪漫、性两边都在光谱内；aspec 只要一边就够</td></tr><tr><td><a href=\"#term/asexual\">Asexual</a> / <a href=\"#term/ace-spec\">Ace-spec</a></td><td>中文里常把\"无性恋\"当作总称来用，但 aspec 还包括有性吸引的 aro-spec 的人（alloaro）</td></tr><tr><td><a href=\"#term/aro-spec\">Aro-spec</a></td><td>aro-spec 只是 aspec 下的其中一把伞</td></tr><tr><td><a href=\"#term/split-attraction-model\">分离吸引模型</a>（SAM）</td><td>SAM 是把浪漫和性分开描述的思路；aspec 这个词本身就建立在这种拆分上。不使用 SAM 的人，也可以按自己的方式认同 aspec</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"aspec 就是无性恋。\"</b> aspec 也包括会被人在性的意义上吸引、但浪漫吸引很少的人。</li><li><b>\"aspec 是一个统一的身份，大家体验都一样。\"</b> 它是一个范围的说法，伞下的人体验差别很大，也有人不用这个词。</li><li><b>\"aspec 一定包括 aplatonic。\"</b> 有的人算，有的人不算，没有统一的说法。</li><li><b>\"aspec 的人都不想要亲密关系。\"</b> 吸引和想要什么样的关系是两件事；关系偏好在维度四、五单独看。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aroace\">Aroace</a></td><td>aroace 要求浪漫、性两边都在光谱内；aspec 只要一边就够</td></tr><tr><td><a href=\"#term/asexual\">Asexual</a> / <a href=\"#term/ace-spec\">Ace-spec</a></td><td>中文里常把\"无性恋\"当作总称来用，但 aspec 还包括有性吸引的 aro-spec 的人（alloaro）</td></tr><tr><td><a href=\"#term/aro-spec\">Aro-spec</a></td><td>aro-spec 只是 aspec 下的其中一把伞</td></tr><tr><td><a href=\"#term/split-attraction-model\">分离吸引模型</a>（SAM）</td><td>SAM 是把浪漫和性分开描述的思路；aspec 这个词本身就建立在这种拆分上。不使用 SAM 的人，也可以按自己的方式认同 aspec</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"aspec 就是无性吸引。\"</b> aspec 也包括会被人在性的意义上吸引、但浪漫吸引很少的人。</li><li><b>\"aspec 是一个统一的身份，大家体验都一样。\"</b> 它是一个范围的说法，伞下的人体验差别很大，也有人不用这个词。</li><li><b>\"aspec 一定包括 aplatonic。\"</b> 有的人算，有的人不算，没有统一的说法。</li><li><b>\"aspec 的人都不想要亲密关系。\"</b> 吸引和想要什么样的关系是两件事；关系偏好在维度四、五单独看。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -68,14 +68,14 @@ window.LEXICON = {
        "id": "aroace",
        "name": "Aroace",
        "en": "Aroace",
-       "zh": "无浪漫倾向无性恋",
+       "zh": "无浪漫倾向无性吸引",
        "zhStatus": "社群流传",
        "complete": true,
        "summary": "浪漫吸引和性吸引两边都落在光谱内的人：很少或不体验这两种吸引，或者以非典型的方式体验它们",
        "facts": [
         [
          "别名",
-         "aro ace、aro-ace、无浪漫无性恋（社群流传）、無性戀無浪漫（AUREA 繁体中文版）"
+         "aro ace、aro-ace、无浪漫倾向无性恋（社群流传）、无浪漫无性恋（社群流传）、無性戀無浪漫（AUREA 繁体中文版）"
         ],
         [
          "层级",
@@ -121,14 +121,14 @@ window.LEXICON = {
        "id": "alloaro",
        "name": "Alloaro",
        "en": "Alloaro",
-       "zh": "有性恋无浪漫倾向",
+       "zh": "有性吸引无浪漫倾向",
        "zhStatus": "AUREA 中文版",
        "complete": true,
        "summary": "对别人有性吸引，但浪漫吸引很少或不以主流方式体验的人",
        "facts": [
         [
          "别名",
-         "allo aro、aro allo（AUREA 简体中文版）、allosexual aromantic"
+         "allo aro、aro allo（AUREA 简体中文版）、allosexual aromantic、有性戀無浪漫（AUREA 繁体中文版）"
         ],
         [
          "层级",
@@ -162,7 +162,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aroace\">Aroace</a></td><td>两边都在光谱内，性吸引也很少或不体验；alloaro 的性吸引是主流方式</td></tr><tr><td><a href=\"#term/allosexual\">Allosexual</a>（有性恋）</td><td>只说性这一边。浪漫这一边不在 aro-spec 内，就不是 alloaro</td></tr><tr><td><a href=\"#term/aromantic\">Aromantic</a></td><td>只说浪漫这一边；alloaro 的人在性这一边有性吸引</td></tr><tr><td><a href=\"#term/alloace\">Alloace</a></td><td>两边正好相反：浪漫吸引是主流方式，性吸引很少或不体验</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"alloaro 只想要性，不要感情。\"</b> 有性吸引不等于只看重性。想要什么样的关系是另外一回事，关系偏好在维度四、五单独看。</li><li><b>\"有性吸引，就是性欲很强。\"</b> 吸引和性欲是两件事。性欲在测试里单独问，不由这个词决定。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aroace\">Aroace</a></td><td>两边都在光谱内，性吸引也很少或不体验；alloaro 的性吸引是主流方式</td></tr><tr><td><a href=\"#term/allosexual\">Allosexual</a>（有性吸引）</td><td>只说性这一边。浪漫这一边不在 aro-spec 内，就不是 alloaro</td></tr><tr><td><a href=\"#term/aromantic\">Aromantic</a></td><td>只说浪漫这一边；alloaro 的人在性这一边有性吸引</td></tr><tr><td><a href=\"#term/alloace\">Alloace</a></td><td>两边正好相反：浪漫吸引是主流方式，性吸引很少或不体验</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"alloaro 只想要性，不要感情。\"</b> 有性吸引不等于只看重性。想要什么样的关系是另外一回事，关系偏好在维度四、五单独看。</li><li><b>\"有性吸引，就是性欲很强。\"</b> 吸引和性欲是两件事。性欲在测试里单独问，不由这个词决定。</li></ul>"
         }
        ]
       },
@@ -170,14 +170,14 @@ window.LEXICON = {
        "id": "alloace",
        "name": "Alloace",
        "en": "Alloace",
-       "zh": "有浪漫倾向无性恋",
+       "zh": "有浪漫倾向无性吸引",
        "zhStatus": "社群流传",
        "complete": true,
        "summary": "对别人有浪漫吸引，但性吸引很少或不体验（或以非典型方式体验）的人",
        "facts": [
         [
          "别名",
-         "allo ace、alloromantic asexual、有浪漫倾向的无性恋者（社群流传）"
+         "allo ace、alloromantic asexual、有浪漫倾向无性恋、有浪漫倾向的无性恋者（社群流传）"
         ],
         [
          "层级",
@@ -219,7 +219,7 @@ window.LEXICON = {
        "id": "oriented-aroace",
        "name": "Oriented aroace",
        "en": "Oriented aroace",
-       "zh": "第三吸引力型无浪漫无性恋",
+       "zh": "第三吸引力型无浪漫无性吸引",
        "zhStatus": "AUREA 中文版",
        "complete": true,
        "summary": "浪漫吸引和性吸引都很少或不体验，但有某种既不属于浪漫也不属于性的吸引，对自己的身份和 aroace 同样重要",
@@ -264,7 +264,7 @@ window.LEXICON = {
         },
         {
          "title": "社区定义",
-         "html": "<p>这个词有两种中文叫法，都来自 AUREA：繁体的\"第三吸引力型无浪漫无性恋\"和简体的\"定向无浪漫无性吸引\"。AUREA 的说明里，它是为从未体验过浪漫或性吸引的人设立的。是否采用由本人决定，测试只展示定义，不替人裁定身份。</p>"
+         "html": "<p>这个词有两种中文叫法，都来自 AUREA：繁体的\"第三吸引力型无浪漫无性恋\"和简体的\"定向无浪漫无性吸引\"；这个测试按附录 A 规则 3，把繁体叫法里的\"无性恋\"换成了\"无性吸引\"。AUREA 的说明里，它是为从未体验过浪漫或性吸引的人设立的。是否采用由本人决定，测试只展示定义，不替人裁定身份。</p>"
         }
        ]
       },
@@ -272,14 +272,14 @@ window.LEXICON = {
        "id": "angled-aroace",
        "name": "Angled aroace",
        "en": "Angled aroace",
-       "zh": "第三吸引力型泛无浪漫无性恋",
-       "zhStatus": "AUREA 繁体中文版",
+       "zh": "第三吸引力型泛无浪漫无性吸引",
+       "zhStatus": "AUREA 中文版",
        "complete": true,
-       "summary": "在无浪漫或无性恋的光谱上（包括灰色、半浪漫、半性恋等倾向），同时体验到某种与浪漫和性都无关的吸引，而且这种吸引对自己的身份同样重要",
+       "summary": "在无浪漫或无性吸引的光谱上（包括灰色、半浪漫、半性吸引等倾向），同时体验到某种与浪漫和性都无关的吸引，而且这种吸引对自己的身份同样重要",
        "facts": [
         [
          "别名",
-         "他向无浪漫无性吸引者（AUREA 简体中文版）"
+         "他向无浪漫无性吸引者（AUREA 简体中文版）、第三吸引力型泛無浪漫無性戀（AUREA 繁体中文版）"
         ],
         [
          "层级",
@@ -309,11 +309,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>和 oriented 的主要区别在适用范围：angled 不限于浪漫和性都不体验的人，只要自己处在无浪漫或无性恋的光谱上就可以，无论是浪漫一边、性一边，还是两边都在</li><li>第三吸引指的是某种与浪漫和性都无关的吸引，如柏拉图、感官、审美或别样吸引（见维度三）</li><li>这种吸引对身份重要，与光谱上的身份并列</li></ul>"
+         "html": "<ul><li>和 oriented 的主要区别在适用范围：angled 不限于浪漫和性都不体验的人，只要自己处在无浪漫或无性吸引的光谱上就可以，无论是浪漫一边、性一边，还是两边都在</li><li>第三吸引指的是某种与浪漫和性都无关的吸引，如柏拉图、感官、审美或别样吸引（见维度三）</li><li>这种吸引对身份重要，与光谱上的身份并列</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/oriented-aroace\">Oriented aroace</a></td><td>oriented 只面向浪漫和性都不体验的人；angled 只要求在光谱上，范围更宽</td></tr><tr><td><a href=\"#term/aroace\">Aroace</a></td><td>aroace 要求浪漫和性两边都在光谱内；angled 不要求两边都在，但要求一种对身份重要的第三吸引</td></tr><tr><td>Grey- / Demi- 等</td><td>灰色、半浪漫等是 angled 可以包括的光谱倾向，但它们本身不说明第三吸引</td></tr><tr><td><a href=\"#term/tertiary-attraction\">第三吸引</a>（tertiary attraction）</td><td>第三吸引是统称；angled 是把某种第三吸引和光谱身份并列的说法</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"用了 pan 等标签，就是 angled aroace。\"</b> 不单凭标签组合得出，是否采用这个词，由本人选择。</li><li><b>\"只要有某种第三吸引，就是 angled aroace。\"</b> 这个词同时要求：这种吸引对身份重要，并且本人处在无浪漫或无性恋的光谱上。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/oriented-aroace\">Oriented aroace</a></td><td>oriented 只面向浪漫和性都不体验的人；angled 只要求在光谱上，范围更宽</td></tr><tr><td><a href=\"#term/aroace\">Aroace</a></td><td>aroace 要求浪漫和性两边都在光谱内；angled 不要求两边都在，但要求一种对身份重要的第三吸引</td></tr><tr><td>Grey- / Demi- 等</td><td>灰色、半浪漫等是 angled 可以包括的光谱倾向，但它们本身不说明第三吸引</td></tr><tr><td><a href=\"#term/tertiary-attraction\">第三吸引</a>（tertiary attraction）</td><td>第三吸引是统称；angled 是把某种第三吸引和光谱身份并列的说法</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"用了 pan 等标签，就是 angled aroace。\"</b> 不单凭标签组合得出，是否采用这个词，由本人选择。</li><li><b>\"只要有某种第三吸引，就是 angled aroace。\"</b> 这个词同时要求：这种吸引对身份重要，并且本人处在无浪漫或无性吸引的光谱上。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -373,6 +373,108 @@ window.LEXICON = {
          "html": "<p>AUREA 的说明里提到，这个模型的历史也存在部分争议，所以它只是一种可选的描述方式。</p>"
         }
        ]
+      },
+      {
+       "id": "auto-spec",
+       "name": "Auto-spec",
+       "en": "Auto-spec",
+       "zh": "自体光谱",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "吸引或关系的对象里包含自己的一类身份的总称，比如对自己有性吸引、浪漫吸引、柏拉图式吸引，或者把自己当作伴侣。这种吸引可以只指向自己，也可以同时指向别人。",
+       "facts": [
+        [
+         "别名",
+         "autospec、Auto Spectrum、auto"
+        ],
+        [
+         "层级",
+         "总伞（延伸区）"
+        ],
+        [
+         "上位类",
+         "—"
+        ],
+        [
+         "对应的轴",
+         "⑦ 对象类型与可及性（对象包含自己）"
+        ],
+        [
+         "共识度",
+         "低或有分歧（延伸区）"
+        ],
+        [
+         "测试适配度",
+         "C"
+        ],
+        [
+         "来源",
+         "The Auto Spectrum（社群自述资料）；伞下包含的说法取自社群流传资料（未另找到出处）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>这是一把伞，不是单个身份：伞下有自体性吸引（Autosexual）、自我浪漫倾向（Autoromantic）、autoplatonic 等</li><li>共同点是吸引或关系的对象里有自己</li><li>这种吸引可以是排他的（只对自己），也可以不排他（对别人也有）</li><li>也包括只有一部分符合的人，比如 autoflux（对自己的吸引流动或波动）</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/autosexual\">自体性吸引</a>（Autosexual）</td><td>自体光谱下的一种，讲的是性吸引指向自己</td></tr><tr><td><a href=\"#term/autoromantic\">自我浪漫倾向</a>（Autoromantic）</td><td>自体光谱下的一种，讲的是浪漫吸引指向自己</td></tr><tr><td>自伴侣（self-partnered）</td><td>社群里这把伞也把它放进来；它讲的是把自己当作伴侣来对待、经营的关系做法，不是吸引指向谁</td></tr><tr><td><a href=\"#term/aspec\">无性吸引／无浪漫光谱</a>（Aspec）</td><td>Aspec 讲的是浪漫、性吸引是否落在光谱内；自体光谱讲的是对象是不是自己。两者是不同的角度</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"对自己有吸引，就一定属于无性吸引光谱或无浪漫光谱。\"</b> 对象是自己，不单独决定是否属于这两条光谱，要看整体的体验。</li></ul>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>自体光谱这个说法来自社群自述资料。同一把伞下具体放哪些身份，各处不完全一样：有的把自伴侣放进来，也有人只把它看作关系做法。</p>"
+        }
+       ]
+      },
+      {
+       "id": "centrispec",
+       "name": "Centrispec",
+       "en": "Centrispec / Centri-spec",
+       "zh": "中心光谱吸引",
+       "zhStatus": "拟；资料里的这个译名带问号",
+       "complete": true,
+       "summary": "有一个“基础”或“中心”取向（比如泛吸引），但会随时间波动，经历各种无性吸引光谱、无浪漫光谱或两者兼有的身份，有时也会回到有吸引状态的人。",
+       "facts": [
+        [
+         "别名",
+         "centri-spec"
+        ],
+        [
+         "层级",
+         "延伸区（时间型）"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/aspec\">Aspec</a>"
+        ],
+        [
+         "对应的轴",
+         "⑤ 时间模式"
+        ],
+        [
+         "共识度",
+         "低或有分歧（延伸区）"
+        ],
+        [
+         "测试适配度",
+         "C"
+        ],
+        [
+         "来源",
+         "社群流传资料；未另找到出处"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>有一个基础或中心取向，比如泛吸引</li><li>随时间波动，会经历无性吸引光谱、无浪漫光谱，或两者兼有的各种身份</li><li>有时会回到有吸引（allo）的状态</li><li>在这些身份之间转换的快慢因人而异，经历的身份也不一定每次相同</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aceflux\">波动无性吸引</a>（Aceflux）／波动浪漫倾向（Aroflux）</td><td>它们讲的是吸引的强弱在光谱上起伏；中心光谱吸引有一个基础取向，波动中会经历各种光谱身份，也会回到有吸引的状态</td></tr><tr><td><a href=\"#term/aspec\">无性吸引／无浪漫光谱</a>（Aspec）</td><td>Aspec 是总伞，讲是否落在光谱内；中心光谱吸引讲的是围绕一个基础取向，在光谱内外来回</td></tr></tbody></table></div>"
+        }
+       ]
       }
      ]
     }
@@ -394,7 +496,7 @@ window.LEXICON = {
        "zh": "无浪漫光谱",
        "zhStatus": "拟",
        "complete": true,
-       "summary": "无浪漫光谱包括很少或从不产生浪漫吸引的人，也包括只在特定条件下、偶尔或不稳定地体验浪漫吸引的人。有些人难以判断自己是否有浪漫吸引，或觉得自己的浪漫体验与常见描述不同，也可能认同这一光谱。",
+       "summary": "包括很少或从不体验浪漫吸引，以及只在特定条件下、偶尔或不稳定地体验浪漫吸引等情况。",
        "facts": [
         [
          "别名",
@@ -885,6 +987,153 @@ window.LEXICON = {
        ]
       },
       {
+       "id": "desinoromantic",
+       "name": "Desinoromantic",
+       "en": "Desinoromantic",
+       "zh": "终止浪漫倾向",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "终止浪漫倾向（Desinoromantic）指的是：会对某人产生喜欢，但感受停在“喜欢”这一步，不会发展成浪漫意义上的“爱”。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "子类"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/greyromantic\">Greyromantic</a>"
+        ],
+        [
+         "对应的轴",
+         "② 频率与强度（停在\"喜欢\"，不会加深）"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "C（只作\"可能\"，不作主结果）"
+        ],
+        [
+         "来源",
+         "AUREA；已核实；误解取自社群图文"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>对某人有好感，想靠近、想待在一起，这份感觉是真实的。</li><li>吸引停在某个程度，不会再往浪漫的方向加深。</li><li>体验因人而异：有人偶尔会有浪漫吸引，有人则非常少有。</li><li>这是这个标签使用者对自己感受的描述，不用来衡量别人的爱有多深。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/greyromantic\">Greyromantic</a></td><td>Desinoromantic 属于它底下这一支，指的是浪漫吸引很少、很弱，并且感受具体停在“喜欢”。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：这个词是在说爱得不够多、不够好。</b> 不对：它只描述自己的感受停在哪里，不用来给别人的爱排高低。</li><li><b>误解：还没遇到对的人。</b> 不对：这不是还没遇到，而是浪漫吸引的上限就在这里。再合适、再喜欢的人，也不会触发更深的浪漫吸引。</li><li><b>误解：肤浅、不认真的喜欢。</b> 不对：他们能感受到的浪漫吸引上限就只有这么多，不代表肤浅或不认真，感情同样可以很真挚。</li><li><b>误解：永远不会爱别人。</b> 不对：他们只是在浪漫吸引这一层停在“喜欢”，在友情、亲情等层面，仍然可以体验到深层的爱，也可以建立 QPR（酷儿柏拉图关系）。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "apresromantic",
+       "name": "Apresromantic",
+       "en": "Apresromantic",
+       "zh": "后置浪漫倾向",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "后置浪漫倾向（Apresromantic）指的是：浪漫吸引要在其他类型的吸引（比如柏拉图吸引、审美吸引）出现之后，才会产生。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "子类（条件型）"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/greyromantic\">Greyromantic</a>"
+        ],
+        [
+         "对应的轴",
+         "③ 触发条件（需先有另一种吸引）"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "C（只作\"可能\"，不作主结果）"
+        ],
+        [
+         "来源",
+         "AUREA；已核实；误解取自社群图文"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>不会一开始就对某人产生浪漫吸引，需要先有其他类型的吸引。</li><li>先有的其他吸引，可能保留下来，也可能被浪漫吸引取代。</li><li>这个标签说的是先后顺序，不规定要等多久。</li><li>个人体验因人而异：有人只在特定的吸引之后才“开窍”，有人则很少被触发。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demiromantic\">Demiromantic</a></td><td>条件是要先与某人建立深厚的情感连接；Apresromantic 的条件是先有其他类型的吸引，两者的前提不同。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：这不就是大多数人的恋爱过程吗？</b> 不对：大多数人的浪漫吸引通常是独立运作的，可以第一眼就觉得“我想和 TA 谈恋爱”，不需要先经过某种前置吸引。对后置浪漫者来说，这个前置条件必须存在，没有它，浪漫吸引就无法触发。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "coeoromantic",
+       "name": "Coeoromantic",
+       "en": "Coeoromantic",
+       "zh": "初遇浪漫倾向",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "初遇浪漫倾向（Coeoromantic）指的是：浪漫吸引只会在初次见面时就出现；初见时没有，之后相处也不会从无到有地产生。",
+       "facts": [
+        [
+         "别名",
+         "—（不要与 coe-，即 Coeromantic 混淆）"
+        ],
+        [
+         "层级",
+         "子类（条件型）"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/greyromantic\">Greyromantic</a>"
+        ],
+        [
+         "对应的轴",
+         "③ 触发条件（只有初遇时就产生的才会存在）"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "C（只作\"可能\"，不作主结果）"
+        ],
+        [
+         "来源",
+         "Urban Dictionary 2020 年词条、Tumgik 转载；已核实（社区记录，证据有限）；误解取自社群图文"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>浪漫吸引只可能在初次见面时出现，甚至只是对视的那一刻；之后相处再多，也很难再“点燃”。</li><li>一旦在初遇时动了心，那种感觉可能很浓烈、很深刻，像谈了几年恋爱一样（不是真的谈了几年，而是情感浓度很高）。</li><li>对熟人反而很难产生浪漫滤镜，刚认识、甚至只见过一面的人，反而更容易让他们心动。</li><li>这和“相处久了才慢慢有感觉”的情况正好相反。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demiromantic\">Demiromantic</a></td><td>方向相反：Demiromantic 要先建立情感连接才会产生浪漫吸引，Coeoromantic 则是初见时就得有。</td></tr><tr><td><a href=\"#term/coeromantic\">Coeromantic</a>（coe-）</td><td>名字很像，但那是另一个词，目前只进词汇表，定义还没有定下来。不要和本词混在一起。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：花心，或者肤浅。</b> 不对：这不是“花心”，也不是“肤浅”，只是浪漫的开关启动机制和大多数人不同，和人格品质无关。</li></ul>"
+        }
+       ]
+      },
+      {
        "id": "quoiromantic",
        "name": "Quoiromantic",
        "en": "Quoiromantic",
@@ -1044,6 +1293,165 @@ window.LEXICON = {
         {
          "title": "概念边界",
          "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aromantic\">Aromantic</a></td><td>讲的是有没有浪漫吸引；cupio 讲的是想不想要浪漫关系</td></tr><tr><td><a href=\"#term/disakoiromantic\">Disakoiromantic</a></td><td>讲的是希望被人浪漫地喜欢、自己却难以回应；cupio 讲的是渴望拥有浪漫关系</td></tr><tr><td><a href=\"#term/not-seeking-partnership\">不寻求伴侣式关系</a>（主动单身）</td><td>不想要恋爱关系；cupio 则想要，两者方向相反</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"想要浪漫关系，就一定有浪漫吸引。\"</b> 两者可以分开。cupio 正是想要浪漫关系、却很少有浪漫吸引的体验。</li><li><b>\"没感觉怎么谈恋爱？\"</b> 渴望浪漫倾向者虽然不\"饿\"，但喜欢吃饭的\"氛围\"和\"味道\"。这两者并不矛盾。</li><li><b>\"他们在玩弄感情吗？\"</b> 渴望浪漫倾向者虽然没有\"心动\"的火花，但不代表没有爱人、照顾人和维持长期承诺的能力。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "fictoromantic",
+       "name": "Fictoromantic",
+       "en": "Fictoromantic",
+       "zh": "虚拟浪漫倾向",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "虚拟浪漫倾向（Fictoromantic）指对虚构角色产生浪漫吸引的人；有人的浪漫吸引主要或仅指向虚构角色，也有人同时会被现实人物吸引。只有当其对现实人物很少或没有浪漫吸引等情形与本人认同相符时，才可能同时把它视为 aro-spec 身份。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "节点·可叠加"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/aro-spec\">Aro-spec</a>（是否属于光谱有争议，不单独推出归属）"
+        ],
+        [
+         "对应的轴",
+         "⑦ 对象类型与可及性"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "B"
+        ],
+        [
+         "来源",
+         "AUREA 身份术语表、学术文献；已核实（aro-spec 归属为条件性）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>浪漫吸引主要或只指向小说、动漫、游戏、影视等作品中的虚构角色。对角色可能有持续的心动、思念、爱慕与深刻的情感联结。</li><li>有些人现实中也会欣赏他人的外貌、性格，与朋友建立亲密感情；但强烈的浪漫心动主要出现在面对虚构角色时。</li><li>与现实中的朋友、家人或重要伙伴仍可以建立深厚关系，包括亲密友谊与酷儿柏拉图关系（QPR）。</li><li>虚构角色可能成为一个人情感生活的重要部分，喜欢角色的方式也会因作品、个人经历与关系想象而变化。</li></ul>"
+        },
+        {
+         "title": "体验举例",
+         "html": "<ul><li>反复想念某个虚构角色，期待再次在作品中见到对方，或想象与角色约会、相伴。</li><li>现实生活中重视友情和亲密陪伴，自己的浪漫情感却更多投注于虚构角色。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/proculromantic\">Proculromantic</a></td><td>关注遥不可及对象带来的浪漫吸引；Fictoromantic 关注吸引对象的虚构性质。</td></tr><tr><td><a href=\"#term/adexromantic\">Adexromantic</a></td><td>关注抽象、非特定的浪漫幻想；Fictoromantic 可以指向姓名、性格、经历和形象都很鲜明的具体角色。</td></tr><tr><td>对作品或角色的欣赏</td><td>欣赏角色的剧情、设计与性格，和对角色产生浪漫爱慕，是两种可以并存的体验。</td></tr></tbody></table></div>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>AUREA 的身份术语表把它定义为对虚构角色产生浪漫吸引。有的人几乎不对现实中的人心动，这时也可能认同 aro-spec；也有人对虚构角色和现实中的人都会心动。</p>"
+        }
+       ]
+      },
+      {
+       "id": "autoromantic",
+       "name": "Autoromantic",
+       "en": "Autoromantic",
+       "zh": "自我浪漫倾向",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "自我浪漫倾向（Autoromantic）指的是：浪漫方面的吸引，对象是自己。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "节点·可叠加"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/aro-spec\">Aro-spec</a>（树中位置只作导航，不单独推出归属）"
+        ],
+        [
+         "对应的轴",
+         "⑦ 对象类型与可及性"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "B"
+        ],
+        [
+         "来源",
+         "The Auto Spectrum；已核实（社群自述资料）；误解取自社群图文"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>浪漫方面的吸引，指向的对象是自己。</li><li>可以与对他人的吸引并存。</li><li>喜欢给自己制造浪漫氛围，比如一个人看电影、散步、吃烛光晚餐，庆祝个人纪念日，想象与自己共度浪漫时光。</li><li>可能对别人的浪漫举动（如牵手、约会）感到不适应或乏味，但对自己做同样的事却很享受。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td>自我伴侣（self-partnered）</td><td>指的是一种关系做法：把自己当作伴侣来对待、经营。Autoromantic 描述的是吸引的对象，自我伴侣描述的是相处的方式。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：自我浪漫就是自恋。</b> 不对：这个标签只说吸引的指向，不评价性格。</li><li><b>误解：他们对别人没有浪漫吸引。</b> 不对：不一定。有些人只是更“偏好”自己，可以同时对别人有浪漫吸引；也有人只能感受到自我浪漫吸引，无法对他人产生浪漫吸引。</li><li><b>误解：这是“短暂的自恋阶段”，或“每个人都这样”。</b> 不对：偶尔享受自我照顾的人很多，但自我浪漫是一种持久的核心取向，是能真切地感受到对自己的浪漫吸引，不是人人都有。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "bellusromantic",
+       "name": "Bellusromantic",
+       "en": "Bellusromantic",
+       "zh": "美感浪漫倾向",
+       "zhStatus": "AUREA 中文版：简体作\"美感浪漫吸引\"，繁体作\"擬浪漫\"",
+       "complete": true,
+       "summary": "美感浪漫倾向（Bellusromantic）指的是：对传统上被视为浪漫的活动有兴趣，但不想要浪漫关系。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "节点·可叠加"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/aro-spec\">Aro-spec</a>（树中位置只作导航，不单独推出归属）"
+        ],
+        [
+         "对应的轴",
+         "派生：对部分浪漫活动有兴趣 × 不想要浪漫关系"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "B"
+        ],
+        [
+         "来源",
+         "AUREA；已核实，注明定义范围差异"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>对传统上被视为浪漫的活动，有欣赏或兴趣。</li><li>不想和某人发展浪漫关系。</li><li>这个标签讲的是对活动的兴趣，不是对某个人的吸引。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aromantic\">Aromantic</a></td><td>Aromantic 说的是很少或没有浪漫吸引；Bellusromantic 说的是对浪漫活动有兴趣，两者可以分开看。</td></tr></tbody></table></div>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>有的来源还要求本人没有浪漫吸引；AUREA 的简短定义没有这个条件，所以这个测试不把它作为条件。</p>"
         }
        ]
       },
@@ -1461,153 +1869,6 @@ window.LEXICON = {
        ]
       },
       {
-       "id": "desinoromantic",
-       "name": "Desinoromantic",
-       "en": "Desinoromantic",
-       "zh": "终止浪漫倾向",
-       "zhStatus": "社群流传",
-       "complete": true,
-       "summary": "终止浪漫倾向（Desinoromantic）指的是：会对某人产生喜欢，但感受停在“喜欢”这一步，不会发展成浪漫意义上的“爱”。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/greyromantic\">Greyromantic</a>"
-        ],
-        [
-         "对应的轴",
-         "② 频率与强度（停在\"喜欢\"，不会加深）"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "AUREA；已核实；误解取自社群图文"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>对某人有好感，想靠近、想待在一起，这份感觉是真实的。</li><li>吸引停在某个程度，不会再往浪漫的方向加深。</li><li>体验因人而异：有人偶尔会有浪漫吸引，有人则非常少有。</li><li>这是这个标签使用者对自己感受的描述，不用来衡量别人的爱有多深。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/greyromantic\">Greyromantic</a></td><td>Desinoromantic 属于它底下这一支，指的是浪漫吸引很少、很弱，并且感受具体停在“喜欢”。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：这个词是在说爱得不够多、不够好。</b> 不对：它只描述自己的感受停在哪里，不用来给别人的爱排高低。</li><li><b>误解：还没遇到对的人。</b> 不对：这不是还没遇到，而是浪漫吸引的上限就在这里。再合适、再喜欢的人，也不会触发更深的浪漫吸引。</li><li><b>误解：肤浅、不认真的喜欢。</b> 不对：他们能感受到的浪漫吸引上限就只有这么多，不代表肤浅或不认真，感情同样可以很真挚。</li><li><b>误解：永远不会爱别人。</b> 不对：他们只是在浪漫吸引这一层停在“喜欢”，在友情、亲情等层面，仍然可以体验到深层的爱，也可以建立 QPR（酷儿柏拉图关系）。</li></ul>"
-        }
-       ]
-      },
-      {
-       "id": "apresromantic",
-       "name": "Apresromantic",
-       "en": "Apresromantic",
-       "zh": "后置浪漫倾向",
-       "zhStatus": "社群流传",
-       "complete": true,
-       "summary": "后置浪漫倾向（Apresromantic）指的是：浪漫吸引要在其他类型的吸引（比如柏拉图吸引、审美吸引）出现之后，才会产生。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/greyromantic\">Greyromantic</a>"
-        ],
-        [
-         "对应的轴",
-         "③ 触发条件（需先有另一种吸引）"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "AUREA；已核实；误解取自社群图文"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>不会一开始就对某人产生浪漫吸引，需要先有其他类型的吸引。</li><li>先有的其他吸引，可能保留下来，也可能被浪漫吸引取代。</li><li>这个标签说的是先后顺序，不规定要等多久。</li><li>个人体验因人而异：有人只在特定的吸引之后才“开窍”，有人则很少被触发。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demiromantic\">Demiromantic</a></td><td>条件是要先与某人建立深厚的情感连接；Apresromantic 的条件是先有其他类型的吸引，两者的前提不同。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：这不就是大多数人的恋爱过程吗？</b> 不对：大多数人的浪漫吸引通常是独立运作的，可以第一眼就觉得“我想和 TA 谈恋爱”，不需要先经过某种前置吸引。对后置浪漫者来说，这个前置条件必须存在，没有它，浪漫吸引就无法触发。</li></ul>"
-        }
-       ]
-      },
-      {
-       "id": "coeoromantic",
-       "name": "Coeoromantic",
-       "en": "Coeoromantic",
-       "zh": "初遇浪漫倾向",
-       "zhStatus": "社群流传",
-       "complete": true,
-       "summary": "初遇浪漫倾向（Coeoromantic）指的是：浪漫吸引只会在初次见面时就出现；初见时没有，之后相处也不会从无到有地产生。",
-       "facts": [
-        [
-         "别名",
-         "—（不要与 coe-，即 Coeromantic 混淆）"
-        ],
-        [
-         "层级",
-         "延伸区"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/greyromantic\">Greyromantic</a>"
-        ],
-        [
-         "对应的轴",
-         "③ 触发条件（只有初遇时就产生的才会存在）"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "Urban Dictionary 2020 年词条、Tumgik 转载；已核实（社区记录，证据有限）；误解取自社群图文"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>浪漫吸引只可能在初次见面时出现，甚至只是对视的那一刻；之后相处再多，也很难再“点燃”。</li><li>一旦在初遇时动了心，那种感觉可能很浓烈、很深刻，像谈了几年恋爱一样（不是真的谈了几年，而是情感浓度很高）。</li><li>对熟人反而很难产生浪漫滤镜，刚认识、甚至只见过一面的人，反而更容易让他们心动。</li><li>这和“相处久了才慢慢有感觉”的情况正好相反。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demiromantic\">Demiromantic</a></td><td>方向相反：Demiromantic 要先建立情感连接才会产生浪漫吸引，Coeoromantic 则是初见时就得有。</td></tr><tr><td><a href=\"#term/coeromantic\">Coeromantic</a>（coe-）</td><td>名字很像，但那是另一个词，目前只进词汇表，定义还没有定下来。不要和本词混在一起。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：花心，或者肤浅。</b> 不对：这不是“花心”，也不是“肤浅”，只是浪漫的开关启动机制和大多数人不同，和人格品质无关。</li></ul>"
-        }
-       ]
-      },
-      {
        "id": "proculromantic",
        "name": "Proculromantic",
        "en": "Proculromantic",
@@ -1718,112 +1979,6 @@ window.LEXICON = {
         {
          "title": "社区定义",
          "html": "<p>Queer Dictionary 收录了这个词，和性侧的 adexsexual 写在同一条里。有人这样形容这种感觉：浪漫的想象本身很吸引人，可一旦把现实中某个具体的人代进去，感觉就变了味。</p>"
-        }
-       ]
-      },
-      {
-       "id": "fictoromantic",
-       "name": "Fictoromantic",
-       "en": "Fictoromantic",
-       "zh": "虚拟浪漫倾向",
-       "zhStatus": "社群流传",
-       "complete": true,
-       "summary": "虚拟浪漫倾向（Fictoromantic）指对虚构角色产生浪漫吸引的人；有人的浪漫吸引主要或仅指向虚构角色，也有人同时会被现实人物吸引。只有当其对现实人物很少或没有浪漫吸引等情形与本人认同相符时，才可能同时把它视为 aro-spec 身份。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区（对象）"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/aro-spec\">Aro-spec</a>（是否属于光谱有争议，不单独推出归属）"
-        ],
-        [
-         "对应的轴",
-         "⑦ 对象类型与可及性"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "AUREA 身份术语表、学术文献；已核实（aro-spec 归属为条件性）"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>浪漫吸引主要或只指向小说、动漫、游戏、影视等作品中的虚构角色。对角色可能有持续的心动、思念、爱慕与深刻的情感联结。</li><li>有些人现实中也会欣赏他人的外貌、性格，与朋友建立亲密感情；但强烈的浪漫心动主要出现在面对虚构角色时。</li><li>与现实中的朋友、家人或重要伙伴仍可以建立深厚关系，包括亲密友谊与酷儿柏拉图关系（QPR）。</li><li>虚构角色可能成为一个人情感生活的重要部分，喜欢角色的方式也会因作品、个人经历与关系想象而变化。</li></ul>"
-        },
-        {
-         "title": "体验举例",
-         "html": "<ul><li>反复想念某个虚构角色，期待再次在作品中见到对方，或想象与角色约会、相伴。</li><li>现实生活中重视友情和亲密陪伴，自己的浪漫情感却更多投注于虚构角色。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/proculromantic\">Proculromantic</a></td><td>关注遥不可及对象带来的浪漫吸引；Fictoromantic 关注吸引对象的虚构性质。</td></tr><tr><td><a href=\"#term/adexromantic\">Adexromantic</a></td><td>关注抽象、非特定的浪漫幻想；Fictoromantic 可以指向姓名、性格、经历和形象都很鲜明的具体角色。</td></tr><tr><td>对作品或角色的欣赏</td><td>欣赏角色的剧情、设计与性格，和对角色产生浪漫爱慕，是两种可以并存的体验。</td></tr></tbody></table></div>"
-        },
-        {
-         "title": "社区定义",
-         "html": "<p>AUREA 的身份术语表把它定义为对虚构角色产生浪漫吸引。有的人几乎不对现实中的人心动，这时也可能认同 aro-spec；也有人对虚构角色和现实中的人都会心动。</p>"
-        }
-       ]
-      },
-      {
-       "id": "autoromantic",
-       "name": "Autoromantic",
-       "en": "Autoromantic",
-       "zh": "自我浪漫倾向",
-       "zhStatus": "社群流传",
-       "complete": true,
-       "summary": "自我浪漫倾向（Autoromantic）指的是：浪漫方面的吸引，对象是自己。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区（对象）"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/aro-spec\">Aro-spec</a>（树中位置只作导航，不单独推出归属）"
-        ],
-        [
-         "对应的轴",
-         "⑦ 对象类型与可及性"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "The Auto Spectrum；已核实（社群自述资料）；误解取自社群图文"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>浪漫方面的吸引，指向的对象是自己。</li><li>可以与对他人的吸引并存。</li><li>喜欢给自己制造浪漫氛围，比如一个人看电影、散步、吃烛光晚餐，庆祝个人纪念日，想象与自己共度浪漫时光。</li><li>可能对别人的浪漫举动（如牵手、约会）感到不适应或乏味，但对自己做同样的事却很享受。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td>自我伴侣（self-partnered）</td><td>指的是一种关系做法：把自己当作伴侣来对待、经营。Autoromantic 描述的是吸引的对象，自我伴侣描述的是相处的方式。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>误解：自我浪漫就是自恋。</b> 不对：这个标签只说吸引的指向，不评价性格。</li><li><b>误解：他们对别人没有浪漫吸引。</b> 不对：不一定。有些人只是更“偏好”自己，可以同时对别人有浪漫吸引；也有人只能感受到自我浪漫吸引，无法对他人产生浪漫吸引。</li><li><b>误解：这是“短暂的自恋阶段”，或“每个人都这样”。</b> 不对：偶尔享受自我照顾的人很多，但自我浪漫是一种持久的核心取向，是能真切地感受到对自己的浪漫吸引，不是人人都有。</li></ul>"
         }
        ]
       },
@@ -2101,59 +2256,6 @@ window.LEXICON = {
         {
          "title": "社区定义",
          "html": "<p>这个词出自 mogaiheaven 整理的一组 acri- 词，同一组里还有性、感官、审美等吸引对应的 acri- 说法。</p>"
-        }
-       ]
-      },
-      {
-       "id": "bellusromantic",
-       "name": "Bellusromantic",
-       "en": "Bellusromantic",
-       "zh": "美感浪漫倾向",
-       "zhStatus": "AUREA 中文版：简体作\"美感浪漫吸引\"，繁体作\"擬浪漫\"",
-       "complete": true,
-       "summary": "美感浪漫倾向（Bellusromantic）指的是：对传统上被视为浪漫的活动有兴趣，但不想要浪漫关系。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区（派生）"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/aro-spec\">Aro-spec</a>（不单独判定归属）"
-        ],
-        [
-         "对应的轴",
-         "派生：对部分浪漫活动有兴趣 × 不想要浪漫关系"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "AUREA；已核实，注明定义范围差异"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>对传统上被视为浪漫的活动，有欣赏或兴趣。</li><li>不想和某人发展浪漫关系。</li><li>这个标签讲的是对活动的兴趣，不是对某个人的吸引。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aromantic\">Aromantic</a></td><td>Aromantic 说的是很少或没有浪漫吸引；Bellusromantic 说的是对浪漫活动有兴趣，两者可以分开看。</td></tr></tbody></table></div>"
-        },
-        {
-         "title": "社区定义",
-         "html": "<p>有的来源还要求本人没有浪漫吸引；AUREA 的简短定义没有这个条件，所以这个测试不把它作为条件。</p>"
         }
        ]
       },
@@ -2658,14 +2760,14 @@ window.LEXICON = {
        "id": "ace-spec",
        "name": "Ace-spec",
        "en": "Ace-spec",
-       "zh": "无性恋光谱",
-       "zhStatus": "通行",
+       "zh": "无性吸引光谱",
+       "zhStatus": "社群流传",
        "complete": true,
-       "summary": "无性恋光谱包括很少或从不体验性吸引的人，也包括只在特定条件下、偶尔或不稳定地体验性吸引的人。有些人难以判断自己是否有性吸引，或觉得自己的体验与常见描述不同，也可能认同这一光谱。",
+       "summary": "也常译作「无性恋光谱」，包括很少或从不体验性吸引，以及只在特定条件下才会产生性吸引等情况。",
        "facts": [
         [
          "别名",
-         "asexual spectrum、acespec；口语里也常简称 ace"
+         "asexual spectrum、acespec；无性恋光谱（通行译名）、无性吸引谱系；口语里也常简称 ace"
         ],
         [
          "层级",
@@ -2711,14 +2813,14 @@ window.LEXICON = {
        "id": "asexual",
        "name": "Asexual",
        "en": "Asexual",
-       "zh": "无性恋",
-       "zhStatus": "通行",
+       "zh": "无性吸引",
+       "zhStatus": "社群流传",
        "complete": true,
-       "summary": "很少或从不体验性吸引的人，也就是很少或从来不会对某个具体的人产生想发生性接触的念头。这不等于没有性欲，也不等于厌恶性。",
+       "summary": "也常译作「无性恋」，指很少或从不体验性吸引。",
        "facts": [
         [
          "别名",
-         "ace（也常用来泛指整个 ace-spec）"
+         "ace（也常用来泛指整个 ace-spec）；无性恋（通行译名）"
         ],
         [
          "层级",
@@ -2752,11 +2854,11 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/ace-spec\">Ace-spec</a></td><td>无性恋光谱是整片范围，无性恋只是其中一个点</td></tr><tr><td><a href=\"#term/greysexual\">Greysexual</a></td><td>灰性恋是性吸引很弱、只偶尔有，或不确定那算不算；无性恋是很少或从不体验</td></tr><tr><td>性欲（libido）</td><td>性欲是身体上的性冲动，不一定指向任何人；无性恋讲的是对具体的人有没有性吸引。两者可以分开</td></tr><tr><td>禁欲（celibacy）</td><td>禁欲是选择不发生性行为，讲的是行为；无性恋讲的是吸引</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"无性恋就是没有性欲。\"</b> 不少无性恋的人有性欲，只是不指向任何具体的人。</li><li><b>\"无性恋一定厌恶性。\"</b> 对性的态度因人而异：有人排斥，有人无所谓，也有人喜欢。态度不决定是不是无性恋。</li><li><b>\"没有性经历的人才会这样。\"</b> 经历不是判断的依据：没有性经历不能说明是无性恋，有过性经历也不排除。</li><li><b>\"这是身体或激素出了问题。\"</b> 社群把它看作一种取向，不是疾病。是否有困扰是另一件事，它不能推出是不是无性恋。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/ace-spec\">Ace-spec</a></td><td>无性吸引光谱是整片范围，无性吸引只是其中一个点</td></tr><tr><td><a href=\"#term/greysexual\">Greysexual</a></td><td>灰色性吸引是性吸引很弱、只偶尔有，或不确定那算不算；无性吸引是很少或从不体验</td></tr><tr><td>性欲（libido）</td><td>性欲是身体上的性冲动，不一定指向任何人；无性吸引讲的是对具体的人有没有性吸引。两者可以分开</td></tr><tr><td>禁欲（celibacy）</td><td>禁欲是选择不发生性行为，讲的是行为；无性吸引讲的是吸引</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"无性吸引就是没有性欲。\"</b> 不少无性吸引者有性欲，只是不指向任何具体的人。</li><li><b>\"无性吸引者一定厌恶性。\"</b> 对性的态度因人而异：有人排斥，有人无所谓，也有人喜欢。态度不决定是不是无性吸引者。</li><li><b>\"没有性经历的人才会这样。\"</b> 经历不是判断的依据：没有性经历不能说明是无性吸引者，有过性经历也不排除。</li><li><b>\"这是身体或激素出了问题。\"</b> 社群把它看作一种取向，不是疾病。是否有困扰是另一件事，它不能推出是不是无性吸引者。</li></ul>"
         },
         {
          "title": "社区定义",
-         "html": "<p>口语里 \"ace\" 有时指整个无性恋光谱，有时只指这个点，两种用法都常见。这个测试里说\"无性恋\"时，指的是这个点。</p>"
+         "html": "<p>口语里 \"ace\" 有时指整个无性吸引光谱，有时只指这个点，两种用法都常见。这个测试里说\"无性吸引\"时，指的是这个点。</p><p>中文通行译名是\"无性恋\"。不少社群成员倡议改称\"无性吸引\"：「恋」字容易让人把\"很少或从不体验性吸引\"读成\"不谈恋爱、对亲密关系没有向往\"，而这个词只讲性吸引，会不会心动、想不想谈恋爱是浪漫吸引那一边的事。这个测试从 2026 年 11 月起以\"无性吸引\"为主名，\"无性恋\"照常列出，两个叫法说的是同一件事。</p>"
         }
        ]
       },
@@ -2764,14 +2866,14 @@ window.LEXICON = {
        "id": "greysexual",
        "name": "Greysexual",
        "en": "Grey-asexual / Greysexual",
-       "zh": "灰性恋、灰色无性恋",
-       "zhStatus": "通行",
+       "zh": "灰色性吸引",
+       "zhStatus": "拟",
        "complete": true,
-       "summary": "很少、很弱或只在特定情况下体验性吸引，或者不确定自己的那种感觉算不算性吸引的人。它处在无性恋和有性恋之间的那一段。",
+       "summary": "也常译作「灰性恋」，指很少、很弱或只在特定情况下体验性吸引，或者不确定自己的那种感觉算不算性吸引的人。它处在无性吸引和有性吸引之间的那一段。",
        "facts": [
         [
          "别名",
-         "grey-ace、graysexual"
+         "grey-ace、graysexual；灰性恋、灰色无性恋（通行译名）；灰色性向（中文维基）"
         ],
         [
          "层级",
@@ -2805,11 +2907,11 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">Asexual</a></td><td>无性恋指很少或从不体验性吸引；灰性恋是性吸引存在但很弱、很少，或分不清那算不算</td></tr><tr><td><a href=\"#term/demisexual\">Demisexual</a></td><td>半性恋是灰性恋伞下的一个子类，指只有建立深厚情感连接之后才会有性吸引</td></tr><tr><td><a href=\"#term/allosexual\">Allosexual</a></td><td>有性恋的体验方式不在无性恋光谱之内；灰性恋仍在这把伞下面</td></tr><tr><td><a href=\"#term/quoisexual\">Quoisexual</a></td><td>困惑性恋讲的是分不清，或觉得概念不适用；灰性恋讲的是性吸引少、弱或不确定。两者可以同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"灰性恋就是没想清楚的无性恋。\"</b> 灰性恋是一个独立的说法。有人会长期用这个词，也有人不用。</li><li><b>\"灰性恋一定有条件。\"</b> 有没有条件因人而异。条件型只是伞下的一类，例如 demisexual。</li><li><b>\"灰性恋就是性吸引比较强的无性恋。\"</b> 灰性恋讲的是性吸引少、弱，或不确定，并不是按强弱排一个高低。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">Asexual</a></td><td>无性吸引指很少或从不体验性吸引；灰色性吸引是性吸引存在但很弱、很少，或分不清那算不算</td></tr><tr><td><a href=\"#term/demisexual\">Demisexual</a></td><td>半性吸引是灰色性吸引伞下的一个子类，指只有建立深厚情感连接之后才会有性吸引</td></tr><tr><td><a href=\"#term/allosexual\">Allosexual</a></td><td>有性吸引者的体验方式不在无性吸引光谱之内；灰色性吸引仍在这把伞下面</td></tr><tr><td><a href=\"#term/quoisexual\">Quoisexual</a></td><td>困惑性吸引讲的是分不清，或觉得概念不适用；灰色性吸引讲的是性吸引少、弱或不确定。两者可以同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"灰色性吸引就是没想清楚的无性吸引。\"</b> 灰色性吸引是一个独立的说法。有人会长期用这个词，也有人不用。</li><li><b>\"灰色性吸引一定有条件。\"</b> 有没有条件因人而异。条件型只是伞下的一类，例如 demisexual。</li><li><b>\"灰色性吸引只是比无性吸引多一点性吸引。\"</b> 灰色性吸引讲的是性吸引少、弱，或不确定，并不是按强弱排一个高低。</li></ul>"
         },
         {
          "title": "社区定义",
-         "html": "<p>对灰色这一段的边界，社群的看法不完全一样：有人只把\"很少、很弱\"算进来，也有人把\"不确定那算不算\"算进来。这个测试两种都包括。</p>"
+         "html": "<p>对灰色这一段的边界，社群的看法不完全一样：有人只把\"很少、很弱\"算进来，也有人把\"不确定那算不算\"算进来。这个测试两种都包括。</p><p>中文通行译名是\"灰性恋\"\"灰色无性恋\"。这个测试从 2026 年 11 月起改以\"灰色性吸引\"为主名，和无性吸引、无性吸引光谱用同一套说法；这是本测试的拟名，旧叫法照常列出，说的是同一件事。</p>"
         }
        ]
       },
@@ -2817,14 +2919,14 @@ window.LEXICON = {
        "id": "demisexual",
        "name": "Demisexual",
        "en": "Demisexual",
-       "zh": "半性恋",
-       "zhStatus": "通行",
+       "zh": "半性吸引",
+       "zhStatus": "拟",
        "complete": true,
-       "summary": "只有在与某人建立深厚的情感连接之后，才可能对其产生性吸引的人。关键在于吸引本身需要连接才会出现，而不是\"愿意发生性关系\"需要连接。",
+       "summary": "也常译作「半性恋」，指只有在与某人建立深厚的情感连接之后，才可能对其产生性吸引的人。关键在于吸引本身需要连接才会出现，而不是\"愿意发生性关系\"需要连接。",
        "facts": [
         [
          "别名",
-         "—"
+         "半性恋（通行译名）"
         ],
         [
          "层级",
@@ -2858,7 +2960,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demiromantic\">半浪漫倾向</a>（Demiromantic）</td><td>同样需要先有情感连接，但讲的是浪漫吸引。两者可以同时出现，也可以只有一种</td></tr><tr><td><a href=\"#term/greysexual\">Grey-asexual / Greysexual</a></td><td>灰性恋是伞，半性恋是伞下的一个子类，指需要条件的那一种</td></tr><tr><td><a href=\"#term/recipsexual\">Recipsexual</a></td><td>互惠性恋需要先知道对方对自己有性吸引；半性恋需要先有深厚的情感连接。两种条件不同</td></tr><tr><td><a href=\"#term/asexual\">Asexual</a></td><td>无性恋指很少或从不体验性吸引；半性恋在情感连接之后会有性吸引，只是需要这个条件</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"半性恋就是只对很熟的人才有性方面的想法。\"</b> 这个词讲的是情感连接，不是熟不熟。两者不完全一样。</li><li><b>\"半性恋一定要恋爱之后才有性吸引。\"</b> 连接不一定是恋爱关系，它指的是深厚的情感连接；和是否恋爱是两回事。</li><li><b>\"半性恋的人对性一定保守。\"</b> 对性的态度因人而异，和吸引需要什么条件没有直接关系。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demiromantic\">半浪漫倾向</a>（Demiromantic）</td><td>同样需要先有情感连接，但讲的是浪漫吸引。两者可以同时出现，也可以只有一种</td></tr><tr><td><a href=\"#term/greysexual\">Grey-asexual / Greysexual</a></td><td>灰色性吸引是伞，半性吸引是伞下的一个子类，指需要条件的那一种</td></tr><tr><td><a href=\"#term/recipsexual\">Recipsexual</a></td><td>互惠性吸引需要先知道对方对自己有性吸引；半性吸引需要先有深厚的情感连接。两种条件不同</td></tr><tr><td><a href=\"#term/asexual\">Asexual</a></td><td>无性吸引指很少或从不体验性吸引；半性吸引在情感连接之后会有性吸引，只是需要这个条件</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"半性吸引就是只对很熟的人才有性方面的想法。\"</b> 这个词讲的是情感连接，不是熟不熟。两者不完全一样。</li><li><b>\"半性吸引一定要恋爱之后才有性吸引。\"</b> 连接不一定是恋爱关系，它指的是深厚的情感连接；和是否恋爱是两回事。</li><li><b>\"半性吸引的人对性一定保守。\"</b> 对性的态度因人而异，和吸引需要什么条件没有直接关系。</li></ul>"
         }
        ]
       },
@@ -2866,7 +2968,7 @@ window.LEXICON = {
        "id": "recipsexual",
        "name": "Recipsexual",
        "en": "Recipsexual / Reciprosexual",
-       "zh": "互惠性恋",
+       "zh": "互惠性吸引",
        "zhStatus": "拟，与浪漫侧对齐",
        "complete": true,
        "summary": "只有在知道对方对自己也有性吸引之后，才可能对对方产生性吸引的人。",
@@ -2903,11 +3005,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>性吸引要等对方先有意才会出现，对方的心意是这里的关键条件</li><li>这里讲的是\"得知对方有意\"，并不限定是怎样得知的</li><li>它是条件型的一种，和半性恋的条件不同：一个看情感连接，一个看对方有没有意思</li><li>吸引是在知道对方有意之后才出现的，是回应式的</li></ul>"
+         "html": "<ul><li>性吸引要等对方先有意才会出现，对方的心意是这里的关键条件</li><li>这里讲的是\"得知对方有意\"，并不限定是怎样得知的</li><li>它是条件型的一种，和半性吸引的条件不同：一个看情感连接，一个看对方有没有意思</li><li>吸引是在知道对方有意之后才出现的，是回应式的</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/akoisexual\">单向性恋</a>（Akoisexual）</td><td>单向性恋是有吸引但不希望被回应；互惠性恋是要先知道对方有意才会有吸引。两者方向不同</td></tr><tr><td><a href=\"#term/demisexual\">半性恋</a>（Demisexual）</td><td>半性恋需要情感连接，互惠性恋需要知道对方有性吸引。两种条件可以同时符合</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"互惠性恋的人不敢主动。\"</b> 这个词讲的是吸引的条件，不是主动性或胆量。</li><li><b>\"互惠性恋的人只能和对方在一起。\"</b> 这个词讲的是吸引的条件，和怎样相处、要不要建立关系没有直接关系。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/akoisexual\">单向性吸引</a>（Akoisexual）</td><td>单向性吸引是有吸引但不希望被回应；互惠性吸引是要先知道对方有意才会有吸引。两者方向不同</td></tr><tr><td><a href=\"#term/demisexual\">半性吸引</a>（Demisexual）</td><td>半性吸引需要情感连接，互惠性吸引需要知道对方有性吸引。两种条件可以同时符合</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"互惠性吸引的人不敢主动。\"</b> 这个词讲的是吸引的条件，不是主动性或胆量。</li><li><b>\"互惠性吸引的人只能和对方在一起。\"</b> 这个词讲的是吸引的条件，和怎样相处、要不要建立关系没有直接关系。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -2919,14 +3021,14 @@ window.LEXICON = {
        "id": "fraysexual",
        "name": "Fraysexual",
        "en": "Fraysexual",
-       "zh": "磨损性恋",
+       "zh": "磨损性吸引",
        "zhStatus": "拟",
        "complete": true,
-       "summary": "性吸引主要指向还不太熟悉的人，随着了解加深而减弱的人。它和半性恋的方向相反。",
+       "summary": "性吸引主要指向还不太熟悉的人，随着了解加深而减弱的人。它和半性吸引的方向相反。",
        "facts": [
         [
          "别名",
-         "—"
+         "ignotasexual；磨散无性吸引（社群叫法）"
         ],
         [
          "层级",
@@ -2950,17 +3052,17 @@ window.LEXICON = {
         ],
         [
          "来源",
-         "主树通用词；逐条来源待补"
+         "主树通用词；逐条来源待补；别名、核心特征和误解取自社群流传资料（未另找到出处）"
         ]
        ],
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>吸引多出现在刚认识、还不太了解对方的阶段</li><li>随着了解加深，对这个人的性吸引会慢慢减弱</li><li>说的是吸引随了解而变化，不是对亲密关系或承诺的态度</li><li>和半性恋方向相反：半性恋是建立了深厚连接才有吸引，磨损性恋是了解越多吸引越淡</li></ul>"
+         "html": "<ul><li>吸引主要出现在和对方还没有情感纽带的时候，比如刚认识、还不太了解</li><li>和对方形成情感纽带后，对这个人的性吸引会减弱或消失</li><li>什么算纽带、要多深才会消退，因人而异：有人刚知道对方的名字就淡了，有人要深入了解之后，也有人是进入浪漫关系之后；可以突然消失，也可以慢慢淡掉</li><li>和半性吸引方向相反：半性吸引是建立了深厚连接才有吸引，磨损性吸引是了解越多吸引越淡</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demisexual\">半性恋</a>（Demisexual）</td><td>方向相反：半性恋在建立连接之后才会有性吸引，磨损性恋在了解之后吸引会减弱</td></tr><tr><td>新鲜感消退</td><td>一般的新鲜感过去，讲的是情感或兴趣的变化；磨损性恋讲的是对特定对象的性吸引随了解而变弱</td></tr><tr><td>害怕承诺</td><td>磨损性恋讲的是吸引随了解的变化，不是对承诺的态度，两者是不同的事</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"磨损性恋就是对人没兴趣，或只图新鲜。\"</b> 它描述的是性吸引随了解而变化，不是对人整体的评价，也不是对新鲜感的追求。</li><li><b>\"磨损性恋的人一定害怕承诺。\"</b> 这个词不描述对承诺的态度。</li><li><b>\"一开始一定要很有感觉。\"</b> 这个词只讲吸引主要出现在还不熟悉的时候，并不规定强度。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demisexual\">半性吸引</a>（Demisexual）</td><td>方向相反：半性吸引在建立连接之后才会有性吸引，磨损性吸引在了解之后吸引会减弱</td></tr><tr><td>新鲜感消退</td><td>一般的新鲜感过去，讲的是情感或兴趣的变化；磨损性吸引讲的是对特定对象的性吸引随了解而变弱</td></tr><tr><td>害怕承诺</td><td>磨损性吸引讲的是吸引随了解的变化，不是对承诺的态度，两者是不同的事</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"磨损性吸引就是对人没兴趣，或只图新鲜。\"</b> 它描述的是性吸引随了解而变化，不是对人整体的评价，也不是对新鲜感的追求。</li><li><b>\"磨损性吸引的人一定害怕承诺。\"</b> 这个词不描述对承诺的态度。</li><li><b>\"一开始一定要很有感觉。\"</b> 这个词只讲吸引主要出现在还不熟悉的时候，并不规定强度。</li><li><b>\"吸引一定是慢慢变淡的。\"</b> 消退的节奏因人而异，可以是突然消失，也可以随着纽带变深逐渐减弱。</li></ul>"
         }
        ]
       },
@@ -2968,7 +3070,7 @@ window.LEXICON = {
        "id": "akoisexual",
        "name": "Akoisexual",
        "en": "Akoisexual / Lithsexual",
-       "zh": "单向性恋",
+       "zh": "单向性吸引",
        "zhStatus": "拟",
        "complete": true,
        "summary": "会体验性吸引，但不希望被对方回应，或者被回应之后吸引就消退的人。",
@@ -3005,11 +3107,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>会对某个具体的人有性方面的吸引，这一点和有性恋相似</li><li>对\"被回应\"这件事有自己的态度：可能不希望对方有同样的回应</li><li>也可能是被回应、或进入关系之后，吸引就消退、失去兴趣</li><li>说的是对回应的态度，不是有没有吸引</li></ul>"
+         "html": "<ul><li>会对某个具体的人有性方面的吸引，这一点和有性吸引者相似</li><li>对\"被回应\"这件事有自己的态度：可能不希望对方有同样的回应</li><li>也可能是被回应、或进入关系之后，吸引就消退、失去兴趣</li><li>说的是对回应的态度，不是有没有吸引</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋是很少或从不体验性吸引；单向性恋有性吸引，只是不希望被回应，或被回应后消退</td></tr><tr><td><a href=\"#term/recipsexual\">互惠性恋</a>（Recipsexual）</td><td>互惠性恋要先知道对方有意，才会有吸引；单向性恋是有吸引，却不希望对方回应。两者方向不同</td></tr><tr><td><a href=\"#term/disakoisexual\">被欲性恋</a>（Disakoisexual）</td><td>被欲性恋是希望被别人吸引，自己却无法回应；单向性恋是自己有吸引，却不希望对方回应。两者方向相反</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"单向性恋就是暗恋。\"</b> 不一定。这个词讲的是对回应的态度，不一定是藏着不说的暗恋。</li><li><b>\"不希望被回应，就是不喜欢对方。\"</b> 吸引和不希望被回应可以同时存在，这个词讲的正是这一点。</li><li><b>\"单向性恋的人不会谈恋爱。\"</b> 这个词讲的是性吸引和回应，和是否恋爱没有直接关系。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引是很少或从不体验性吸引；单向性吸引有性吸引，只是不希望被回应，或被回应后消退</td></tr><tr><td><a href=\"#term/recipsexual\">互惠性吸引</a>（Recipsexual）</td><td>互惠性吸引要先知道对方有意，才会有吸引；单向性吸引是有吸引，却不希望对方回应。两者方向不同</td></tr><tr><td><a href=\"#term/disakoisexual\">被欲性恋</a>（Disakoisexual）</td><td>被欲性恋是希望被别人吸引，自己却无法回应；单向性吸引是自己有吸引，却不希望对方回应。两者方向相反</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"单向性吸引就是暗恋。\"</b> 不一定。这个词讲的是对回应的态度，不一定是藏着不说的暗恋。</li><li><b>\"不希望被回应，就是不喜欢对方。\"</b> 吸引和不希望被回应可以同时存在，这个词讲的正是这一点。</li><li><b>\"单向性吸引的人不会谈恋爱。\"</b> 这个词讲的是性吸引和回应，和是否恋爱没有直接关系。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -3021,10 +3123,10 @@ window.LEXICON = {
        "id": "aceflux",
        "name": "Aceflux",
        "en": "Aceflux",
-       "zh": "波动无性恋",
+       "zh": "波动无性吸引",
        "zhStatus": "拟",
        "complete": true,
-       "summary": "性吸引的强弱随时间在无性恋光谱上来回波动的人。",
+       "summary": "性吸引的强弱随时间在无性吸引光谱上来回波动的人。",
        "facts": [
         [
          "别名",
@@ -3062,7 +3164,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/acespike\">尖峰无性恋</a>（Acespike）</td><td>尖峰是平时几乎没有，偶尔出现一次强烈而短暂的高峰；波动是强弱持续地变化，不一定有明显的尖峰</td></tr><tr><td><a href=\"#term/greysexual\">灰性恋</a>（Greysexual）</td><td>灰性恋讲的是性吸引的强度或确定性；波动无性恋讲的是随时间的变化。两者可以同时符合</td></tr><tr><td><a href=\"#term/quoisexual\">困惑性恋</a>（Quoisexual）</td><td>困惑性恋讲的是分不清或不适用；波动讲的是随时间变化。两者不一定同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"波动无性恋就是没想清楚自己的取向。\"</b> 它描述的是吸引强弱随时间的变化，不是对自己认识的判断。</li><li><b>\"'波动'说明这个人不稳定，有问题。\"</b> 这个词只描述变化的模式，不评价一个人的稳定性或心理状态。</li><li><b>\"有过一次吸引，就是波动无性恋。\"</b> 它讲的是一段时间里的整体节奏，单次体验不决定归属。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/acespike\">尖峰无性吸引</a>（Acespike）</td><td>尖峰是平时几乎没有，偶尔出现一次强烈而短暂的高峰；波动是强弱持续地变化，不一定有明显的尖峰</td></tr><tr><td><a href=\"#term/greysexual\">灰色性吸引</a>（Greysexual）</td><td>灰色性吸引讲的是性吸引的强度或确定性；波动无性吸引讲的是随时间的变化。两者可以同时符合</td></tr><tr><td><a href=\"#term/quoisexual\">困惑性吸引</a>（Quoisexual）</td><td>困惑性吸引讲的是分不清或不适用；波动讲的是随时间变化。两者不一定同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"波动无性吸引就是没想清楚自己的取向。\"</b> 它描述的是吸引强弱随时间的变化，不是对自己认识的判断。</li><li><b>\"'波动'说明这个人不稳定，有问题。\"</b> 这个词只描述变化的模式，不评价一个人的稳定性或心理状态。</li><li><b>\"有过一次吸引，就是波动无性吸引。\"</b> 它讲的是一段时间里的整体节奏，单次体验不决定归属。</li></ul>"
         }
        ]
       },
@@ -3070,7 +3172,7 @@ window.LEXICON = {
        "id": "acespike",
        "name": "Acespike",
        "en": "Acespike",
-       "zh": "尖峰无性恋",
+       "zh": "尖峰无性吸引",
        "zhStatus": "拟",
        "complete": true,
        "summary": "平时几乎没有性吸引，偶尔会出现强烈而短暂的性吸引\"尖峰\"的人。",
@@ -3111,7 +3213,162 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aceflux\">波动无性恋</a>（Aceflux）</td><td>波动讲的是强弱持续地变化；尖峰讲的是平时几乎没有，偶尔出现一次明显的高峰</td></tr><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋讲的是很少或从不体验性吸引。尖峰无性恋承认偶尔会有强烈的一段，这是两者的差别</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"尖峰无性恋是不正常的性吸引。\"</b> 它只描述出现的节奏，不做好坏或正常与否的判断。</li><li><b>\"尖峰一定很强烈。\"</b> \"尖峰\"是相对平时而言更明显、更短暂的一段，强弱因人而异。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aceflux\">波动无性吸引</a>（Aceflux）</td><td>波动讲的是强弱持续地变化；尖峰讲的是平时几乎没有，偶尔出现一次明显的高峰</td></tr><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是很少或从不体验性吸引。尖峰无性吸引承认偶尔会有强烈的一段，这是两者的差别</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"尖峰无性吸引是不正常的性吸引。\"</b> 它只描述出现的节奏，不做好坏或正常与否的判断。</li><li><b>\"尖峰一定很强烈。\"</b> \"尖峰\"是相对平时而言更明显、更短暂的一段，强弱因人而异。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "desinosexual",
+       "name": "Desinosexual",
+       "en": "Desinosexual",
+       "zh": "终止性吸引",
+       "zhStatus": "拟；只沿用前缀名，不套用浪漫侧\"喜欢／爱\"的释义",
+       "complete": true,
+       "summary": "无性吸引光谱上的一种吸引：没有完整的性吸引，可能有视觉吸引或其他形式的吸引。对某个特定的人，可能会欣赏，也有唤起，但不想与其发生性关系；吸引到这一步就结束了。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "子类"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>（按 lgbtqia.wiki；02 的 4.6 未指定上位类）"
+        ],
+        [
+         "对应的轴",
+         "② 频率与强度（吸引不充分或不完整）"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "C（只作\"可能\"，不作主结果）"
+        ],
+        [
+         "来源",
+         "AVENwiki；已核实（简短词条）；lgbtqia.wiki 词条（定义依据，与 02 的 4.6 大体相符）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>不是完整的性吸引，但可能有视觉吸引或其他形式的吸引</li><li>对某个特定的人，可能欣赏、有唤起，却不想和对方发生性关系</li><li>吸引停在欣赏和唤起这一步，没有继续走到想发生性关系</li><li>它描述的是吸引完整到什么程度，不是对性本身的态度</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/greysexual\">灰色性吸引</a>（Greysexual）</td><td>灰色性吸引讲的是性吸引很少、很弱，或不确定那算不算；终止性吸引讲的是吸引停在欣赏和唤起这一步，没有完整的性吸引</td></tr><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是性吸引很少或从不；终止性吸引的人可能有视觉吸引或其他吸引，但不是完整的性吸引</td></tr><tr><td><a href=\"#term/desinoromantic\">终止浪漫倾向</a>（Desinoromantic，浪漫侧）</td><td>浪漫侧的对应说法，讲的是浪漫吸引停在哪一步</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"终止性吸引就是完全没有吸引。\"</b> 它描述的是吸引停在欣赏和唤起这一步，可能仍然有视觉吸引或其他形式的吸引。</li><li><b>\"有唤起，就一定有完整的性吸引。\"</b> 这个词讲的正是唤起之后没有想发生性关系的情况，唤起和完整的性吸引不是一回事。</li><li><b>\"终止性吸引一定是对性的排斥。\"</b> 这个词讲的是吸引的完整程度，不描述对性的态度。</li></ul>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>这个词在 2021 年 9 月被造出。词根 desino 来自拉丁语，意思是离开或停止。</p>"
+        }
+       ]
+      },
+      {
+       "id": "apressexual",
+       "name": "Apressexual",
+       "en": "Apressexual",
+       "zh": "后置性吸引",
+       "zhStatus": "拟",
+       "complete": true,
+       "summary": "后置性吸引（Apressexual，拟）指的是：只有先对某人有过其他类型的吸引（比如友情、欣赏），才可能对这个人产生性吸引。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "子类（条件型）"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/greysexual\">Grey-asexual / Greysexual</a>"
+        ],
+        [
+         "对应的轴",
+         "③ 触发条件（需先有另一种吸引）"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "C（只作\"可能\"，不作主结果）"
+        ],
+        [
+         "来源",
+         "AVENwiki；检索摘录有性侧独立定义，正文访问受限"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>不会一开始就对某人产生性吸引，需要先有其他类型的吸引。</li><li>这是先后顺序的问题，不规定要等多久。</li><li>是否使用这个说法，由本人决定。</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demisexual\">Demisexual</a></td><td>条件是要先与某人建立深厚的情感连接；Apressexual 的条件是先有其他类型的吸引，两者的前提不同。</td></tr><tr><td><a href=\"#term/apresromantic\">Apresromantic</a></td><td>浪漫侧的对应标签，讲的是浪漫吸引。</td></tr></tbody></table></div>"
+        }
+       ]
+      },
+      {
+       "id": "coeosexual",
+       "name": "Coeosexual",
+       "en": "Coeosexual",
+       "zh": "初遇性吸引",
+       "zhStatus": "拟",
+       "complete": true,
+       "summary": "只有在初次见面时就已经产生的性吸引才会存在的人。这种感觉有点像\"一见钟情\"，之后不会从无到有地产生。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "子类（条件型）"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>（按 lgbtqia.wiki，它只说在无性吸引光谱上，与半性吸引相对）"
+        ],
+        [
+         "对应的轴",
+         "③ 触发条件（初遇时是否已有吸引）"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "C（只作\"可能\"，不作主结果）"
+        ],
+        [
+         "来源",
+         "Tumgik 社群介绍转载；lgbtqia.wiki 词条（转引一条 Reddit 讨论）；已核实（转述定义）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>性吸引的产生时间是重点：只有初见时就有的，才属于这个词</li><li>对还不太了解的人也可能有性吸引，这种吸引可能转瞬即逝，也可能不够强，不足以发展成关系</li><li>讲的是性吸引，不是浪漫方面的心动，和是否想恋爱是两回事</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demisexual\">半性吸引</a>（Demisexual）</td><td>两者方向相反：半性吸引要先建立深厚的情感连接才会有性吸引，初遇性吸引则要在初次见面时就已经有</td></tr><tr><td><a href=\"#term/fraysexual\">磨损性吸引</a>（Fraysexual）</td><td>磨损性吸引讲的是性吸引随着了解而减弱；初遇性吸引讲的是吸引在初见时是否已经产生。两者可以同时符合</td></tr><tr><td>一见钟情</td><td>一见钟情多指浪漫方面的心动；初遇性吸引讲的是性吸引，两者不是同一件事</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"初遇性吸引就是对第一次见面的人都有性吸引。\"</b> 这个词讲的是吸引是否在初次见面时产生，并不是每个人初见都会有。</li><li><b>\"只要见过一面，就是初遇性吸引。\"</b> 必须是初见时就已经有的吸引，之后才出现的，不属于这个词。</li><li><b>\"初遇性吸引的吸引一定很强烈。\"</b> 吸引可能转瞬即逝，也可能不够强，不足以发展成关系。</li></ul>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>这个词出自 Reddit 上的一条讨论。和它相近的说法有单向性吸引、磨损性吸引，它们都讲性吸引在什么情况下出现或消失。</p><p>词根 coeo 来自拉丁语，意思是相遇、结合。</p>"
         }
        ]
       },
@@ -3119,7 +3376,7 @@ window.LEXICON = {
        "id": "quoisexual",
        "name": "Quoisexual",
        "en": "Quoisexual",
-       "zh": "困惑性恋",
+       "zh": "困惑性吸引",
        "zhStatus": "拟",
        "complete": true,
        "summary": "无法确定自己是否体验性吸引，或无法把它与其他吸引区分开，或觉得\"性吸引\"这个概念对自己不适用的人。",
@@ -3160,11 +3417,11 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/vexsexual\">迷惑性恋</a>（Vexsexual，延伸区）</td><td>困惑性恋讲的是分不清、无法区分，或觉得不适用；迷惑性恋讲的是认为自己在光谱内，却因为不理解性吸引而无法进一步描述。两者很接近，可以重叠</td></tr><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋讲的是性吸引很少或从不；困惑性恋讲的是分不清。两者可以同时出现</td></tr><tr><td><a href=\"#term/pseudosexual\">伪性恋</a>（Pseudosexual，延伸区）</td><td>伪性恋可以是其他吸引看起来像性吸引，也可以是分不清类别；两者可以重叠</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"困惑性恋就是没有性吸引。\"</b> 它讲的是分类上的困惑，不直接说明有没有性吸引。</li><li><b>\"困惑性恋的人只是还没搞懂。\"</b> 觉得概念不适用，本身也是一种体验，不需要被\"搞懂\"。</li><li><b>\"困惑性恋一定不属于无性恋光谱。\"</b> 是否在光谱内由本人决定，这个词不替本人下结论。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/vexsexual\">迷惑性恋</a>（Vexsexual，延伸区）</td><td>困惑性吸引讲的是分不清、无法区分，或觉得不适用；迷惑性恋讲的是认为自己在光谱内，却因为不理解性吸引而无法进一步描述。两者很接近，可以重叠</td></tr><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是性吸引很少或从不；困惑性吸引讲的是分不清。两者可以同时出现</td></tr><tr><td><a href=\"#term/pseudosexual\">伪性恋</a>（Pseudosexual，延伸区）</td><td>伪性恋可以是其他吸引看起来像性吸引，也可以是分不清类别；两者可以重叠</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"困惑性吸引就是没有性吸引。\"</b> 它讲的是分类上的困惑，不直接说明有没有性吸引。</li><li><b>\"困惑性吸引的人只是还没搞懂。\"</b> 觉得概念不适用，本身也是一种体验，不需要被\"搞懂\"。</li><li><b>\"困惑性吸引一定不属于无性吸引光谱。\"</b> 是否在光谱内由本人决定，这个词不替本人下结论。</li></ul>"
         },
         {
          "title": "社区定义",
-         "html": "<p>关于它是否属于无性恋光谱，社群的看法并不一致。这个测试把它放在无性恋光谱之下，但是否属于，由本人决定。</p>"
+         "html": "<p>关于它是否属于无性吸引光谱，社群的看法并不一致。这个测试把它放在无性吸引光谱之下，但是否属于，由本人决定。</p>"
         }
        ]
       },
@@ -3172,7 +3429,7 @@ window.LEXICON = {
        "id": "aegosexual",
        "name": "Aegosexual",
        "en": "Aegosexual",
-       "zh": "旁观性恋",
+       "zh": "旁观性吸引",
        "zhStatus": "拟",
        "complete": true,
        "summary": "自己和性之间有\"断开\"感的人：可能有性方面的想象，也会被性相关的内容唤起，但并不渴望自己作为当事人和别人发生性行为。",
@@ -3213,7 +3470,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td>性欲</td><td>性欲是身体上的冲动；旁观性恋讲的是自己是否想作为当事人参与。两者可以同时有，也可以分开</td></tr><tr><td><a href=\"#term/autosexual\">自我性恋</a>（Autosexual，延伸区）</td><td>自我性恋讲的是吸引指向自己；旁观性恋讲的是自己不渴望参与。两者讲的是不同的事</td></tr><tr><td><a href=\"#term/cupiosexual\">渴望性恋</a>（Cupiosexual）</td><td>渴望性恋希望拥有性关系或性行为；旁观性恋不渴望自己作为当事人参与。两者方向相反</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"旁观性恋就是只能看、不能参与。\"</b> 它讲的是是否渴望自己参与，不是规定能做什么、不能做什么。</li><li><b>\"旁观性恋是一种性功能的问题。\"</b> 这个词描述的是对自己参与的渴望，不说明身体功能，也不说明原因。</li><li><b>\"这是一种病理或偏差。\"</b> 这个词不是诊断。它的旧称带有病理化的色彩，社群因此改用现在的名称。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td>性欲</td><td>性欲是身体上的冲动；旁观性吸引讲的是自己是否想作为当事人参与。两者可以同时有，也可以分开</td></tr><tr><td><a href=\"#term/autosexual\">自体性吸引</a>（Autosexual）</td><td>自体性吸引讲的是吸引指向自己；旁观性吸引讲的是自己不渴望参与。两者讲的是不同的事</td></tr><tr><td><a href=\"#term/cupiosexual\">渴望性吸引</a>（Cupiosexual）</td><td>渴望性吸引希望拥有性关系或性行为；旁观性吸引不渴望自己作为当事人参与。两者方向相反</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"旁观性吸引就是只能看、不能参与。\"</b> 它讲的是是否渴望自己参与，不是规定能做什么、不能做什么。</li><li><b>\"旁观性吸引是一种性功能的问题。\"</b> 这个词描述的是对自己参与的渴望，不说明身体功能，也不说明原因。</li><li><b>\"这是一种病理或偏差。\"</b> 这个词不是诊断。它的旧称带有病理化的色彩，社群因此改用现在的名称。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -3225,7 +3482,7 @@ window.LEXICON = {
        "id": "cupiosexual",
        "name": "Cupiosexual",
        "en": "Cupiosexual",
-       "zh": "渴望性恋",
+       "zh": "渴望性吸引",
        "zhStatus": "拟",
        "complete": true,
        "summary": "不（或很少）体验性吸引，但希望拥有性关系或性行为的人。",
@@ -3262,11 +3519,170 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>性吸引很少或没有，这一点和无性恋相近</li><li>但对性关系或性行为本身有想要的意愿</li><li>这份意愿是想拥有性关系，不是被某个具体的人吸引</li><li>是可以叠加的标签，可以和其他无性恋的说法一起用</li></ul>"
+         "html": "<ul><li>性吸引很少或没有，这一点和无性吸引相近</li><li>但对性关系或性行为本身有想要的意愿</li><li>这份意愿是想拥有性关系，不是被某个具体的人吸引</li><li>是可以叠加的标签，可以和其他无性吸引光谱上的说法一起用</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋讲的是性吸引很少或从不；渴望性恋讲的是想要性关系或性行为。两者可以同时存在</td></tr><tr><td>性欲</td><td>性欲是身体上的冲动；渴望性恋讲的是想拥有性关系或性行为的意愿。两者是不同的事</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性恋</a>（Aegosexual）</td><td>旁观性恋不渴望自己作为当事人参与；渴望性恋希望拥有性关系。两者方向相反</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"渴望性恋就是性欲很强。\"</b> 想要性关系的意愿和性欲的高低是两回事。</li><li><b>\"渴望性恋一定会去发生性关系。\"</b> 意愿不等于行动。是否实际发生由本人决定，也受很多因素影响。</li><li><b>\"渴望性恋一定要有一个特定的对象。\"</b> 这个词讲的是对性关系的意愿，不规定对象是谁。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是性吸引很少或从不；渴望性吸引讲的是想要性关系或性行为。两者可以同时存在</td></tr><tr><td>性欲</td><td>性欲是身体上的冲动；渴望性吸引讲的是想拥有性关系或性行为的意愿。两者是不同的事</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性吸引</a>（Aegosexual）</td><td>旁观性吸引不渴望自己作为当事人参与；渴望性吸引希望拥有性关系。两者方向相反</td></tr><tr><td><a href=\"#term/sex-favorable\">性喜好</a>（sex-favorable）</td><td>性喜好描述乐于参与性行为的态度；渴望性吸引强调很少或没有性吸引，但仍希望拥有性关系或性行为。两者可以重叠，但并不等同</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"渴望性吸引就是性欲很强。\"</b> 想要性关系的意愿和性欲的高低是两回事。</li><li><b>\"渴望性吸引一定会去发生性关系。\"</b> 意愿不等于行动。是否实际发生由本人决定，也受很多因素影响。</li><li><b>\"渴望性吸引一定要有一个特定的对象。\"</b> 这个词讲的是对性关系的意愿，不规定对象是谁。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "fictosexual",
+       "name": "Fictosexual",
+       "en": "Fictosexual",
+       "zh": "虚拟角色性吸引",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "也常叫「纸性恋」，指性吸引主要或只指向虚构角色的人。是否属于无性吸引光谱存在争议，这个词本身不决定归属。",
+       "facts": [
+        [
+         "别名",
+         "纸性恋（社群叫法）；fictisexual、fictonsexual、fictiosexual、fictionsexual、fictionalsexual（拼写变体）"
+        ],
+        [
+         "层级",
+         "节点·可叠加"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>（是否属于光谱有争议，不单独推出归属）"
+        ],
+        [
+         "对应的轴",
+         "⑦ 对象类型与可及性"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "B"
+        ],
+        [
+         "来源",
+         "学术文献、社群 wiki；已核实；别名、对象范围与相关词取自社群流传资料（未另找到出处）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>性吸引的对象是小说、动漫、游戏、影视等作品里的虚构角色</li><li>对现实中的人，性吸引可能很少或没有；也有人对虚构角色有明显的性吸引，同时对现实中的人也有，或者性取向只是受虚构角色影响。吸引可以只有这一类，也可以和别的吸引并存</li><li>这个词讲的是对象是谁，不说明吸引的强弱或频率</li><li>是否属于无性吸引光谱，不同人的看法不同，由本人判断</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictoromantic\">虚拟浪漫倾向</a>（Fictoromantic，浪漫侧）</td><td>虚拟浪漫倾向讲的是浪漫吸引指向虚构角色；虚拟角色性吸引讲的是性吸引指向虚构角色。两者可以同时出现</td></tr><tr><td><a href=\"#term/proculsexual\">遥远性恋</a>（Proculsexual）</td><td>遥远性恋的重点是明知无法建立现实关系，对象可以是虚构角色，也可以是现实中的人；虚拟角色性吸引的重点是对象是虚构的</td></tr><tr><td><a href=\"#term/adexsexual\">抽象性恋</a>（Adexsexual）</td><td>抽象性恋的对象是抽象、非特定的想象；虚拟角色性吸引的对象是有名字、有形象的虚构角色</td></tr><tr><td><a href=\"#term/fictoasexual\">仅虚拟角色性吸引</a>（Fictoasexual）</td><td>只对虚构角色有性吸引，对现实中的人没有；虚拟角色性吸引是总称，可以包含现实中的吸引</td></tr><tr><td><a href=\"#term/semifictosexual\">现实＋虚拟角色性吸引</a>（Semifictosexual）</td><td>对虚构角色和现实中的人都有性吸引</td></tr><tr><td>真实角色性吸引（Veritasexual）</td><td>虚拟角色性吸引的反义词，指性吸引的对象是真实的人</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"喜欢某个角色或作品，就是虚拟角色性吸引。\"</b> 喜欢某个角色，不等于性吸引指向这个角色。要看的是性吸引的指向。</li><li><b>\"虚拟角色性吸引就是不正常的幻想。\"</b> 这个词讲的是吸引指向的对象，不评价幻想本身。</li><li><b>\"虚拟角色性吸引一定属于无性吸引光谱。\"</b> 是否属于光谱有争议，不能单凭这个词推出。</li></ul>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>这个词的来源包括学术研究和社群资料，对它是否属于无性吸引光谱，两边的看法并不一致：有的社群资料把它直接算作无性吸引光谱里的一类，也有人认为要看本人的整体体验。研究上也有人讨论过对虚构角色的爱与欲望。</p><p>中文里，对动漫角色的性吸引和对虚构角色的性吸引，都被叫作虚拟角色性吸引。在东亚，尤其是日语语境里与“二次元”相关的人群，有自己的亚文化圈。</p>"
+        }
+       ]
+      },
+      {
+       "id": "autosexual",
+       "name": "Autosexual",
+       "en": "Autosexual",
+       "zh": "自体性吸引",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "对自己产生性吸引的人。也可能同时对别人有性吸引；这个词本身不决定是否属于无性吸引光谱。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "节点·可叠加"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>（树中位置只作导航，不单独推出归属）"
+        ],
+        [
+         "对应的轴",
+         "⑦ 对象类型与可及性"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "B"
+        ],
+        [
+         "来源",
+         "The Auto Spectrum；已核实（社群自述资料）；较窄的用法取自社群流传资料（未另找到出处）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>性吸引指向的对象是自己</li><li>可以只对自己有，也可以同时对别人有</li><li>这个词讲的是吸引指向谁，不说明行为，也不说明要不要和别人发生关系</li><li>树里把它放在 ace-spec 下面只作导航，是否属于光谱要看整体的体验</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/autoromantic\">自我浪漫倾向</a>（Autoromantic，浪漫侧）</td><td>自我浪漫倾向讲的是浪漫吸引指向自己；自体性吸引讲的是性吸引指向自己。两者可以分开，也可以同时有</td></tr><tr><td>自伴侣（self-partnered）</td><td>自伴侣讲的是关系与生活的安排，不是吸引指向谁。两者讲的是不同的事</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性吸引</a>（Aegosexual）</td><td>旁观性吸引讲的是自己是否渴望作为当事人参与；自体性吸引讲的是吸引指向自己</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"自体性吸引就是自恋。\"</b> 这个词讲的是吸引指向谁，不评价一个人的性格或自尊心。</li><li><b>\"对自己有性吸引，就不能对别人有。\"</b> 两者可以同时存在。</li><li><b>\"自体性吸引一定属于无性吸引光谱。\"</b> 树里放在那一侧只作导航，是否属于光谱不能单凭这个词推出。</li></ul>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>这个词有两种用法。较宽的用法是：对自己有性吸引，也可以同时对别人有。较窄的用法是：通常或完全只对自己有性吸引，对别人感受不到性吸引，常被放在无性吸引光谱里。社群里也有人把它归在“自体光谱”这把伞下，同属一把伞的还有自我浪漫倾向（Autoromantic）。</p>"
+        }
+       ]
+      },
+      {
+       "id": "bellussexual",
+       "name": "Bellussexual",
+       "en": "Bellussexual",
+       "zh": "美感性恋",
+       "zhStatus": "拟，与浪漫侧对齐",
+       "complete": true,
+       "summary": "对某些性活动、性关系的样子或性关系的某些方面有兴趣，却不想拥有性关系的人。他们可能喜欢参与一些通常被看作性的行为，也可能喜欢性关系的想法，或被媒体里对性关系的呈现吸引，但对自己身处性关系感到排斥或回避。",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "节点·可叠加"
+        ],
+        [
+         "上位类",
+         "sex-ambivalent 伞（按 lgbtqia.wiki；本词库尚未收录这把伞）"
+        ],
+        [
+         "对应的轴",
+         "派生：2B 对性的态度 × 2D 性关系意愿"
+        ],
+        [
+         "共识度",
+         "低或有分歧"
+        ],
+        [
+         "测试适配度",
+         "B"
+        ],
+        [
+         "来源",
+         "lgbtqia.wiki 词条（定义以此为依据）；AVEN 社群定义列表、Sounds Fake But Okay 逐字稿（检索摘录有相符定义，列表正文访问受限）"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>讲的是对性活动和性关系的感受：有兴趣、觉得好看，或愿意参与其中的一些行为</li><li>同时不想拥有性关系；想到自己身处性关系里，可能排斥或回避</li><li>它描述的是对这些事的感受，不描述对某个人的性吸引</li><li>多见于无性吸引者，但不限于无性恋社群</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/cupiosexual\">渴望性吸引</a>（Cupiosexual）</td><td>渴望性吸引希望拥有性关系；美感性恋不想拥有性关系，只对性的某些方面有兴趣。两者方向相反</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性吸引</a>（Aegosexual）</td><td>旁观性吸引讲的是自己不渴望作为当事人参与；美感性恋讲的是对性活动或性关系的样子有兴趣，同时对自己身处关系排斥或回避。两者侧重不同</td></tr><tr><td><a href=\"#term/apothisexual\">排斥性恋</a>（Apothisexual）</td><td>排斥性恋讲的是对性感到排斥；美感性恋对某些性活动和性关系有兴趣，只是不想拥有性关系。两者可以同时存在</td></tr><tr><td><a href=\"#term/bellusromantic\">美感浪漫倾向</a>（Bellusromantic，浪漫侧）</td><td>浪漫侧的对应说法，讲的是对浪漫的样子或某些方面有兴趣，却不想拥有恋爱关系</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"美感性恋就是没有性欲。\"</b> 这个词讲的是对性活动和性关系的感受，不说明性欲的有无。</li><li><b>\"有兴趣参与某些性活动，就是有性吸引。\"</b> 这个词讲的是对性活动和性关系的感受，不描述对某个人的性吸引。</li><li><b>\"美感性恋只属于无性吸引者。\"</b> 这个词多见于无性吸引者，但不限于无性恋社群。</li></ul>"
+        },
+        {
+         "title": "社区定义",
+         "html": "<p>这个词多见于无性恋社群，但不限于那里。有人把它归在 sex-ambivalent 伞下。</p><p>这个词在 2017 年 10 月之前就已经出现，造词者不明。词根 bellus 来自拉丁语，意思是漂亮。</p>"
         }
        ]
       },
@@ -3274,14 +3690,14 @@ window.LEXICON = {
        "id": "allosexual",
        "name": "Allosexual",
        "en": "Allosexual",
-       "zh": "有性恋",
-       "zhStatus": "通行",
+       "zh": "有性吸引",
+       "zhStatus": "社群流传",
        "complete": true,
-       "summary": "会体验性吸引，而且体验方式不落在无性恋光谱之内的人。",
+       "summary": "也常译作「有性恋」，指会体验性吸引，而且体验方式不落在无性吸引光谱之内的人。",
        "facts": [
         [
          "别名",
-         "allo"
+         "allo；有性恋（通行译名）"
         ],
         [
          "层级",
@@ -3311,11 +3727,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>会对某个具体的人产生性吸引</li><li>体验性吸引时，没有特定的条件限制</li><li>它是和无性恋光谱相对的一端，用来说明\"不在光谱内\"的情形</li><li>只说性吸引，不说性欲、对性的态度和性行为</li></ul>"
+         "html": "<ul><li>会对某个具体的人产生性吸引</li><li>体验性吸引时，没有特定的条件限制</li><li>它是和无性吸引光谱相对的一端，用来说明\"不在光谱内\"的情形</li><li>只说性吸引，不说性欲、对性的态度和性行为</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋很少或从不体验性吸引；有性恋会体验性吸引，而且方式不在光谱之内</td></tr><tr><td><a href=\"#term/ace-spec\">Ace-spec</a></td><td>无性恋光谱是一片范围；有性恋是不在这片范围内的那一端</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"有性恋就是性欲强或喜欢性。\"</b> 性吸引、性欲、对性的态度是三件事，这个词只讲吸引。</li><li><b>\"有性恋是比较标准或正确的那一种。\"</b> 这只是一个对照的说法，不代表正常或标准。</li><li><b>\"有性恋就会对所有人都有性吸引。\"</b> 性吸引指向的对象因人而异，这个词没有规定对象是谁。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引者很少或从不体验性吸引；有性吸引者会体验性吸引，而且方式不在光谱之内</td></tr><tr><td><a href=\"#term/ace-spec\">Ace-spec</a></td><td>无性吸引光谱是一片范围；有性吸引是不在这片范围内的那一端</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"有性吸引就是性欲强或喜欢性。\"</b> 性吸引、性欲、对性的态度是三件事，这个词只讲吸引。</li><li><b>\"有性吸引是比较标准或正确的那一种。\"</b> 这只是一个对照的说法，不代表正常或标准。</li><li><b>\"有性吸引者就会对所有人都有性吸引。\"</b> 性吸引指向的对象因人而异，这个词没有规定对象是谁。</li></ul>"
         }
        ]
       },
@@ -3507,11 +3923,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>对参与性行为是正面的，可能因此而享受</li><li>和\"有没有性吸引\"分开看：喜好不会推出吸引</li><li>和\"有没有性欲\"也是分开的</li></ul>"
+         "html": "<ul><li>对参与性行为抱有正面态度，可能享受其中的体验</li><li>可能因为身体愉悦、喜欢亲密接触，或希望和伴侣分享亲密体验而愿意参与</li><li>对性行为的喜好与性吸引、性欲是不同的感受，彼此不能直接推出</li><li>喜欢性行为不代表随时愿意，也不代表对任何人都愿意；意愿可能随对象、情境和时间变化</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/sex-indifferent\">性无所谓</a>（sex-indifferent）</td><td>喜好是乐于参与，无所谓则没有特别的感觉</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"性喜好，就一定有性吸引。\"</b> 02 的 4.4 节明确把两者分开，喜好只说明对参与的态度。</li><li>不建议用 sex-positive 这个叫法，容易和\"性积极运动\"混淆。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/sex-indifferent\">性无所谓</a>（sex-indifferent）</td><td>喜好是乐于参与，无所谓则没有特别的感觉</td></tr><tr><td><a href=\"#term/cupiosexual\">渴望性吸引</a>（Cupiosexual）</td><td>渴望性吸引指很少或没有性吸引、却希望拥有性关系或性行为；性喜好描述对自己参与性行为的积极态度。两者可以重叠，也可能只符合其中一种</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"性喜好，就一定有性吸引。\"</b> 02 的 4.4 节明确把两者分开，喜好只说明对参与的态度。</li><li>不建议用 sex-positive 这个叫法，容易和\"性积极运动\"混淆。</li></ul>"
         }
        ]
       },
@@ -3663,7 +4079,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictosexual\">纸性恋</a>（Fictosexual）</td><td>纸性恋的对象是虚构角色；抽象性恋的对象是抽象、非特定的想象</td></tr><tr><td><a href=\"#term/proculsexual\">遥远性恋</a>（Proculsexual）</td><td>遥远性恋的对象是有具体身份、但明知无法建立关系的人；抽象性恋的想象没有这样一个具体的人</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性恋</a>（Aegosexual）</td><td>旁观性恋讲的是自己是否渴望作为当事人参与；抽象性恋讲的是幻想中的欲望与具体对象的关系。两者可以同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"幻想越多，就是抽象性恋。\"</b> 这个词讲的是欲望指向哪里，幻想多少不决定归属。</li><li><b>\"幻想里有欲望，就等于对现实中的人也有性吸引。\"</b> 这两件事不一样，抽象性恋正是讲这一点的。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictosexual\">虚拟角色性吸引</a>（Fictosexual）</td><td>虚拟角色性吸引的对象是虚构角色；抽象性恋的对象是抽象、非特定的想象</td></tr><tr><td><a href=\"#term/proculsexual\">遥远性恋</a>（Proculsexual）</td><td>遥远性恋的对象是有具体身份、但明知无法建立关系的人；抽象性恋的想象没有这样一个具体的人</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性吸引</a>（Aegosexual）</td><td>旁观性吸引讲的是自己是否渴望作为当事人参与；抽象性恋讲的是幻想中的欲望与具体对象的关系。两者可以同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"幻想越多，就是抽象性恋。\"</b> 这个词讲的是欲望指向哪里，幻想多少不决定归属。</li><li><b>\"幻想里有欲望，就等于对现实中的人也有性吸引。\"</b> 这两件事不一样，抽象性恋正是讲这一点的。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -3672,13 +4088,13 @@ window.LEXICON = {
        ]
       },
       {
-       "id": "autosexual",
-       "name": "Autosexual",
-       "en": "Autosexual",
-       "zh": "自我性恋",
-       "zhStatus": "拟",
+       "id": "fictoasexual",
+       "name": "Fictoasexual",
+       "en": "Fictoasexual",
+       "zh": "仅虚拟角色性吸引",
+       "zhStatus": "社群流传",
        "complete": true,
-       "summary": "对自己产生性吸引的人。也可能同时对别人有性吸引；这个词本身不决定是否属于无性恋光谱。",
+       "summary": "性吸引只指向虚构角色、对现实中的人没有性吸引的人。它是虚拟角色性吸引里“只有虚构角色”的那一种。",
        "facts": [
         [
          "别名",
@@ -3690,7 +4106,7 @@ window.LEXICON = {
         ],
         [
          "上位类",
-         "<a href=\"#term/ace-spec\">Ace-spec</a>（树中位置只作导航，不单独推出归属）"
+         "<a href=\"#term/fictosexual\">Fictosexual</a>"
         ],
         [
          "对应的轴",
@@ -3706,32 +4122,32 @@ window.LEXICON = {
         ],
         [
          "来源",
-         "The Auto Spectrum；已核实（社群自述资料）"
+         "社群流传资料；未另找到出处"
         ]
        ],
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>性吸引指向的对象是自己</li><li>可以只对自己有，也可以同时对别人有</li><li>这个词讲的是吸引指向谁，不说明行为，也不说明要不要和别人发生关系</li><li>树里把它放在 ace-spec 下面只作导航，是否属于光谱要看整体的体验</li></ul>"
+         "html": "<ul><li>性吸引的对象只有虚构角色，这种吸引是排他的</li><li>对现实中的人没有性吸引</li><li>有的无性吸引光谱里的人，只会对永远无法建立现实关系的对象（比如虚构角色）有性吸引，这个词描述的正是这种情况</li><li>虚拟角色性吸引是总称，这个词特指其中“只有虚构角色”的一端</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/autoromantic\">自我浪漫倾向</a>（Autoromantic，浪漫侧）</td><td>自我浪漫倾向讲的是浪漫吸引指向自己；自我性恋讲的是性吸引指向自己。两者可以分开，也可以同时有</td></tr><tr><td>自伴侣（self-partnered）</td><td>自伴侣讲的是关系与生活的安排，不是吸引指向谁。两者讲的是不同的事</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性恋</a>（Aegosexual）</td><td>旁观性恋讲的是自己是否渴望作为当事人参与；自我性恋讲的是吸引指向自己</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"自我性恋就是自恋。\"</b> 这个词讲的是吸引指向谁，不评价一个人的性格或自尊心。</li><li><b>\"对自己有性吸引，就不能对别人有。\"</b> 两者可以同时存在。</li><li><b>\"自我性恋一定属于无性恋光谱。\"</b> 树里放在那一侧只作导航，是否属于光谱不能单凭这个词推出。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictosexual\">虚拟角色性吸引</a>（Fictosexual）</td><td>虚拟角色性吸引是总称，可以同时对现实中的人有吸引；仅虚拟角色性吸引特指只有虚构角色</td></tr><tr><td><a href=\"#term/semifictosexual\">现实＋虚拟角色性吸引</a>（Semifictosexual）</td><td>对虚构角色和现实中的人都有性吸引，和这个词相对</td></tr><tr><td><a href=\"#term/proculsexual\">遥远性恋</a>（Proculsexual）</td><td>遥远性恋的对象可以是现实中明知无法建立关系的人；这个词的对象只有虚构角色</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"名字里有 a，就是没有性吸引。\"</b> 这个词的人对虚构角色有性吸引，只是对象限于虚构角色。是否把自己放在无性吸引光谱里，由本人决定。</li></ul>"
         }
        ]
       },
       {
-       "id": "fictosexual",
-       "name": "Fictosexual",
-       "en": "Fictosexual",
-       "zh": "纸性恋",
+       "id": "semifictosexual",
+       "name": "Semifictosexual",
+       "en": "Semifictosexual / Kaitasexual",
+       "zh": "现实＋虚拟角色性吸引",
        "zhStatus": "社群流传",
        "complete": true,
-       "summary": "性吸引主要或只指向虚构角色的人。是否属于无性恋光谱存在争议，这个词本身不决定归属。",
+       "summary": "对虚构角色有性吸引，同时也对现实中的人有性吸引的人。",
        "facts": [
         [
          "别名",
-         "—"
+         "Kaitasexual"
         ],
         [
          "层级",
@@ -3739,7 +4155,7 @@ window.LEXICON = {
         ],
         [
          "上位类",
-         "<a href=\"#term/ace-spec\">Ace-spec</a>（是否属于光谱有争议，不单独推出归属）"
+         "<a href=\"#term/fictosexual\">Fictosexual</a>"
         ],
         [
          "对应的轴",
@@ -3755,21 +4171,17 @@ window.LEXICON = {
         ],
         [
          "来源",
-         "学术文献、社群 wiki；已核实"
+         "社群流传资料；未另找到出处"
         ]
        ],
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>性吸引的对象是小说、动漫、游戏、影视等作品里的虚构角色</li><li>对现实中的人，性吸引很少或没有</li><li>这个词讲的是对象是谁，不说明吸引的强弱或频率</li><li>是否属于无性恋光谱，不同人的看法不同，由本人判断</li></ul>"
+         "html": "<ul><li>性吸引指向虚构角色，这是它属于虚拟角色性吸引一家的原因</li><li>同时也对现实中的人有性吸引</li><li>讲的是对象的范围：虚构和现实两类都有</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictoromantic\">虚拟浪漫倾向</a>（Fictoromantic，浪漫侧）</td><td>虚拟浪漫倾向讲的是浪漫吸引指向虚构角色；纸性恋讲的是性吸引指向虚构角色。两者可以同时出现</td></tr><tr><td><a href=\"#term/proculsexual\">遥远性恋</a>（Proculsexual）</td><td>遥远性恋的重点是明知无法建立现实关系，对象可以是虚构角色，也可以是现实中的人；纸性恋的重点是对象是虚构的</td></tr><tr><td><a href=\"#term/adexsexual\">抽象性恋</a>（Adexsexual）</td><td>抽象性恋的对象是抽象、非特定的想象；纸性恋的对象是有名字、有形象的虚构角色</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"喜欢某个角色或作品，就是纸性恋。\"</b> 喜欢某个角色，不等于性吸引指向这个角色。要看的是性吸引的指向。</li><li><b>\"纸性恋就是不正常的幻想。\"</b> 这个词讲的是吸引指向的对象，不评价幻想本身。</li><li><b>\"纸性恋一定属于无性恋光谱。\"</b> 是否属于光谱有争议，不能单凭这个词推出。</li></ul>"
-        },
-        {
-         "title": "社区定义",
-         "html": "<p>这个词的来源包括学术研究和社群资料，对它是否属于无性恋光谱，两边的看法并不一致。研究上也有人讨论过对虚构角色的爱与欲望。</p>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictoasexual\">仅虚拟角色性吸引</a>（Fictoasexual）</td><td>只有虚构角色，没有现实中的吸引；这个词两类都有</td></tr></tbody></table></div>"
         }
        ]
       },
@@ -3818,7 +4230,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/akoisexual\">单向性恋</a>（Akoisexual）</td><td>单向性恋是自己有性吸引，却不希望被回应；被欲性恋是希望被别人吸引，自己却无法回应。两者方向相反</td></tr><tr><td><a href=\"#term/recipsexual\">互惠性恋</a>（Recipsexual）</td><td>互惠性恋讲的是吸引要先知道对方有意；被欲性恋讲的是希望被别人吸引、而自己无法回应</td></tr><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋讲的是自己很少或从不体验性吸引；被欲性恋的重点是希望被别人吸引。两者可以同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"被欲性恋就是缺爱，想被人喜欢。\"</b> 这个词讲的是对性吸引的回应方向，不说明原因，也不判断一个人的需要。</li><li><b>\"被欲性恋一定想要恋爱或发生性关系。\"</b> 这个词只讲吸引的方向，不规定关系的形式。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/akoisexual\">单向性吸引</a>（Akoisexual）</td><td>单向性吸引是自己有性吸引，却不希望被回应；被欲性恋是希望被别人吸引，自己却无法回应。两者方向相反</td></tr><tr><td><a href=\"#term/recipsexual\">互惠性吸引</a>（Recipsexual）</td><td>互惠性吸引讲的是吸引要先知道对方有意；被欲性恋讲的是希望被别人吸引、而自己无法回应</td></tr><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是自己很少或从不体验性吸引；被欲性恋的重点是希望被别人吸引。两者可以同时出现</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"被欲性恋就是缺爱，想被人喜欢。\"</b> 这个词讲的是对性吸引的回应方向，不说明原因，也不判断一个人的需要。</li><li><b>\"被欲性恋一定想要恋爱或发生性关系。\"</b> 这个词只讲吸引的方向，不规定关系的形式。</li></ul>"
         }
        ]
       },
@@ -3829,7 +4241,7 @@ window.LEXICON = {
        "zh": "迷惑性恋",
        "zhStatus": "拟",
        "complete": true,
-       "summary": "认为自己属于无性恋光谱，但因为不太理解性吸引是什么，没办法进一步描述自己的人。",
+       "summary": "认为自己属于无性吸引光谱，但因为不太理解性吸引是什么，没办法进一步描述自己的人。",
        "facts": [
         [
          "别名",
@@ -3863,11 +4275,11 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>大方向上认为自己属于无性恋光谱</li><li>卡在对\"性吸引\"这个概念本身的理解上：不知道它具体指什么</li><li>因此没办法把自己的情况说得更细</li><li>和困惑性恋相近，但重点在于不理解这个概念，所以无法进一步描述</li></ul>"
+         "html": "<ul><li>大方向上认为自己属于无性吸引光谱</li><li>卡在对\"性吸引\"这个概念本身的理解上：不知道它具体指什么</li><li>因此没办法把自己的情况说得更细</li><li>和困惑性吸引相近，但重点在于不理解这个概念，所以无法进一步描述</li></ul>"
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/quoisexual\">困惑性恋</a>（Quoisexual）</td><td>困惑性恋讲的是分不清、无法区分，或觉得不适用；迷惑性恋讲的是认为自己在光谱内，却因为不理解性吸引而无法进一步描述。两者很接近，可以重叠</td></tr><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋是一个具体的说法，描述性吸引很少或从不。迷惑性恋的人认为自己在光谱内，但对\"性吸引\"本身不太理解，所以描述不下去</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"迷惑性恋就是没想清楚自己是不是无性恋。\"</b> 这个词讲的是不理解性吸引这个概念，这本身是一种体验，不需要被纠正。</li><li><b>\"迷惑性恋的人一定没有性吸引。\"</b> 这个词讲的是概念上的困惑，不直接说明有没有性吸引。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/quoisexual\">困惑性吸引</a>（Quoisexual）</td><td>困惑性吸引讲的是分不清、无法区分，或觉得不适用；迷惑性恋讲的是认为自己在光谱内，却因为不理解性吸引而无法进一步描述。两者很接近，可以重叠</td></tr><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引是一个具体的说法，描述性吸引很少或从不。迷惑性恋的人认为自己在光谱内，但对\"性吸引\"本身不太理解，所以描述不下去</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"迷惑性恋就是没想清楚自己是不是无性吸引者。\"</b> 这个词讲的是不理解性吸引这个概念，这本身是一种体验，不需要被纠正。</li><li><b>\"迷惑性恋的人一定没有性吸引。\"</b> 这个词讲的是概念上的困惑，不直接说明有没有性吸引。</li></ul>"
         }
        ]
       },
@@ -3916,7 +4328,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictosexual\">纸性恋</a>（Fictosexual）</td><td>纸性恋的对象是虚构角色；遥远性恋的对象可以是现实中有身份、却明知无法建立关系的人，也可以是虚构角色。两者可以重叠</td></tr><tr><td><a href=\"#term/adexsexual\">抽象性恋</a>（Adexsexual）</td><td>抽象性恋的想象没有具体的对象；遥远性恋的对象是有具体身份、只是明知无法建立关系的人</td></tr><tr><td>异地恋</td><td>异地恋讲的是双方相隔多远；遥远性恋讲的是本人认定无法建立关系的对象</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"只要对方不可能和自己在一起，就是遥远性恋。\"</b> 这个词讲的是持续而强烈的性吸引，偶尔一次的想象不属于这个词。</li><li><b>\"遥远性恋就是单相思。\"</b> 这个词讲的是对象的可及性和吸引的性质，不是单方面的情感。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/fictosexual\">虚拟角色性吸引</a>（Fictosexual）</td><td>虚拟角色性吸引的对象是虚构角色；遥远性恋的对象可以是现实中有身份、却明知无法建立关系的人，也可以是虚构角色。两者可以重叠</td></tr><tr><td><a href=\"#term/adexsexual\">抽象性恋</a>（Adexsexual）</td><td>抽象性恋的想象没有具体的对象；遥远性恋的对象是有具体身份、只是明知无法建立关系的人</td></tr><tr><td>异地恋</td><td>异地恋讲的是双方相隔多远；遥远性恋讲的是本人认定无法建立关系的对象</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"只要对方不可能和自己在一起，就是遥远性恋。\"</b> 这个词讲的是持续而强烈的性吸引，偶尔一次的想象不属于这个词。</li><li><b>\"遥远性恋就是单相思。\"</b> 这个词讲的是对象的可及性和吸引的性质，不是单方面的情感。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -3969,7 +4381,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aesthetic-attraction\">审美吸引</a></td><td>审美吸引是欣赏对方的外貌或美感；伪性恋讲的是这种欣赏看起来像性吸引</td></tr><tr><td><a href=\"#term/sensual-attraction\">感官吸引</a></td><td>感官吸引是想要非性的身体接触；伪性恋讲的是感官等其他吸引看起来像性吸引</td></tr><tr><td><a href=\"#term/quoisexual\">困惑性恋</a>（Quoisexual）</td><td>困惑性恋讲的是分不清或不适用；伪性恋可以是分不清，也可以是其他吸引在模仿性吸引。两者可以重叠</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"伪性恋就是假的性吸引。\"</b> 它描述的是来源不同、看起来像性吸引的感受；感受本身是真实的。</li><li><b>\"伪性恋的人是在骗自己。\"</b> 这个词只描述感受的来源和样子，不判断一个人是否诚实或心理状态。</li><li><b>\"只要觉得像性吸引，就是伪性恋。\"</b> 这个词讲的是其他吸引模仿或遮盖性吸引的情形，是否属于它由本人判断。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aesthetic-attraction\">审美吸引</a></td><td>审美吸引是欣赏对方的外貌或美感；伪性恋讲的是这种欣赏看起来像性吸引</td></tr><tr><td><a href=\"#term/sensual-attraction\">感官吸引</a></td><td>感官吸引是想要非性的身体接触；伪性恋讲的是感官等其他吸引看起来像性吸引</td></tr><tr><td><a href=\"#term/quoisexual\">困惑性吸引</a>（Quoisexual）</td><td>困惑性吸引讲的是分不清或不适用；伪性恋可以是分不清，也可以是其他吸引在模仿性吸引。两者可以重叠</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"伪性恋就是假的性吸引。\"</b> 它描述的是来源不同、看起来像性吸引的感受；感受本身是真实的。</li><li><b>\"伪性恋的人是在骗自己。\"</b> 这个词只描述感受的来源和样子，不判断一个人是否诚实或心理状态。</li><li><b>\"只要觉得像性吸引，就是伪性恋。\"</b> 这个词讲的是其他吸引模仿或遮盖性吸引的情形，是否属于它由本人判断。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -4022,7 +4434,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/quoisexual\">困惑性恋</a>（Quoisexual）</td><td>困惑性恋讲的是分不清、无法区分，或觉得概念不适用；错位性恋讲的是吸引确实有，却觉得它不自然。两者重点不同</td></tr><tr><td><a href=\"#term/pseudosexual\">伪性恋</a>（Pseudosexual）</td><td>伪性恋是其他吸引看起来像性吸引；错位性恋是性吸引确实有，只是本人觉得不自然</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"错位性恋就是没有性吸引。\"</b> 这个词的前提是确实有性吸引，只是觉得不自然。</li><li><b>\"错位性恋的人一定要改变这种感觉。\"</b> 这个词只描述感受，不要求改变，也不替本人判断要不要处理。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/quoisexual\">困惑性吸引</a>（Quoisexual）</td><td>困惑性吸引讲的是分不清、无法区分，或觉得概念不适用；错位性恋讲的是吸引确实有，却觉得它不自然。两者重点不同</td></tr><tr><td><a href=\"#term/pseudosexual\">伪性恋</a>（Pseudosexual）</td><td>伪性恋是其他吸引看起来像性吸引；错位性恋是性吸引确实有，只是本人觉得不自然</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"错位性恋就是没有性吸引。\"</b> 这个词的前提是确实有性吸引，只是觉得不自然。</li><li><b>\"错位性恋的人一定要改变这种感觉。\"</b> 这个词只描述感受，不要求改变，也不替本人判断要不要处理。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -4111,161 +4523,6 @@ window.LEXICON = {
        "sections": []
       },
       {
-       "id": "desinosexual",
-       "name": "Desinosexual",
-       "en": "Desinosexual",
-       "zh": "终止性恋",
-       "zhStatus": "拟；只沿用前缀名，不套用浪漫侧\"喜欢／爱\"的释义",
-       "complete": true,
-       "summary": "无性恋光谱上的一种吸引：没有完整的性吸引，可能有视觉吸引或其他形式的吸引。对某个特定的人，可能会欣赏，也有唤起，但不想与其发生性关系；吸引到这一步就结束了。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/ace-spec\">Ace-spec</a>（按 lgbtqia.wiki；02 的 4.6 未指定上位类）"
-        ],
-        [
-         "对应的轴",
-         "② 频率与强度（吸引不充分或不完整）"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "AVENwiki；已核实（简短词条）；lgbtqia.wiki 词条（定义依据，与 02 的 4.6 大体相符）"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>不是完整的性吸引，但可能有视觉吸引或其他形式的吸引</li><li>对某个特定的人，可能欣赏、有唤起，却不想和对方发生性关系</li><li>吸引停在欣赏和唤起这一步，没有继续走到想发生性关系</li><li>它描述的是吸引完整到什么程度，不是对性本身的态度</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/greysexual\">灰性恋</a>（Greysexual）</td><td>灰性恋讲的是性吸引很少、很弱，或不确定那算不算；终止性恋讲的是吸引停在欣赏和唤起这一步，没有完整的性吸引</td></tr><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋讲的是性吸引很少或从不；终止性恋的人可能有视觉吸引或其他吸引，但不是完整的性吸引</td></tr><tr><td><a href=\"#term/desinoromantic\">终止浪漫倾向</a>（Desinoromantic，浪漫侧）</td><td>浪漫侧的对应说法，讲的是浪漫吸引停在哪一步</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"终止性恋就是完全没有吸引。\"</b> 它描述的是吸引停在欣赏和唤起这一步，可能仍然有视觉吸引或其他形式的吸引。</li><li><b>\"有唤起，就一定有完整的性吸引。\"</b> 这个词讲的正是唤起之后没有想发生性关系的情况，唤起和完整的性吸引不是一回事。</li><li><b>\"终止性恋一定是对性的排斥。\"</b> 这个词讲的是吸引的完整程度，不描述对性的态度。</li></ul>"
-        },
-        {
-         "title": "社区定义",
-         "html": "<p>这个词在 2021 年 9 月被造出。词根 desino 来自拉丁语，意思是离开或停止。</p>"
-        }
-       ]
-      },
-      {
-       "id": "apressexual",
-       "name": "Apressexual",
-       "en": "Apressexual",
-       "zh": "后置性恋",
-       "zhStatus": "拟",
-       "complete": true,
-       "summary": "后置性恋（Apressexual，拟）指的是：只有先对某人有过其他类型的吸引（比如友情、欣赏），才可能对这个人产生性吸引。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/greysexual\">Grey-asexual / Greysexual</a>"
-        ],
-        [
-         "对应的轴",
-         "③ 触发条件（需先有另一种吸引）"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "AVENwiki；检索摘录有性侧独立定义，正文访问受限"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>不会一开始就对某人产生性吸引，需要先有其他类型的吸引。</li><li>这是先后顺序的问题，不规定要等多久。</li><li>是否使用这个说法，由本人决定。</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demisexual\">Demisexual</a></td><td>条件是要先与某人建立深厚的情感连接；Apressexual 的条件是先有其他类型的吸引，两者的前提不同。</td></tr><tr><td><a href=\"#term/apresromantic\">Apresromantic</a></td><td>浪漫侧的对应标签，讲的是浪漫吸引，见浪漫延伸区。</td></tr></tbody></table></div>"
-        }
-       ]
-      },
-      {
-       "id": "coeosexual",
-       "name": "Coeosexual",
-       "en": "Coeosexual",
-       "zh": "初遇性恋",
-       "zhStatus": "拟",
-       "complete": true,
-       "summary": "只有在初次见面时就已经产生的性吸引才会存在的人。这种感觉有点像\"一见钟情\"，之后不会从无到有地产生。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区"
-        ],
-        [
-         "上位类",
-         "<a href=\"#term/ace-spec\">Ace-spec</a>（按 lgbtqia.wiki，它只说在无性恋光谱上，与半性恋相对）"
-        ],
-        [
-         "对应的轴",
-         "③ 触发条件（初遇时是否已有吸引）"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "Tumgik 社群介绍转载；lgbtqia.wiki 词条（转引一条 Reddit 讨论）；已核实（转述定义）"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>性吸引的产生时间是重点：只有初见时就有的，才属于这个词</li><li>对还不太了解的人也可能有性吸引，这种吸引可能转瞬即逝，也可能不够强，不足以发展成关系</li><li>讲的是性吸引，不是浪漫方面的心动，和是否想恋爱是两回事</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/demisexual\">半性恋</a>（Demisexual）</td><td>两者方向相反：半性恋要先建立深厚的情感连接才会有性吸引，初遇性恋则要在初次见面时就已经有</td></tr><tr><td><a href=\"#term/fraysexual\">磨损性恋</a>（Fraysexual）</td><td>磨损性恋讲的是性吸引随着了解而减弱；初遇性恋讲的是吸引在初见时是否已经产生。两者可以同时符合</td></tr><tr><td>一见钟情</td><td>一见钟情多指浪漫方面的心动；初遇性恋讲的是性吸引，两者不是同一件事</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"初遇性恋就是对第一次见面的人都有性吸引。\"</b> 这个词讲的是吸引是否在初次见面时产生，并不是每个人初见都会有。</li><li><b>\"只要见过一面，就是初遇性恋。\"</b> 必须是初见时就已经有的吸引，之后才出现的，不属于这个词。</li><li><b>\"初遇性恋的吸引一定很强烈。\"</b> 吸引可能转瞬即逝，也可能不够强，不足以发展成关系。</li></ul>"
-        },
-        {
-         "title": "社区定义",
-         "html": "<p>这个词出自 Reddit 上的一条讨论。和它相近的说法有单向性恋、磨损性恋，它们都讲性吸引在什么情况下出现或消失。</p><p>词根 coeo 来自拉丁语，意思是相遇、结合。</p>"
-        }
-       ]
-      },
-      {
        "id": "placiosexual",
        "name": "Placiosexual",
        "en": "Placiosexual",
@@ -4284,7 +4541,7 @@ window.LEXICON = {
         ],
         [
          "上位类",
-         "<a href=\"#term/ace-spec\">Ace-spec</a>（不单独推出归属；lgbtqia.wiki 说它可以在无性恋光谱之内，也可以在之外）"
+         "<a href=\"#term/ace-spec\">Ace-spec</a>（不单独推出归属；lgbtqia.wiki 说它可以在无性吸引光谱之内，也可以在之外）"
         ],
         [
          "对应的轴",
@@ -4310,11 +4567,11 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/akoisexual\">单向性恋</a>（Akoisexual）</td><td>单向性恋是有吸引，却不希望被回应；给予性恋是喜欢为别人做，却不希望对方为自己做。两者都和\"回应\"有关，讲的是不同的事</td></tr><tr><td><a href=\"#term/apothisexual\">排斥性恋</a>（Apothisexual）</td><td>排斥性恋讲的是对性感到排斥；给予性恋讲的是乐于为别人做，对接受则可能无所谓，也可能排斥。两者可以同时出现</td></tr><tr><td>iamvanosexual</td><td>lgbtqia.wiki 说它与给予性恋相反。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"给予性恋就是支配的人。\"</b> 它讲的是给予和接受的方向，不等于在关系里支配对方。</li><li><b>\"给予性恋一定是无性恋。\"</b> 它被看作一种性的态度，可以在无性恋光谱之内，也可以在之外，要看有没有性吸引。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/akoisexual\">单向性吸引</a>（Akoisexual）</td><td>单向性吸引是有吸引，却不希望被回应；给予性恋是喜欢为别人做，却不希望对方为自己做。两者都和\"回应\"有关，讲的是不同的事</td></tr><tr><td><a href=\"#term/apothisexual\">排斥性恋</a>（Apothisexual）</td><td>排斥性恋讲的是对性感到排斥；给予性恋讲的是乐于为别人做，对接受则可能无所谓，也可能排斥。两者可以同时出现</td></tr><tr><td>iamvanosexual</td><td>lgbtqia.wiki 说它与给予性恋相反。</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"给予性恋就是支配的人。\"</b> 它讲的是给予和接受的方向，不等于在关系里支配对方。</li><li><b>\"给予性恋的人一定是无性吸引者。\"</b> 它被看作一种性的态度，可以在无性吸引光谱之内，也可以在之外，要看有没有性吸引。</li></ul>"
         },
         {
          "title": "社区定义",
-         "html": "<p>有人把它看作一种性的态度，而不是独立的取向。也有人在特定的情况下，把它当作灰性恋之下的取向：有性吸引，但在对方为自己做这些事时，吸引和性欲一起消失。这个测试不替本人决定。</p><p>有人把它放在 merosexual 伞下，也有人把它看作 orchidsexuality 的一种具体类型。词根 placio 来自拉丁语 placere，意思是取悦。</p>"
+         "html": "<p>有人把它看作一种性的态度，而不是独立的取向。也有人在特定的情况下，把它当作灰色性吸引之下的取向：有性吸引，但在对方为自己做这些事时，吸引和性欲一起消失。这个测试不替本人决定。</p><p>有人把它放在 merosexual 伞下，也有人把它看作 orchidsexuality 的一种具体类型。词根 placio 来自拉丁语 placere，意思是取悦。</p>"
         }
        ]
       },
@@ -4325,7 +4582,7 @@ window.LEXICON = {
        "zh": "排斥性恋",
        "zhStatus": "拟",
        "complete": true,
-       "summary": "对性感到排斥的人，这个词是\"性排斥\"的另一种说法，常被无性恋的人用来描述自己。",
+       "summary": "对性感到排斥的人，这个词是\"性排斥\"的另一种说法，常被无性吸引者用来描述自己。",
        "facts": [
         [
          "别名",
@@ -4353,7 +4610,7 @@ window.LEXICON = {
         ],
         [
          "来源",
-         "常见定义；lgbtqia.wiki 词条与之相符（称它是\"性排斥\"的另一种说法，常被无性恋的人使用）；结果中按组合表达呈现"
+         "常见定义；lgbtqia.wiki 词条与之相符（称它是\"性排斥\"的另一种说法，常被无性吸引者使用）；结果中按组合表达呈现"
         ]
        ],
        "sections": [
@@ -4363,64 +4620,11 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性恋</a>（Asexual）</td><td>无性恋讲的是性吸引很少或从不；排斥性恋讲的是对性感到排斥。两者常一起出现，讲的是不同的事</td></tr><tr><td><a href=\"#term/sex-repulsed\">性排斥</a>（sex-repulsed）</td><td>两者指的是同一种感受。排斥性恋是这种感受的一个说法，用不用由本人决定</td></tr><tr><td><a href=\"#term/apothiromantic\">排斥浪漫倾向</a>（Apothiromantic，浪漫侧）</td><td>浪漫侧的对应说法，讲的是对浪漫感到排斥。两者可以同时有</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"排斥性恋就是讨厌别人。\"</b> 这个词讲的是对性的排斥，不是对人的厌恶。</li><li><b>\"排斥性恋的人都排斥所有亲密关系。\"</b> 这个词讲的是对性的排斥；对其他亲密方式的态度，是另外的事。</li><li><b>\"对性排斥就一定要处理。\"</b> 这个词只描述感受，不判断对错，也不替本人决定要不要处理。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是性吸引很少或从不；排斥性恋讲的是对性感到排斥。两者常一起出现，讲的是不同的事</td></tr><tr><td><a href=\"#term/sex-repulsed\">性排斥</a>（sex-repulsed）</td><td>两者指的是同一种感受。排斥性恋是这种感受的一个说法，用不用由本人决定</td></tr><tr><td><a href=\"#term/apothiromantic\">排斥浪漫倾向</a>（Apothiromantic，浪漫侧）</td><td>浪漫侧的对应说法，讲的是对浪漫感到排斥。两者可以同时有</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"排斥性恋就是讨厌别人。\"</b> 这个词讲的是对性的排斥，不是对人的厌恶。</li><li><b>\"排斥性恋的人都排斥所有亲密关系。\"</b> 这个词讲的是对性的排斥；对其他亲密方式的态度，是另外的事。</li><li><b>\"对性排斥就一定要处理。\"</b> 这个词只描述感受，不判断对错，也不替本人决定要不要处理。</li></ul>"
         },
         {
          "title": "社区定义",
          "html": "<p>和排斥浪漫倾向都符合的人，有时用 apothi aroace 这个组合说法。词根 apothi 来自希腊语 apothisan，意思是排斥。</p>"
-        }
-       ]
-      },
-      {
-       "id": "bellussexual",
-       "name": "Bellussexual",
-       "en": "Bellussexual",
-       "zh": "美感性恋",
-       "zhStatus": "拟，与浪漫侧对齐",
-       "complete": true,
-       "summary": "对某些性活动、性关系的样子或性关系的某些方面有兴趣，却不想拥有性关系的人。他们可能喜欢参与一些通常被看作性的行为，也可能喜欢性关系的想法，或被媒体里对性关系的呈现吸引，但对自己身处性关系感到排斥或回避。",
-       "facts": [
-        [
-         "别名",
-         "—"
-        ],
-        [
-         "层级",
-         "延伸区（派生）"
-        ],
-        [
-         "上位类",
-         "sex-ambivalent 伞（按 lgbtqia.wiki；本词库尚未收录这把伞）"
-        ],
-        [
-         "对应的轴",
-         "派生：2B 对性的态度 × 2D 性关系意愿"
-        ],
-        [
-         "共识度",
-         "低或有分歧（延伸区）"
-        ],
-        [
-         "测试适配度",
-         "C"
-        ],
-        [
-         "来源",
-         "lgbtqia.wiki 词条（定义以此为依据）；AVEN 社群定义列表、Sounds Fake But Okay 逐字稿（检索摘录有相符定义，列表正文访问受限）；02 的派生条件（不体验性吸引）与 wiki 不一致，02 尚未同步"
-        ]
-       ],
-       "sections": [
-        {
-         "title": "核心特征",
-         "html": "<ul><li>讲的是对性活动和性关系的感受：有兴趣、觉得好看，或愿意参与其中的一些行为</li><li>同时不想拥有性关系；想到自己身处性关系里，可能排斥或回避</li><li>它描述的是对这些事的感受，不描述对某个人的性吸引</li><li>多见于无性恋的人，但不限于无性恋社群</li></ul>"
-        },
-        {
-         "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/cupiosexual\">渴望性恋</a>（Cupiosexual）</td><td>渴望性恋希望拥有性关系；美感性恋不想拥有性关系，只对性的某些方面有兴趣。两者方向相反</td></tr><tr><td><a href=\"#term/aegosexual\">旁观性恋</a>（Aegosexual）</td><td>旁观性恋讲的是自己不渴望作为当事人参与；美感性恋讲的是对性活动或性关系的样子有兴趣，同时对自己身处关系排斥或回避。两者侧重不同</td></tr><tr><td><a href=\"#term/apothisexual\">排斥性恋</a>（Apothisexual）</td><td>排斥性恋讲的是对性感到排斥；美感性恋对某些性活动和性关系有兴趣，只是不想拥有性关系。两者可以同时存在</td></tr><tr><td><a href=\"#term/bellusromantic\">美感浪漫倾向</a>（Bellusromantic，浪漫侧）</td><td>浪漫侧的对应说法，讲的是对浪漫的样子或某些方面有兴趣，却不想拥有恋爱关系</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"美感性恋就是没有性欲。\"</b> 这个词讲的是对性活动和性关系的感受，不说明性欲的有无。</li><li><b>\"有兴趣参与某些性活动，就是有性吸引。\"</b> 这个词讲的是对性活动和性关系的感受，不描述对某个人的性吸引。</li><li><b>\"美感性恋只属于无性恋的人。\"</b> 这个词多见于无性恋的人，但不限于无性恋社群。</li></ul>"
-        },
-        {
-         "title": "社区定义",
-         "html": "<p>这个词多见于无性恋社群，但不限于那里。有人把它归在 sex-ambivalent 伞下。</p><p>这个词在 2017 年 10 月之前就已经出现，造词者不明。词根 bellus 来自拉丁语，意思是漂亮。</p>"
         }
        ]
       },
@@ -4474,6 +4678,104 @@ window.LEXICON = {
        ]
       },
       {
+       "id": "analloerotic",
+       "name": "Analloerotic",
+       "en": "Analloerotic",
+       "zh": "非ta性欲",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "对别人缺乏性兴趣，或者没有指向别人的性感受的人。性方面的刺激可以从自己身上获得。",
+       "facts": [
+        [
+         "别名",
+         "analloeroticism、analloerotism、analloeroticity；非ta性欲态、非ta性欲特质、非ta性欲主义（社群叫法）"
+        ],
+        [
+         "层级",
+         "延伸区（性欲）"
+        ],
+        [
+         "上位类",
+         "—（不单独推出归属）"
+        ],
+        [
+         "对应的轴",
+         "2C 性欲，联动 ⑦"
+        ],
+        [
+         "共识度",
+         "低或有分歧（延伸区）"
+        ],
+        [
+         "测试适配度",
+         "C"
+        ],
+        [
+         "来源",
+         "社群流传资料；未另找到出处"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>缺少的是对别人的性兴趣，或指向别人的性感受</li><li>性方面的刺激可以通过自己获得</li><li>这个词讲的是性兴趣、性感受指向谁，不是在说性吸引有没有</li><li>和无性吸引不是同一件事</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/asexual\">无性吸引</a>（Asexual）</td><td>无性吸引讲的是缺少性吸引，不是缺少和别人发生性行为的欲望：无性吸引的人可以有性行为，也可以渴望性关系；非ta性欲讲的是对别人缺乏性兴趣</td></tr><tr><td><a href=\"#term/autosexual\">自体性吸引</a>（Autosexual）</td><td>自体性吸引讲的是性吸引的对象是自己；非ta性欲讲的是对别人缺乏性兴趣。两个词讲的角度不同</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"非ta性欲就是无性吸引。\"</b> 两者讲的是不同的事：无性吸引讲有没有性吸引，非ta性欲讲对别人有没有性兴趣、性感受。</li><li><b>\"非ta性欲就是完全没有性欲。\"</b> 这个词讲的是对别人缺乏性兴趣，性方面的刺激仍可以从自己身上获得。</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "emotuasexual",
+       "name": "Emotuasexual",
+       "en": "Emotuasexual / Emotuace",
+       "zh": "情绪无性吸引",
+       "zhStatus": "社群流传",
+       "complete": true,
+       "summary": "性取向流动或波动，并且受情绪、心境和心理状态影响的人。这种变化始终在无性吸引光谱的范围内。",
+       "facts": [
+        [
+         "别名",
+         "Emotuace"
+        ],
+        [
+         "层级",
+         "延伸区（时间型）"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>"
+        ],
+        [
+         "对应的轴",
+         "⑤ 时间模式，联动 ③"
+        ],
+        [
+         "共识度",
+         "低或有分歧（延伸区）"
+        ],
+        [
+         "测试适配度",
+         "C"
+        ],
+        [
+         "来源",
+         "社群流传资料；未另找到出处"
+        ]
+       ],
+       "sections": [
+        {
+         "title": "核心特征",
+         "html": "<ul><li>性取向不是一直不变，会流动或波动</li><li>变化受情绪、心境和心理状态影响</li><li>变化始终保持在无性吸引光谱的范围内</li></ul>"
+        },
+        {
+         "title": "概念边界",
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/aceflux\">波动无性吸引</a>（Aceflux）</td><td>波动无性吸引讲的是吸引强弱随时间起伏，不说明受什么影响；情绪无性吸引讲的是变化受情绪、心境影响</td></tr><tr><td><a href=\"#term/acespike\">尖峰无性吸引</a>（Acespike）</td><td>尖峰是平时几乎没有、偶尔出现一次强烈而短暂的高峰；情绪无性吸引讲的是取向随情绪、心境变化</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"情绪无性吸引就是心情好坏决定有没有吸引。\"</b> 它讲的是取向会随情绪、心境等变化，变化始终在无性吸引光谱之内，不是在“有”和“没有”之间切换。</li></ul>"
+        }
+       ]
+      },
+      {
        "id": "caedsexual",
        "name": "Caedsexual",
        "en": "Caedsexual",
@@ -4492,7 +4794,7 @@ window.LEXICON = {
         ],
         [
          "上位类",
-         "<a href=\"#term/asexual\">Asexual</a>（wiki 说明：它是微标签，隐含无性恋）"
+         "<a href=\"#term/asexual\">Asexual</a>（wiki 说明：它是微标签，隐含无性吸引）"
         ],
         [
          "对应的轴",
@@ -4509,6 +4811,286 @@ window.LEXICON = {
         [
          "来源",
          "只进词汇表；lgbtqia.wiki 词条给出的说法是觉得自己曾经有性吸引，但因过去的创伤而被切断。wiki 同时限定只给创伤幸存者和有 PTSD 的人使用，本测试不采用这个限定（不做创伤归因，也不从标签推断经历）。wiki 记这个词最早见于 2015 年 1 月前后的一份词汇表，造词者不明"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "fictollosexual",
+       "name": "Fictollosexual",
+       "en": "Fictollosexual",
+       "zh": "虚拟与现实吸引对象不一致",
+       "zhStatus": "拟；资料只给了释义，没有中文名",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/fictosexual\">Fictosexual</a>"
+        ],
+        [
+         "对应的轴",
+         "不测量（属于方向，性侧方向模块尚未建）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：虚构角色身上被吸引的性别，和现实中的人不一致，例如对虚构角色是泛吸引、对现实中的人只对一种性别有吸引"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "fictorose",
+       "name": "Fictorose",
+       "en": "Fictorose",
+       "zh": "虚拟角色玫瑰吸引",
+       "zhStatus": "拟；资料里的这个译名带问号",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/fictosexual\">Fictosexual</a>"
+        ],
+        [
+         "对应的轴",
+         "不测量（组合说法）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：同时是虚拟角色性吸引和虚拟浪漫倾向（Fictoromantic）的人可用的说法"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "myrsexual",
+       "name": "Myrsexual",
+       "en": "Myrsexual",
+       "zh": "多重无性吸引",
+       "zhStatus": "社群流传",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>"
+        ],
+        [
+         "对应的轴",
+         "不测量（讲的是同时用几个标签）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：同时体验多种无性吸引光谱身份；这些身份可以是静态的（kymenic），也可以是动态的（amplusic）"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "propeestsexual",
+       "name": "Propeestsexual",
+       "en": "Propeestsexual",
+       "zh": "混合性吸引",
+       "zhStatus": "社群流传",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>"
+        ],
+        [
+         "对应的轴",
+         "不测量（讲的是几个标签怎样合成自己的身份）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：感觉多种无性吸引光谱身份混合起来，构成自己身份的一部分；与 Myrsexual 相近，区别是它指身份混合，Myrsexual 指同时体验多种（但不混合）"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "agneasian",
+       "name": "Agneasian",
+       "en": "Agneasian",
+       "zh": "无性吸引收集者",
+       "zhStatus": "社群流传",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "<a href=\"#term/ace-spec\">Ace-spec</a>"
+        ],
+        [
+         "对应的轴",
+         "不测量（讲的是怎样使用标签）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：“收集”无性吸引光谱的身份，因为只靠少数几个词说不准自己；可能同时认同所有这些身份，也可能在不同身份之间流动"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "brickhillsexual",
+       "name": "Brickhillsexual",
+       "en": "Brickhillsexual",
+       "zh": "多层性恋",
+       "zhStatus": "拟；资料只给了释义，没有中文名",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "BHsexual"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "—"
+        ],
+        [
+         "对应的轴",
+         "不测量（讲的是取向由几层构成）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：性取向由多层构成，每一层都稳固；层次可以是对多种性别的吸引、产生吸引的前提条件等，由本人诠释"
+        ]
+       ],
+       "sections": []
+      },
+      {
+       "id": "duosexual",
+       "name": "Duosexual",
+       "en": "Duosexual",
+       "zh": "双取向切换性恋",
+       "zhStatus": "拟；资料只给了释义，没有中文名",
+       "complete": false,
+       "summary": "",
+       "facts": [
+        [
+         "别名",
+         "—"
+        ],
+        [
+         "层级",
+         "只进词汇表"
+        ],
+        [
+         "上位类",
+         "—"
+        ],
+        [
+         "对应的轴",
+         "不测量（不专属于无性吸引光谱）"
+        ],
+        [
+         "共识度",
+         "—"
+        ],
+        [
+         "测试适配度",
+         "D"
+        ],
+        [
+         "来源",
+         "只进词汇表；社群流传资料（未另找到出处）：有两种或更多明确界定的性取向，并在这些取向之间切换；和流动性取向（abrosexual）不同，后者流动得无法明确分类，而 duosexual 可能只在少数几种取向之间切换"
         ]
        ],
        "sections": []
@@ -4673,7 +5255,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/platonic-attraction\">柏拉图吸引</a></td><td>描述对某个人的朋友式渴望；aplatonic 描述这种渴望很少或几乎不出现</td></tr><tr><td>内向、不喜欢社交</td><td>内向或不想社交讲的是社交意愿和精力；aplatonic 讲的是对具体对象的柏拉图吸引。两者可以同时出现，也可以互不相干</td></tr><tr><td><a href=\"#term/aromantic\">无浪漫倾向</a> / <a href=\"#term/asexual\">无性恋</a></td><td>分别讲浪漫吸引和性吸引；aplatonic 讲柏拉图吸引。三者可以同时存在，也可以只符合其中一个</td></tr><tr><td>当前没有朋友</td><td>有没有朋友是关系和现状；aplatonic 讲的是吸引。没有朋友的人不一定 aplatonic，aplatonic 的人也可能有很亲近的朋友</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"aplatonic 就是讨厌人、不需要朋友。\"</b> 它描述的是柏拉图吸引很少或几乎不出现，不等于讨厌别人，也不等于没有朋友。</li><li><b>\"不想社交就是 aplatonic。\"</b> 不想社交、喜欢独处和缺少柏拉图吸引是两件事。</li><li><b>\"aplatonic 一定也是 aro 或 ace。\"</b> 三种说法讲不同的吸引，可以同时出现，也可以只符合其中一个。</li><li><b>\"这只是心理或身体出了问题。\"</b> 这个词只描述柏拉图吸引的多寡，不说明原因，也不判断一个人的社交能力或心理状态。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/platonic-attraction\">柏拉图吸引</a></td><td>描述对某个人的朋友式渴望；aplatonic 描述这种渴望很少或几乎不出现</td></tr><tr><td>内向、不喜欢社交</td><td>内向或不想社交讲的是社交意愿和精力；aplatonic 讲的是对具体对象的柏拉图吸引。两者可以同时出现，也可以互不相干</td></tr><tr><td><a href=\"#term/aromantic\">无浪漫倾向</a> / <a href=\"#term/asexual\">无性吸引</a></td><td>分别讲浪漫吸引和性吸引；aplatonic 讲柏拉图吸引。三者可以同时存在，也可以只符合其中一个</td></tr><tr><td>当前没有朋友</td><td>有没有朋友是关系和现状；aplatonic 讲的是吸引。没有朋友的人不一定 aplatonic，aplatonic 的人也可能有很亲近的朋友</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"aplatonic 就是讨厌人、不需要朋友。\"</b> 它描述的是柏拉图吸引很少或几乎不出现，不等于讨厌别人，也不等于没有朋友。</li><li><b>\"不想社交就是 aplatonic。\"</b> 不想社交、喜欢独处和缺少柏拉图吸引是两件事。</li><li><b>\"aplatonic 一定也是 aro 或 ace。\"</b> 三种说法讲不同的吸引，可以同时出现，也可以只符合其中一个。</li><li><b>\"这只是心理或身体出了问题。\"</b> 这个词只描述柏拉图吸引的多寡，不说明原因，也不判断一个人的社交能力或心理状态。</li></ul>"
         }
        ]
       },
@@ -4775,7 +5357,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/sensual-attraction\">感官吸引</a></td><td>描述对某个人的非性接触渴望；asensual 描述这种渴望很少或几乎不出现</td></tr><tr><td><a href=\"#term/asexual\">无性恋</a></td><td>无性恋讲性吸引；asensual 讲感官吸引。一个人可以只有其中一种，也可以两种都有或都没有</td></tr><tr><td>排斥触碰、触觉敏感</td><td>这些讲的是对触碰的态度或身体反应；asensual 讲的是对特定对象的渴望少，不代表讨厌触碰</td></tr><tr><td>一般触碰需求</td><td>不指向特定对象的触碰需求是另一回事，不属于感官吸引</td></tr><tr><td>当前没有亲密接触</td><td>有没有拥抱、牵手是经历和现状；asensual 讲的是吸引本身</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"asensual 就是讨厌拥抱、不想被人碰。\"</b> 它描述的是对特定对象的感官吸引很少或几乎不出现；对触碰本身的态度可以喜欢、无所谓或排斥。</li><li><b>\"asensual 就是无性恋。\"</b> 两者讲不同的吸引，可以同时出现，也可以只符合其中一个。</li><li><b>\"这是因为没有对象或没有经验。\"</b> 经历不决定有没有这种吸引；现在有没有亲密接触，和 asensual 是两件事。</li><li><b>\"这是身体有问题。\"</b> 这个词只描述感官吸引的多寡，不说明原因。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/sensual-attraction\">感官吸引</a></td><td>描述对某个人的非性接触渴望；asensual 描述这种渴望很少或几乎不出现</td></tr><tr><td><a href=\"#term/asexual\">无性吸引</a></td><td>前者讲性吸引，asensual 讲感官吸引。一个人可以只有其中一种，也可以两种都有或都没有</td></tr><tr><td>排斥触碰、触觉敏感</td><td>这些讲的是对触碰的态度或身体反应；asensual 讲的是对特定对象的渴望少，不代表讨厌触碰</td></tr><tr><td>一般触碰需求</td><td>不指向特定对象的触碰需求是另一回事，不属于感官吸引</td></tr><tr><td>当前没有亲密接触</td><td>有没有拥抱、牵手是经历和现状；asensual 讲的是吸引本身</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"asensual 就是讨厌拥抱、不想被人碰。\"</b> 它描述的是对特定对象的感官吸引很少或几乎不出现；对触碰本身的态度可以喜欢、无所谓或排斥。</li><li><b>\"asensual 就是无性吸引。\"</b> 两者讲不同的吸引，可以同时出现，也可以只符合其中一个。</li><li><b>\"这是因为没有对象或没有经验。\"</b> 经历不决定有没有这种吸引；现在有没有亲密接触，和 asensual 是两件事。</li><li><b>\"这是身体有问题。\"</b> 这个词只描述感官吸引的多寡，不说明原因。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -5580,7 +6162,7 @@ window.LEXICON = {
         },
         {
          "title": "概念边界",
-         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/polyamory\">Polyamory</a></td><td>polyamory 是 CNM 下的一种，强调同时拥有多段亲密或承诺关系；CNM 还包括以性为主的开放式关系等安排</td></tr><tr><td><a href=\"#term/open-relationship\">Open relationship</a></td><td>开放式关系也在 CNM 伞下，通常以一段核心关系为基础，对外多是性方面的关系</td></tr><tr><td><a href=\"#term/relationship-anarchy\">Relationship anarchy</a>（RA）</td><td>RA 是组织关系的原则（不预设等级、逐项定制），和伴侣数量无关：只有一段关系，甚至没有伴侣式关系的人，也可以是 RA</td></tr><tr><td><a href=\"#term/monogamy\">Monogamy</a></td><td>单偶是同时只有一段伴侣式关系并保持排他；单偶不限于浪漫，排他的 QPR 也是单偶</td></tr><tr><td>出轨</td><td>出轨是瞒着伴侣、违背约定；CNM 的前提正是所有相关者知情同意</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"非单偶就是不认真、随便。\"</b> CNM 对沟通和约定的要求往往更多，很多人的每段关系都是长期、认真的。</li><li><b>\"非单偶一定和性有关。\"</b> 不一定。多段 QPR、一段浪漫关系加一段 QPR，都可以是非单偶，可以完全不涉及性。</li><li><b>\"无浪漫倾向（aro）或无性恋（ace）的人一定是（或一定不是）非单偶。\"</b> 吸引和关系结构是两件事，光谱内外的人都可能选择任何一种结构。</li><li><b>\"现在只有一位伴侣，就不算 CNM。\"</b> 维度五问的是理想和倾向；现在有几段关系，不决定你想要什么样的结构。</li></ul>"
+         "html": "<h4>相似的标签</h4><div class=\"lx-table\"><table><thead><tr><th>标签</th><th>区别</th></tr></thead><tbody><tr><td><a href=\"#term/polyamory\">Polyamory</a></td><td>polyamory 是 CNM 下的一种，强调同时拥有多段亲密或承诺关系；CNM 还包括以性为主的开放式关系等安排</td></tr><tr><td><a href=\"#term/open-relationship\">Open relationship</a></td><td>开放式关系也在 CNM 伞下，通常以一段核心关系为基础，对外多是性方面的关系</td></tr><tr><td><a href=\"#term/relationship-anarchy\">Relationship anarchy</a>（RA）</td><td>RA 是组织关系的原则（不预设等级、逐项定制），和伴侣数量无关：只有一段关系，甚至没有伴侣式关系的人，也可以是 RA</td></tr><tr><td><a href=\"#term/monogamy\">Monogamy</a></td><td>单偶是同时只有一段伴侣式关系并保持排他；单偶不限于浪漫，排他的 QPR 也是单偶</td></tr><tr><td>出轨</td><td>出轨是瞒着伴侣、违背约定；CNM 的前提正是所有相关者知情同意</td></tr></tbody></table></div><h4>常见误解</h4><ul><li><b>\"非单偶就是不认真、随便。\"</b> CNM 对沟通和约定的要求往往更多，很多人的每段关系都是长期、认真的。</li><li><b>\"非单偶一定和性有关。\"</b> 不一定。多段 QPR、一段浪漫关系加一段 QPR，都可以是非单偶，可以完全不涉及性。</li><li><b>\"无浪漫倾向（aro）或无性吸引（ace）的人一定是（或一定不是）非单偶。\"</b> 吸引和关系结构是两件事，光谱内外的人都可能选择任何一种结构。</li><li><b>\"现在只有一位伴侣，就不算 CNM。\"</b> 维度五问的是理想和倾向；现在有几段关系，不决定你想要什么样的结构。</li></ul>"
         },
         {
          "title": "社区定义",
@@ -5890,7 +6472,7 @@ window.LEXICON = {
        "sections": [
         {
          "title": "核心特征",
-         "html": "<ul><li>有一段被当作核心的关系，它是这个安排的基础</li><li>核心关系之外，允许与别人发生关系，而且这些外部关系多为性方面的</li><li>外部关系的界限和怎么告知，由相关的人商量约定</li><li>无性恋（ace）与有性恋（allo）的伴侣，为协调彼此的需求而约定开放，也属于这类安排，不单设名称</li></ul>"
+         "html": "<ul><li>有一段被当作核心的关系，它是这个安排的基础</li><li>核心关系之外，允许与别人发生关系，而且这些外部关系多为性方面的</li><li>外部关系的界限和怎么告知，由相关的人商量约定</li><li>无性吸引（ace）与有性吸引（allo）的伴侣，为协调彼此的需求而约定开放，也属于这类安排，不单设名称</li></ul>"
         },
         {
          "title": "体验举例",
@@ -6197,19 +6779,19 @@ window.LEXICON = {
   "Coeoromantic": "coeoromantic",
   "Aegoromantic": "aegoromantic",
   "Cupioromantic": "cupioromantic",
+  "Fictoromantic": "fictoromantic",
+  "Autoromantic": "autoromantic",
+  "Bellusromantic": "bellusromantic",
   "Idemromantic": "idemromantic",
   "Platoniromantic": "platoniromantic",
   "Vexromantic": "vexromantic",
   "Proculromantic": "proculromantic",
   "Adexromantic": "adexromantic",
-  "Fictoromantic": "fictoromantic",
-  "Autoromantic": "autoromantic",
   "Disakoiromantic": "disakoiromantic",
   "Placioromantic": "placioromantic",
   "Morphoromantic": "morphoromantic",
   "Pseudoromantic": "pseudoromantic",
   "Acriromantic": "acriromantic",
-  "Bellusromantic": "bellusromantic",
   "Apothiromantic": "apothiromantic",
   "Orchidromantic": "orchidromantic",
   "Ace-spec": "ace-spec",
@@ -6228,16 +6810,16 @@ window.LEXICON = {
   "Desinosexual": "desinosexual",
   "Aegosexual": "aegosexual",
   "Cupiosexual": "cupiosexual",
-  "Vexsexual": "vexsexual",
-  "Proculsexual": "proculsexual",
   "Fictosexual": "fictosexual",
   "Autosexual": "autosexual",
+  "Bellussexual": "bellussexual",
+  "Vexsexual": "vexsexual",
+  "Proculsexual": "proculsexual",
   "Adexsexual": "adexsexual",
   "Disakoisexual": "disakoisexual",
   "Placiosexual": "placiosexual",
   "Pseudosexual": "pseudosexual",
   "Acrisexual": "acrisexual",
-  "Bellussexual": "bellussexual",
   "Apothisexual": "apothisexual",
   "Platonic attraction": "platonic-attraction",
   "Aplatonic": "aplatonic",

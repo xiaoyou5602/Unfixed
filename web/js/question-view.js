@@ -49,7 +49,7 @@ window.QuestionView = (() => {
 
   function render(q, st, footer = '') {
     // 这几题的“没有经历”放进答案列表，仍沿用标准出口的取值与计分含义。
-    const optionExits = ['Q1-07', 'Q1-08', 'Q2-09'].includes(q.id) ? q.exits.filter(x => x.value === '没有这类经历') : [];
+    const optionExits = ['Q1-07', 'Q1-08', 'Q2-08', 'Q2-09'].includes(q.id) ? q.exits.filter(x => x.value === '没有这类经历') : [];
     const single = q.kind === 'single';
     const exitOptions = optionExits.map(x => `<label class="opt${single ? ' single' : ''}" data-exit="${esc(x.value)}">
       <input type="${single ? 'radio' : 'checkbox'}" name="${esc(q.id)}" ${st.exit === x.value ? 'checked' : ''}>
