@@ -126,7 +126,7 @@ window.QuestionScoring = (() => {
       // desino、apres、coeo 是主树子类，但各只有一道题，和 flux、spike 一样只作"可能"（15.5）
       const extended = ['Desino', 'Apres', 'Coeo'].map(p => p + suffix);
       const time = sexual ? ['Aceflux', 'Acespike'] : ['Aroflux', 'Arospike'];
-      const freq = ctx.axes[axis + '②'], clarity = ctx.axes[axis + '①'], temporal = ['flux', 'spike'].includes(ctx.axes[axis + '⑤']);
+      const freq = ctx.axes[axis + '②'], clarity = ctx.axes[axis + '①'];
       const quoi = ['感受相同', '体验相同', '无法区分', '无法理解', '不适用'].includes(clarity);
       const selfSpec = ctx.is(sexual ? 'Q2-04' : 'Q1-05', '在光谱内');
       const objectSpec = ctx.is(sexual ? 'Q2-17' : 'Q1-20', '在光谱内');
@@ -152,10 +152,6 @@ window.QuestionScoring = (() => {
         if (!selfSpec && !primary.includes(names.spec)) {
           (ctx.is(sexual ? 'Q2-04' : 'Q1-05', '不在光谱内') ? umbrella : possible).push(names.spec);
         }
-      } else if (temporal) {
-        primary = [names.grey];
-        if (freq === '从不' && ok(names.a)) primary.unshift(names.a);
-        possible.push(...time.filter(clue)); inSpectrum = true;
       } else if (freq === '从不') {
         primary = [ok(names.a) ? names.a : names.spec];
         if (!ok(names.a)) possible.push(names.a);
@@ -180,7 +176,7 @@ window.QuestionScoring = (() => {
       if (primary.some(id => [names.a, names.grey, names.spec, names.allo, '探索中'].includes(id))) {
         possible.push(...sub.filter(id => audit[id]?.status === '线索'));
       }
-      possible.push(...extended.filter(clue));
+      possible.push(...time.filter(clue), ...extended.filter(clue));
       // 不在 quoi 路径、却说不清渴望指向谁（Q2-10）时，Quoisexual 作为"可能"列出（15.7）
       if (!quoi && ok(names.quoi)) possible.push(names.quoi);
       if (primary.some(id => sub.includes(id)) && !primary.includes(names.a)) parents.push(names.grey);

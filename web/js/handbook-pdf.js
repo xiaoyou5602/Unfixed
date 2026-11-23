@@ -88,7 +88,7 @@ window.HandbookPDF = (() => {
     const [html2canvas, { jsPDF }] = await Promise.all([load('html2canvas'), load('jspdf')]);
     const pdf = new jsPDF({ unit: 'mm', format: 'a4', compress: true });
     pdf.setProperties({ title: 'Unfixed 自我探索手册', creator: 'Unfixed' });
-    const chapters = [...book.querySelectorAll('.hb-page')];
+    const chapters = [...book.querySelectorAll('.hb-page:not(.hb-howto)')];
     if (!chapters.length) throw new Error('没有找到可导出的结果。');
     const sheet = document.createElement('canvas'), ctx = sheet.getContext('2d');
     if (!ctx) throw new Error('当前浏览器无法生成页面图像。');
@@ -143,13 +143,15 @@ window.HandbookPDF = (() => {
       downloadURL = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = downloadURL; link.download = `Unfixed-${book.dataset.serial || 'handbook'}.pdf`;
-      link.textContent = '点此下载 PDF'; link.target = '_blank'; link.rel = 'noopener';
-      status.textContent = 'PDF 已生成。若未出现下载提示，'; status.append(link);
-      status.append('。PDF 是图片版，文字不能选中复制。');
-      // 链接留在页面上：有的手机浏览器要再手动点一次才肯下载
-      link.click();
+      link.className = 'hb-btn'; link.textContent = '保存 PDF';
+      const preview = document.createElement('a');
+      preview.href = downloadURL; preview.target = '_blank'; preview.rel = 'noopener'; preview.textContent = '打开 PDF';
+      button.replaceWith(link);
+      status.textContent = `PDF 已生成，请点“保存 PDF”。文件名：${link.download}。可在浏览器下载记录中查找。若没有下载，可`;
+      status.append(preview, '，再用浏览器的分享或保存功能。');
+      link.focus({ preventScroll: true });
     } catch (error) {
-      status.textContent = `${error.message || 'PDF 生成失败。'} 请点“下载 PDF”重试。`;
+      status.textContent = `${error.message || 'PDF 生成失败。'} 请点“生成 PDF”重试。`;
     } finally { busy = false; button.disabled = false; }
   }
   document.addEventListener('click', event => {

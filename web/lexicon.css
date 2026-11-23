@@ -129,5 +129,5 @@ body.lex-open .progress{display:none}
   .lx-prose{font-size:14.5px}
   .topbar{padding-left:62px}
 }
-@media (prefers-reduced-motion:reduce){ .drawer,body.drawer-open .drawer{transition:none} }
+body.reduced-motion .drawer,body.reduced-motion.drawer-open .drawer{transition:none}
 @media print{ .menu-btn,.drawer,.drawer-mask{display:none !important} }

@@ -3,7 +3,6 @@
 // 第一屏的纸页（data-px="page"）先是闪烁的大像素块，再一级级变细，最后换回真正的页面；
 // 接着第一屏的正文（data-px="text"）从块状字符逐字显影。改选项重画、第一屏以外的内容都直接显示；减少动态效果时整页直接显示
 window.PixelReveal = (() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // 闪烁用问卷原有的颜色：群青、朱红、深蓝墨、网点青
   const FLICK = ['#1d33e0', '#e0392c', '#1b2340', '#1f86b8'].map(h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)));
   const running = new Set();
@@ -155,7 +154,7 @@ window.PixelReveal = (() => {
   function mount(root, entering) {
     finishAll();
     layer = root.querySelector('.px-layer');
-    if (!entering || reduce || !layer) return;
+    if (!entering || reduceMotion || !layer) return;
     playing = root; root.classList.add('px-playing');
     const my = token, first = el => el.getClientRects().length && el.getBoundingClientRect().top + scrollY < innerHeight;
     const pages = [...root.querySelectorAll('[data-px="page"]')].filter(first);

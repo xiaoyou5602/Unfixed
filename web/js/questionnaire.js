@@ -307,6 +307,7 @@ function render() {
   document.body.classList.toggle('reading', pg.kind === 'done');
   if (pg.kind === 'done') Handbook.mount(slip, true);
   renderDots();
+  requestPaperFrame();
 }
 function renderDots() {
   const pg = PAGES[cur], dots = document.getElementById('dots');
@@ -318,12 +319,13 @@ function renderDots() {
   document.getElementById('progressText').textContent =
     pg.kind === 'cover' ? '按回答出题' : pg.kind === 'done' ? '结果页' : `${questionLabel(pg.q)} · ${view.title}`;
 }
+let pageFade = null, pageFadeFrame = 0;
 function go(i, explicitStart = false) {
   if (busy || i === cur || i < 0 || i >= PAGES.length) return;
   busy = true;
-  setPrint(PAGES[i], true);
-  slipWrap.classList.add('leaving');
-  setTimeout(() => {
+  if (!reduceMotion) setPrint(PAGES[i], true);
+  if (!reduceMotion) slipWrap.classList.add('leaving');
+  const advance = () => {
     const from = cur;
     cur = i; render(); window.scrollTo(0, 0);
     if (PAGES[cur].kind !== 'cover') { savedAt = PAGES[cur].q || PAGES[cur].kind; persist(); }
@@ -331,8 +333,21 @@ function go(i, explicitStart = false) {
     if (PAGES[from].kind === 'cover' && PAGES[cur].kind !== 'cover') recordCoverEntry(explicitStart);
     if (PAGES[cur].kind === 'done' && RESULT) report('complete', labelsOf(RESULT));
     slipWrap.classList.remove('leaving');
-    setTimeout(() => { busy = false; }, 420);
-  }, 380);
+    if (reduceMotion) {
+      setPrint(PAGES[cur], false);
+      pageFade?.cancel();
+      cancelAnimationFrame(pageFadeFrame);
+      // 底页按需绘制完成后再开始淡入，慢设备也不会把动画耗在绘制等待里。
+      pageFadeFrame = requestAnimationFrame(() => {
+        pageFadeFrame = 0;
+        pageFade = slipWrap.animate([{ opacity: 0.65 }, { opacity: 1 }], { duration: 160, easing: 'ease-out' });
+      });
+      busy = false;
+    }
+    else setTimeout(() => { busy = false; }, 420);
+  };
+  if (reduceMotion) advance();
+  else setTimeout(advance, 380);
 }
 // 改了回答：保存，重排后面的页（当前页的序号不变），更新进度点
 function changed() {

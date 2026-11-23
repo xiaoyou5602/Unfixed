@@ -17,27 +17,47 @@ function resize() {
   setPrint(Lexicon.printPage(), false);
 }
 let resizeQueued = true;
-addEventListener('resize', () => { resizeQueued = true; });
+addEventListener('resize', () => { resizeQueued = true; requestPaperFrame(); });
+
 
 const PAPER = { cream: [0.949, 0.933, 0.894], white: [0.969, 0.969, 0.961] };
 const FR = new Float32Array(40), FC = new Float32Array(40), FP = new Float32Array(40);
 let simT = 37, lastNow = performance.now(), lastDraw = 0;
+let frameId = 0, pausedAt = null;
+const calmCanvas = document.getElementById('calmBg');
+let calmPrintKey = '';
+function drawCalmPaper() {
+  const page = Lexicon.printPage();
+  const key = JSON.stringify([page.print, page.kind, canvas.clientWidth, canvas.clientHeight, devicePixelRatio]);
+  if (key === calmPrintKey) return;
+  const src = drawPrint(page, true);
+  if (!src) return;
+  calmCanvas.width = src.width; calmCanvas.height = src.height;
+  calmCanvas.getContext('2d').drawImage(src, 0, 0);
+  calmPrintKey = key;
+}
+function requestPaperFrame() {
+  if (!frameId) frameId = requestAnimationFrame(frame);
+}
 function frame(now) {
-  requestAnimationFrame(frame);
-  if (now - lastDraw < 31) return;
+  frameId = 0;
+  if (reduceMotion) { drawCalmPaper(); lastDraw = now; return; }
+  requestPaperFrame();
+  if (!reduceMotion && now - lastDraw < 31) return;
   // 手机地址栏伸缩会连续触发 resize。清空和重画必须在同一帧内完成，
   // 不能在独立回调里清空后被上面的限帧跳过，留下不透明黑帧。
   if (resizeQueued) { resizeQueued = false; resize(); }
   const dt = Math.min(0.1, (now - lastNow) / 1000); lastNow = now; lastDraw = now;
-  simT += dt * S.speed * (reduceMotion ? 0.15 : 1);
-  const breath = reduceMotion ? 0 : Math.sin(now / 1000 * Math.PI * 2 / 9.5);
+  if (!reduceMotion) simT += dt * S.speed;
+  const sceneNow = reduceMotion ? pausedAt : now;
+  const breath = Math.sin(sceneNow / 1000 * Math.PI * 2 / 9.5);
   const ampPx = S.amp * AMP_PX;
 
   if (printAnim) { printMix = clamp((now - printAnim.t0) / printAnim.dur, 0, 1); if (printMix >= 1) finishPrint(); }
-  for (const f of frags) f.life = fragLife(f, now);
+  if (!reduceMotion) for (const f of frags) f.life = fragLife(f, now);
   for (let i = frags.length - 1; i >= 0; i--) if (frags[i].dead) frags.splice(i, 1);
-  if (texturesReady) { ambient(now); threadTick(now); }
-  drawLoose(now, simT, ampPx);
+  if (texturesReady && !reduceMotion) { ambient(now); threadTick(now); }
+  if (!reduceMotion) drawLoose(sceneNow, simT, ampPx);
 
   if (!glOK()) return;
   const W = canvas.width / dpr, H = canvas.height / dpr;
@@ -64,9 +84,14 @@ function frame(now) {
 }
 
 let texturesReady = false;
-render();
-fontsReady.then(async () => {
+let preparing = false;
+async function preparePaper() {
+  if (preparing || texturesReady) return;
+  preparing = true;
+  await fontsReady;
+  if (reduceMotion) { preparing = false; return; }
   if (glOK()) { upload(atlasTex, await buildAtlas()); setPrint(Lexicon.printPage(), false); }
+  preparing = false;
   texturesReady = true;
   // 一打开就有碎片在显影途中、有线已经落在纸上
   const now = performance.now(), sr = slipRect();
@@ -76,10 +101,56 @@ fontsReady.then(async () => {
   // 手机上两根一左一右地斜，交叉成 X
   for (let i = 0; i < Math.min(2, S.threads); i++) spawnThread({ ahead: 1e6, lean: narrow() ? (i % 2 ? -1 : 1) : 0 });
   nextAmbient = now + 1800; nextThread = now + 4000;
-});
+  if (reduceMotion) {
+    pausedAt = now;
+    for (const f of frags) { f.phase = 'hold'; f.life = 0.5; f.t0 = now; }
+  }
+  requestPaperFrame();
+}
 let refontTimer = 0;
 document.fonts.addEventListener?.('loadingdone', () => {
   clearTimeout(refontTimer);
-  refontTimer = setTimeout(async () => { if (texturesReady && glOK()) { upload(atlasTex, await buildAtlas()); setPrint(Lexicon.printPage(), false); } }, 400);
+  refontTimer = setTimeout(async () => { if (reduceMotion) { calmPrintKey = ''; requestPaperFrame(); return; } if (texturesReady && glOK()) { upload(atlasTex, await buildAtlas()); setPrint(Lexicon.printPage(), false); } }, 400);
 });
-requestAnimationFrame(frame);
+const motionToggle = document.getElementById('motionToggle');
+function applyMotion(reduced) {
+  reduceMotion = reduced;
+  document.body.classList.toggle('reduced-motion', reduced);
+  motionToggle.checked = reduced;
+  cancelAnimationFrame(frameId);
+  frameId = 0;
+  const now = performance.now();
+  if (reduced) {
+    if (pausedAt === null) pausedAt = now;
+    PixelReveal.finishAll();
+    finishPrint();
+    slipWrap.classList.remove('leaving');
+  } else if (pausedAt !== null) {
+    const elapsed = now - pausedAt;
+    for (const f of frags) f.t0 += elapsed;
+    for (const t of loose) t.t0 += elapsed;
+    nextAmbient += elapsed; nextThread += elapsed;
+    pausedAt = null;
+  }
+  lastNow = now;
+  resizeQueued = true;
+  if (reduced) {
+    drawCalmPaper();
+    fontsReady.then(() => { calmPrintKey = ''; requestPaperFrame(); });
+  } else {
+    initPaper();
+    if (texturesReady) setPrint(Lexicon.printPage(), false);
+    preparePaper();
+  }
+  requestPaperFrame();
+}
+motionToggle.addEventListener('change', () => {
+  motionChoice = String(motionToggle.checked);
+  try { localStorage.setItem('unfixed-reduced-motion', motionChoice); } catch {}
+  applyMotion(motionToggle.checked);
+});
+systemMotion.addEventListener('change', event => { if (motionChoice === null) applyMotion(event.matches); });
+// 静态纸面仍响应调参、底页切换和尺寸变化，不运行常驻动画。
+for (const event of ['input', 'change', 'click']) tune.addEventListener(event, requestPaperFrame);
+applyMotion(reduceMotion);
+render();

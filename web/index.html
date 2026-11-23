@@ -18,6 +18,7 @@
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
+<canvas id="calmBg" aria-hidden="true"></canvas>
 <svg id="threads" aria-hidden="true"></svg>
 
 <!-- 左上三条杠：打开侧栏（测试名、名词库的维度大纲），见 js/lexicon.js -->
@@ -46,7 +47,10 @@
   <label><span class="lab">散落的红线 <output id="o-threads"></output></span><input type="range" id="t-threads" min="0" max="6" step="1"></label>
   <label><span class="lab">波浪底纹 <output id="o-wave"></output></span><input type="range" id="t-wave" min="0" max="1" step="0.05"></label>
   <div class="row">纸色 <button data-paper="cream">米</button><button data-paper="white">白</button></div>
-  <label class="check"><input type="checkbox" id="t-bgonly"> 只看底页</label>
+  <div class="tune-checks">
+    <label class="check"><input type="checkbox" id="t-bgonly"> 只看底页</label>
+    <label class="check"><input type="checkbox" id="motionToggle"> 减弱动效</label>
+  </div>
   <button class="reset" id="t-reset">恢复默认</button>
 </div>
 

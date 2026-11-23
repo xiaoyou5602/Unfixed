@@ -225,7 +225,7 @@ window.Handbook = (() => {
         `<span class="hb-group${gi % 2 ? ' alt' : ''}" style="--t:${STAIR[gi % STAIR.length]}">${g.map(w =>
           `<span class="hb-word" style="--len:${wordLen(w).toFixed(2)}">${text(w)}</span>`).join('')}</span>`).join('')}</h1>
       <p class="hb-motto" data-px="text">标签只是代称，一切由你自己的最终体验决定。</p>
-      <div class="hb-cover-foot">
+      <div class="hb-print-guide">${readingGuide()}</div><div class="hb-cover-foot">
         <nav class="hb-toc" aria-label="目录">${chapters.map(c => c.skipped ? `<span class="is-off"><b>${c.no}</b>${text(c.big)} · 跳过了</span>`
           : `<button type="button" data-hb-jump="hb-${c.id}"><b>${c.no}</b>${text(c.big)}</button>`).join('')}</nav>
       </div>`;
@@ -244,8 +244,8 @@ window.Handbook = (() => {
     });
   }
   const GRAN =[['umbrella', '只看伞'], ['main', '主树标签'], ['all', '加上延伸区']];
-  const howto = () => `<p class="hb-kicker">怎么读这本手册</p>
-    <p class="hb-body" data-px="text">每一章对应问卷的一部分，也就是你的回答最接近的词。测试只能说到"你描述的体验和哪些词的定义接近"，不替你决定身份。</p>
+  const readingGuide = () => `<p class="hb-kicker">怎么读这本手册</p><p class="hb-body" data-px="text">每一章对应问卷的一部分，也就是你的回答最接近的词。测试只能说到"你描述的体验和哪些词的定义接近"，不替你决定身份。</p>`;
+  const howto = () => `${readingGuide()}
     <fieldset class="hb-choice" aria-label="想看多细">${GRAN.map(([v, l]) =>
       `<label class="hb-pill"><input type="radio" name="hb-gran" data-hb-gran value="${v}" ${choices.granularity === v ? 'checked' : ''}><span>${l}</span></label>`).join('')}</fieldset>`;
   function short() {
@@ -262,7 +262,7 @@ window.Handbook = (() => {
       <div class="jump">${env.missing.map(q => `<button type="button" data-q="${esc(q.id)}">${text(env.questionLabel(q.id))} · ${text(q.title)}</button>`).join('')}</div>` : ''}
     <p class="hb-sec-p">回答和这里的选择只保存在这台设备的浏览器里。回去改了前面的回答，手册会按新的回答重新拼。</p>
     <div class="hb-actions hb-end-nav"><button type="button" class="hb-btn ghost" data-step="-1">← 回去改回答</button>
-      <button type="button" class="hb-btn ghost" data-hb-pdf>下载 PDF</button><button type="button" class="hb-btn" data-go="0">回到开头 ↺</button></div>
+      <button type="button" class="hb-btn ghost" data-hb-pdf>生成 PDF</button><button type="button" class="hb-btn" data-go="0">回到开头 ↺</button></div>
     ${repo() ? `<p class="hb-sec-p hb-star">觉得这本手册有帮助的话，可以去 <a href="${esc(repo())}" target="_blank" rel="noopener">GitHub</a> 给项目点个 star ☆</p>` : ''}`;
   // 仓库地址只写在页面头部，空着就不出链接
   const repo = () => document.querySelector('meta[name="repo"]')?.content.trim();
@@ -347,7 +347,7 @@ window.Handbook = (() => {
     el.addEventListener('click', e => {
       if (!inBook(e)) return;
       const jump = e.target.closest('[data-hb-jump]'), act = e.target.closest('[data-hb-act]');
-      if (jump) { PixelReveal.finishAll(); document.getElementById(jump.dataset.hbJump)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); return; }
+      if (jump) { PixelReveal.finishAll(); document.getElementById(jump.dataset.hbJump)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); return; }
       if (!act) return;
       const a = act.dataset.hbAct;
       if (a === 'copy-short') copy(result.shorthand, act);

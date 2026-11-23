@@ -10,4 +10,7 @@ main,main[data-kind="done"]{display:block;padding:0}
 .hb-page{filter:none;break-after:page}
 .hb-sheet{clip-path:none;background:#fff}
 .hb-cover .hb-sheet{min-height:96vh}
+.hb-howto{display:none !important}
+.hb-print-guide{display:block;break-inside:avoid}
+.hb-cover .hb-stair{margin:20px 0;gap:4px}
 .px-wait{visibility:visible !important}

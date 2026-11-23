@@ -6,7 +6,11 @@ const DEFAULTS = { cell: 10, amp: 1, speed: 1, frags: 3, threads: 2, wave: 0.8, 
 const S = { ...DEFAULTS };
 try { Object.assign(S, JSON.parse(localStorage.getItem('breathing-paper-tune-v2') || '{}')); } catch (e) {}
 const save = () => { try { localStorage.setItem('breathing-paper-tune-v2', JSON.stringify(S)); } catch (e) {} };
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const systemMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let motionChoice = null;
+try { motionChoice = localStorage.getItem('unfixed-reduced-motion'); } catch {}
+if (motionChoice !== 'true' && motionChoice !== 'false') motionChoice = null;
+let reduceMotion = motionChoice === null ? systemMotion.matches : motionChoice === 'true';
 
 /* ---------------- 小工具 ---------------- */
 function mulberry(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -32,8 +36,7 @@ const AMP_PX = 16;
 
 /* ---------------- WebGL ---------------- */
 const canvas = document.getElementById('bg');
-const gl = canvas.getContext('webgl2', { antialias: false, alpha: false, premultipliedAlpha: false });
-if (!gl) document.body.classList.add('no-gl');
+let gl;
 
 
 let prog, U = {}, atlasTex, printTex = [];
@@ -57,7 +60,10 @@ function upload(t, src) {
   gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src);
 }
-if (gl) {
+function initPaper() {
+  if (gl !== undefined) return;
+  gl = canvas.getContext('webgl2', { antialias: false, alpha: false, premultipliedAlpha: false });
+  if (!gl) { document.body.classList.add('no-gl'); return; }
   try {
     prog = gl.createProgram();
     gl.attachShader(prog, compile(gl.VERTEX_SHADER, VS));
@@ -149,15 +155,15 @@ async function buildAtlas() {
 /* ---------------- 印刷层：红通道=克莱因蓝，绿通道=红，蓝通道=深蓝 ---------------- */
 const printCanvas = document.createElement('canvas');
 let printZone = null;  // 大标题大致占的区域，碎片尽量避开
-const INK_BLUE = '#ff0000', INK_RED = '#00ff00', INK_NAVY = '#0000ff';
-function drawPrint(page) {
+function drawPrint(page, calm = false) {
+  const INK_BLUE = calm ? '#1d33e0' : '#ff0000', INK_RED = calm ? '#e0392c' : '#00ff00', INK_NAVY = calm ? '#1b2340' : '#0000ff';
   const W = canvas.clientWidth, H = canvas.clientHeight, pd = Math.min(devicePixelRatio || 1, 1.5);
   if (W < 2 || H < 2) return null;
   printCanvas.width = Math.round(W * pd); printCanvas.height = Math.round(H * pd);
   const g = printCanvas.getContext('2d');
   g.setTransform(pd, 0, 0, pd, 0, 0);
-  g.globalCompositeOperation = 'source-over'; g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
-  g.globalCompositeOperation = 'lighter';
+  g.globalCompositeOperation = 'source-over';
+  if (!calm) { g.fillStyle = '#000'; g.fillRect(0, 0, W, H); g.globalCompositeOperation = 'lighter'; }
   const m = Math.max(16, W * 0.035);
   // 新分册还没在 PRINTS 登记时照常画底色，不让一次翻页把整个作答锁死
   const pr = page.print || { no: '', latin: '', big: '' };
@@ -205,13 +211,15 @@ function drawPrint(page) {
 let printCur = 0, printMix = 0, printAnim = null;
 function finishPrint() { if (printAnim) { printCur = 1 - printCur; printMix = 0; printAnim = null; } }
 function setPrint(page, animate) {
+  if (reduceMotion) { requestPaperFrame(); return; }
   if (!glOK()) return;
   finishPrint();
   const src = drawPrint(page);
   if (!src) return;
-  if (!animate) { upload(printTex[printCur], src); return; }
+  requestPaperFrame();
+  if (!animate || reduceMotion) { upload(printTex[printCur], src); return; }
   upload(printTex[1 - printCur], src);
-  printAnim = { t0: performance.now(), dur: reduceMotion ? 300 : 1400 };
+  printAnim = { t0: performance.now(), dur: 1400 };
 }
 
 /* ---------------- 碎片 ---------------- */
@@ -323,6 +331,7 @@ function ambient(now) {
 }
 // 勾选一项时，在纸条旁边显影一块碎片（不牵线）；没地方就不放
 function pulse(el, item) {
+  if (reduceMotion) return;
   const sr = slipRect(), W = innerWidth, er = el.getBoundingClientRect();
   const y = er.top + er.height / 2;
   let pref = null;

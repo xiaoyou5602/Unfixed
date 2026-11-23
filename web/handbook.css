@@ -48,6 +48,7 @@ body.reading .topbar{position:absolute}
 .hb-toc .is-off b{color:var(--muted)}
 
 /* 怎么读、正文 */
+.hb-print-guide{display:none}
 .hb-kicker{font:500 11px/1 var(--mono);letter-spacing:.12em;color:var(--blue);margin:0 0 14px}
 .hb-body{font:400 15.5px/1.85 var(--sans);margin:0 0 14px;max-width:38em}
 .hb-lede{font:700 clamp(21px,2.2vw,25px)/1.6 var(--serif);margin:0 0 12px;text-wrap:pretty}
@@ -172,4 +173,3 @@ a.hb-step:hover{color:var(--blue);border-color:var(--blue)}
   .hb-meta span:last-child{margin-left:0}
   .hb-body{font-size:15px}
 }
-@media (prefers-reduced-motion:reduce){ .hb-toc button,.hb-btn,.hb-pill span{transition:none} }
